@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC42C36871C0097E71A /* VigourApp.swift */; };
+		8984BAC72C36871C0097E71A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC62C36871C0097E71A /* ContentView.swift */; };
+		8984BAC92C36871D0097E71A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAC82C36871D0097E71A /* Assets.xcassets */; };
+		8984BACC2C36871D0097E71A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8984BACB2C36871D0097E71A /* Preview Assets.xcassets */; };
+		8984BAD62C36871D0097E71A /* VigourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAD52C36871D0097E71A /* VigourTests.swift */; };
+		8984BAE02C36871D0097E71A /* VigourUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BADF2C36871D0097E71A /* VigourUITests.swift */; };
+		8984BAE22C36871D0097E71A /* VigourUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAE12C36871D0097E71A /* VigourUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8984BAD22C36871D0097E71A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8984BAB92C36871C0097E71A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8984BAC02C36871C0097E71A;
+			remoteInfo = Vigour;
+		};
+		8984BADC2C36871D0097E71A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8984BAB92C36871C0097E71A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8984BAC02C36871C0097E71A;
+			remoteInfo = Vigour;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8984BAC12C36871C0097E71A /* Vigour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vigour.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8984BAC42C36871C0097E71A /* VigourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourApp.swift; sourceTree = "<group>"; };
+		8984BAC62C36871C0097E71A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8984BAC82C36871D0097E71A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8984BACB2C36871D0097E71A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8984BAD12C36871D0097E71A /* VigourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VigourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8984BAD52C36871D0097E71A /* VigourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourTests.swift; sourceTree = "<group>"; };
+		8984BADB2C36871D0097E71A /* VigourUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VigourUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8984BADF2C36871D0097E71A /* VigourUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourUITests.swift; sourceTree = "<group>"; };
+		8984BAE12C36871D0097E71A /* VigourUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8984BABE2C36871C0097E71A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8984BACE2C36871D0097E71A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8984BAD82C36871D0097E71A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8984BAB82C36871C0097E71A = {
+			isa = PBXGroup;
+			children = (
+				8984BAC32C36871C0097E71A /* Vigour */,
+				8984BAD42C36871D0097E71A /* VigourTests */,
+				8984BADE2C36871D0097E71A /* VigourUITests */,
+				8984BAC22C36871C0097E71A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8984BAC22C36871C0097E71A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8984BAC12C36871C0097E71A /* Vigour.app */,
+				8984BAD12C36871D0097E71A /* VigourTests.xctest */,
+				8984BADB2C36871D0097E71A /* VigourUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8984BAC32C36871C0097E71A /* Vigour */ = {
+			isa = PBXGroup;
+			children = (
+				8984BAC42C36871C0097E71A /* VigourApp.swift */,
+				8984BAC62C36871C0097E71A /* ContentView.swift */,
+				8984BAC82C36871D0097E71A /* Assets.xcassets */,
+				8984BACA2C36871D0097E71A /* Preview Content */,
+			);
+			path = Vigour;
+			sourceTree = "<group>";
+		};
+		8984BACA2C36871D0097E71A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8984BACB2C36871D0097E71A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8984BAD42C36871D0097E71A /* VigourTests */ = {
+			isa = PBXGroup;
+			children = (
+				8984BAD52C36871D0097E71A /* VigourTests.swift */,
+			);
+			path = VigourTests;
+			sourceTree = "<group>";
+		};
+		8984BADE2C36871D0097E71A /* VigourUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8984BADF2C36871D0097E71A /* VigourUITests.swift */,
+				8984BAE12C36871D0097E71A /* VigourUITestsLaunchTests.swift */,
+			);
+			path = VigourUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8984BAC02C36871C0097E71A /* Vigour */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8984BAE52C36871D0097E71A /* Build configuration list for PBXNativeTarget "Vigour" */;
+			buildPhases = (
+				8984BABD2C36871C0097E71A /* Sources */,
+				8984BABE2C36871C0097E71A /* Frameworks */,
+				8984BABF2C36871C0097E71A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vigour;
+			productName = Vigour;
+			productReference = 8984BAC12C36871C0097E71A /* Vigour.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8984BAD02C36871D0097E71A /* VigourTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8984BAE82C36871D0097E71A /* Build configuration list for PBXNativeTarget "VigourTests" */;
+			buildPhases = (
+				8984BACD2C36871D0097E71A /* Sources */,
+				8984BACE2C36871D0097E71A /* Frameworks */,
+				8984BACF2C36871D0097E71A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8984BAD32C36871D0097E71A /* PBXTargetDependency */,
+			);
+			name = VigourTests;
+			productName = VigourTests;
+			productReference = 8984BAD12C36871D0097E71A /* VigourTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8984BADA2C36871D0097E71A /* VigourUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8984BAEB2C36871D0097E71A /* Build configuration list for PBXNativeTarget "VigourUITests" */;
+			buildPhases = (
+				8984BAD72C36871D0097E71A /* Sources */,
+				8984BAD82C36871D0097E71A /* Frameworks */,
+				8984BAD92C36871D0097E71A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8984BADD2C36871D0097E71A /* PBXTargetDependency */,
+			);
+			name = VigourUITests;
+			productName = VigourUITests;
+			productReference = 8984BADB2C36871D0097E71A /* VigourUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8984BAB92C36871C0097E71A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					8984BAC02C36871C0097E71A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					8984BAD02C36871D0097E71A = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 8984BAC02C36871C0097E71A;
+					};
+					8984BADA2C36871D0097E71A = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 8984BAC02C36871C0097E71A;
+					};
+				};
+			};
+			buildConfigurationList = 8984BABC2C36871C0097E71A /* Build configuration list for PBXProject "Vigour" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8984BAB82C36871C0097E71A;
+			productRefGroup = 8984BAC22C36871C0097E71A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8984BAC02C36871C0097E71A /* Vigour */,
+				8984BAD02C36871D0097E71A /* VigourTests */,
+				8984BADA2C36871D0097E71A /* VigourUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8984BABF2C36871C0097E71A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8984BACC2C36871D0097E71A /* Preview Assets.xcassets in Resources */,
+				8984BAC92C36871D0097E71A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8984BACF2C36871D0097E71A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8984BAD92C36871D0097E71A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8984BABD2C36871C0097E71A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8984BAC72C36871C0097E71A /* ContentView.swift in Sources */,
+				8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8984BACD2C36871D0097E71A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8984BAD62C36871D0097E71A /* VigourTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8984BAD72C36871D0097E71A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8984BAE22C36871D0097E71A /* VigourUITestsLaunchTests.swift in Sources */,
+				8984BAE02C36871D0097E71A /* VigourUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8984BAD32C36871D0097E71A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8984BAC02C36871C0097E71A /* Vigour */;
+			targetProxy = 8984BAD22C36871D0097E71A /* PBXContainerItemProxy */;
+		};
+		8984BADD2C36871D0097E71A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8984BAC02C36871C0097E71A /* Vigour */;
+			targetProxy = 8984BADC2C36871D0097E71A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8984BAE32C36871D0097E71A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8984BAE42C36871D0097E71A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8984BAE62C36871D0097E71A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Vigour/Preview Content\"";
+				DEVELOPMENT_TEAM = MA3FM4Y73P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxlodyk.Vigour;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8984BAE72C36871D0097E71A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Vigour/Preview Content\"";
+				DEVELOPMENT_TEAM = MA3FM4Y73P;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxlodyk.Vigour;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8984BAE92C36871D0097E71A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MA3FM4Y73P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxlodyk.VigourTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vigour.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Vigour";
+			};
+			name = Debug;
+		};
+		8984BAEA2C36871D0097E71A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MA3FM4Y73P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxlodyk.VigourTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vigour.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Vigour";
+			};
+			name = Release;
+		};
+		8984BAEC2C36871D0097E71A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MA3FM4Y73P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxlodyk.VigourUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Vigour;
+			};
+			name = Debug;
+		};
+		8984BAED2C36871D0097E71A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MA3FM4Y73P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxlodyk.VigourUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Vigour;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8984BABC2C36871C0097E71A /* Build configuration list for PBXProject "Vigour" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8984BAE32C36871D0097E71A /* Debug */,
+				8984BAE42C36871D0097E71A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8984BAE52C36871D0097E71A /* Build configuration list for PBXNativeTarget "Vigour" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8984BAE62C36871D0097E71A /* Debug */,
+				8984BAE72C36871D0097E71A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8984BAE82C36871D0097E71A /* Build configuration list for PBXNativeTarget "VigourTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8984BAE92C36871D0097E71A /* Debug */,
+				8984BAEA2C36871D0097E71A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8984BAEB2C36871D0097E71A /* Build configuration list for PBXNativeTarget "VigourUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8984BAEC2C36871D0097E71A /* Debug */,
+				8984BAED2C36871D0097E71A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8984BAB92C36871C0097E71A /* Project object */;
+}
