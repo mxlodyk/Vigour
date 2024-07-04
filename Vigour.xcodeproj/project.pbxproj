@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC42C36871C0097E71A /* VigourApp.swift */; };
-		8984BAC72C36871C0097E71A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC62C36871C0097E71A /* ContentView.swift */; };
+		8984BAC72C36871C0097E71A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC62C36871C0097E71A /* HomeView.swift */; };
 		8984BAC92C36871D0097E71A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAC82C36871D0097E71A /* Assets.xcassets */; };
 		8984BACC2C36871D0097E71A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8984BACB2C36871D0097E71A /* Preview Assets.xcassets */; };
 		8984BAD62C36871D0097E71A /* VigourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAD52C36871D0097E71A /* VigourTests.swift */; };
 		8984BAE02C36871D0097E71A /* VigourUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BADF2C36871D0097E71A /* VigourUITests.swift */; };
 		8984BAE22C36871D0097E71A /* VigourUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAE12C36871D0097E71A /* VigourUITestsLaunchTests.swift */; };
+		8984BAEF2C3687A40097E71A /* DumbbellVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAEE2C3687A40097E71A /* DumbbellVideoPlayerView.swift */; };
+		8984BAF32C3687CC0097E71A /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAF22C3687CC0097E71A /* ViewModifiers.swift */; };
+		8984BAFA2C36888C0097E71A /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAF92C36888C0097E71A /* Montserrat.ttf */; };
+		8984BAFB2C36888C0097E71A /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAF92C36888C0097E71A /* Montserrat.ttf */; };
+		8984BAFC2C36888C0097E71A /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAF92C36888C0097E71A /* Montserrat.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,7 @@
 /* Begin PBXFileReference section */
 		8984BAC12C36871C0097E71A /* Vigour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vigour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8984BAC42C36871C0097E71A /* VigourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourApp.swift; sourceTree = "<group>"; };
-		8984BAC62C36871C0097E71A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8984BAC62C36871C0097E71A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8984BAC82C36871D0097E71A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8984BACB2C36871D0097E71A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8984BAD12C36871D0097E71A /* VigourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VigourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +49,10 @@
 		8984BADB2C36871D0097E71A /* VigourUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VigourUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8984BADF2C36871D0097E71A /* VigourUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourUITests.swift; sourceTree = "<group>"; };
 		8984BAE12C36871D0097E71A /* VigourUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8984BAEE2C3687A40097E71A /* DumbbellVideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DumbbellVideoPlayerView.swift; sourceTree = "<group>"; };
+		8984BAF22C3687CC0097E71A /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		8984BAF92C36888C0097E71A /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
+		8984BAFD2C36889C0097E71A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +104,13 @@
 			isa = PBXGroup;
 			children = (
 				8984BAC42C36871C0097E71A /* VigourApp.swift */,
-				8984BAC62C36871C0097E71A /* ContentView.swift */,
 				8984BAC82C36871D0097E71A /* Assets.xcassets */,
+				8984BAFD2C36889C0097E71A /* Info.plist */,
+				8984BAF52C3687F00097E71A /* Models */,
+				8984BAF62C3687F80097E71A /* ViewModels */,
+				8984BAF42C3687D90097E71A /* Views */,
+				8984BAF82C3688470097E71A /* Supporting */,
+				8984BAF72C3688410097E71A /* Fonts */,
 				8984BACA2C36871D0097E71A /* Preview Content */,
 			);
 			path = Vigour;
@@ -125,6 +139,45 @@
 				8984BAE12C36871D0097E71A /* VigourUITestsLaunchTests.swift */,
 			);
 			path = VigourUITests;
+			sourceTree = "<group>";
+		};
+		8984BAF42C3687D90097E71A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8984BAC62C36871C0097E71A /* HomeView.swift */,
+				8984BAEE2C3687A40097E71A /* DumbbellVideoPlayerView.swift */,
+				8984BAF22C3687CC0097E71A /* ViewModifiers.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8984BAF52C3687F00097E71A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8984BAF62C3687F80097E71A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8984BAF72C3688410097E71A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8984BAF92C36888C0097E71A /* Montserrat.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8984BAF82C3688470097E71A /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +286,7 @@
 			files = (
 				8984BACC2C36871D0097E71A /* Preview Assets.xcassets in Resources */,
 				8984BAC92C36871D0097E71A /* Assets.xcassets in Resources */,
+				8984BAFA2C36888C0097E71A /* Montserrat.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8984BAFB2C36888C0097E71A /* Montserrat.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8984BAFC2C36888C0097E71A /* Montserrat.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +313,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8984BAC72C36871C0097E71A /* ContentView.swift in Sources */,
+				8984BAEF2C3687A40097E71A /* DumbbellVideoPlayerView.swift in Sources */,
+				8984BAC72C36871C0097E71A /* HomeView.swift in Sources */,
 				8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */,
+				8984BAF32C3687CC0097E71A /* ViewModifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +483,7 @@
 				DEVELOPMENT_TEAM = MA3FM4Y73P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Vigour/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +513,7 @@
 				DEVELOPMENT_TEAM = MA3FM4Y73P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Vigour/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

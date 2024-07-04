@@ -1,9 +1,6 @@
-//
 //  VigourApp.swift
 //  Vigour
-//
 //  Created by Melody Flavel on 4/7/2024.
-//
 
 import SwiftUI
 
@@ -11,7 +8,7 @@ import SwiftUI
 struct VigourApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
