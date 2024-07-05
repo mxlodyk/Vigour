@@ -13,16 +13,15 @@ struct HomeView: View {
                 DumbbellVideoPlayerView(videoName: "Dumbbell Animation")
                     .frame(width: 350, height: 350)
                     .edgesIgnoringSafeArea(.all)
-                    .padding(.top, 50)
                 Spacer()
                 Text("VIGOUR")
                     .withTitleFormatting()
                 Spacer()
-                Text("Start")
-                    .withTextFormatting()
-                
+                NavigationLink(destination: MenuView()) {
+                    Image("OnButtonSVG")
+                }
             }
-            .padding()
+            .withEdgePadding()
         }
     }
 }
