@@ -6,17 +6,34 @@ import SwiftUI
 
 struct AddWorkoutView: View {
     
-    var body: some View {
+    @Binding var program: ProgramModel
+    @State var newWorkoutName: String = ""
+    @Environment(\.presentationMode) var presentationMode
         
-        ZStack {
-            Color.background
-                .edgesIgnoringSafeArea(.all)
-            Text("Add Workout View.")
-                .withTextFormatting()
+        var body: some View {
+            
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                VStack{
+                    TextField("Workout Name", text: $newWorkoutName)
+                        .withTextFieldFormatting()
+                    Button(action: {
+                        saveButtonPressed()
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Add Workout")
+                            .withButtonFormatting()
+                    }
+                }
+                .withEdgePadding()
+                .padding(.top, 30)
+            }
         }
+        
+        func saveButtonPressed() {
+            @State var newWorkout = WorkoutModel(name: newWorkoutName, exercises: [])
+            DataProvider.addWorkout(programID: program.id, workoutModel: newWorkout)
     }
 }
 
-#Preview {
-    AddWorkoutView()
-}

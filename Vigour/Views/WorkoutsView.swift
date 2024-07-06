@@ -7,8 +7,9 @@ import SwiftUI
 struct WorkoutsView: View {
     
     @Binding var program: ProgramModel
-    var programID: String
+    @State var programID: String
     @Environment(\.presentationMode) var presentationMode
+    @State var showingBottomSheet = false
     
     var body: some View {
         ZStack {
@@ -16,8 +17,12 @@ struct WorkoutsView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack {
-                    ForEach(program.workouts) { workout in
-                        WorkoutRowView(workout: workout)
+                    ForEach(DataProvider.getPrograms()) { program in
+                        if program.id == programID {
+                            ForEach(program.workouts) { workout in
+                                WorkoutRowView(workout: workout)
+                            }
+                        }
                     }
                 }
                 .withEdgePadding()
@@ -32,10 +37,16 @@ struct WorkoutsView: View {
                             .iconStyle()
                     },
                 trailing:
-                    NavigationLink(destination: AddWorkoutView()) {
+                    Button(action: {
+                        showingBottomSheet.toggle()
+                    }) {
                         Image("AddButton")
                             .iconStyle()
                     })
+            .sheet(isPresented: $showingBottomSheet, content: {
+                AddWorkoutView(program: $program)
+                    .presentationDetents([.fraction(0.2 )])
+            })
         }
     }
 }

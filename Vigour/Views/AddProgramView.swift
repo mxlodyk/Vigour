@@ -21,7 +21,7 @@ struct AddProgramView: View {
                     saveButtonPressed()
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
-                    Text("Create Program")
+                    Text("Add Program")
                         .withButtonFormatting()
                 }
             }
