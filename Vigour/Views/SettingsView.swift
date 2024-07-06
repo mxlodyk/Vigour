@@ -24,7 +24,7 @@ struct SettingsView: View {
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
-                    Image("BackArrow")
+                    Image("BackButton")
                         .iconStyle()
                 })
         }

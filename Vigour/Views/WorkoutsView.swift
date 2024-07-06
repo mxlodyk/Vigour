@@ -23,13 +23,19 @@ struct WorkoutsView: View {
                 .withEdgePadding()
             }
             .navigationBarBackButtonHidden()
-            .navigationBarItems(leading:
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image("BackArrow")
-                        .iconStyle()
-                })
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image("BackButton")
+                            .iconStyle()
+                    },
+                trailing:
+                    NavigationLink(destination: AddWorkoutView()) {
+                        Image("AddButton")
+                            .iconStyle()
+                    })
         }
     }
 }

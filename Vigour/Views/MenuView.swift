@@ -26,11 +26,11 @@ struct MenuView: View {
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
-                        Image("Home")
+                        Image("HomeButton")
                             .iconStyle()},
                 trailing:
                     NavigationLink(destination: SettingsView()) {
-                        Image("Settings")
+                        Image("SettingsButton")
                             .iconStyle()
                     })
         }

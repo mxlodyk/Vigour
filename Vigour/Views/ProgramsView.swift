@@ -28,9 +28,14 @@ struct ProgramsView: View {
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
-                    Image("BackArrow")
+                    Image("BackButton")
                         .iconStyle()
-                })
+                },
+                trailing:
+                    NavigationLink(destination: AddProgramView()) {
+                        Image("AddButton")
+                            .iconStyle()
+                    })
         }
     }
 }
