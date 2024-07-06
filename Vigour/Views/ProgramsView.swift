@@ -8,6 +8,7 @@ struct ProgramsView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var showingBottomSheet = false
+    @StateObject var programViewModel = ProgramViewModel()
     
     var body: some View {
         ZStack {
@@ -15,7 +16,7 @@ struct ProgramsView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack {
-                    ForEach(DataProvider.getPrograms()) { program in
+                    ForEach(programViewModel.programs) { program in
                         ProgramListRowView(program: program)
                     }
                     Spacer()
@@ -39,7 +40,7 @@ struct ProgramsView: View {
                         .iconStyle()
                 })
             .sheet(isPresented: $showingBottomSheet, content: {
-                AddProgramView()
+                AddProgramView(programViewModel: programViewModel)
                     .presentationDetents([.fraction(0.2 )])
             })
         }

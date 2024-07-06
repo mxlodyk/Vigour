@@ -35,6 +35,7 @@
 		89EF51A32C3938710086BBC0 /* AddProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A22C3938710086BBC0 /* AddProgramView.swift */; };
 		89EF51A52C3939A00086BBC0 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A42C3939A00086BBC0 /* AddWorkoutView.swift */; };
 		89EF51A72C3939AA0086BBC0 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A62C3939AA0086BBC0 /* AddExerciseView.swift */; };
+		89EF51A92C39F6FF0086BBC0 /* ProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A82C39F6FF0086BBC0 /* ProgramViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		89EF51A22C3938710086BBC0 /* AddProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProgramView.swift; sourceTree = "<group>"; };
 		89EF51A42C3939A00086BBC0 /* AddWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutView.swift; sourceTree = "<group>"; };
 		89EF51A62C3939AA0086BBC0 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
+		89EF51A82C39F6FF0086BBC0 /* ProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				89EF51902C3801130086BBC0 /* DataProvider.swift */,
+				89EF51A82C39F6FF0086BBC0 /* ProgramViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				89EF51992C3915FE0086BBC0 /* WorkoutRowView.swift in Sources */,
 				8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */,
 				89EF51A52C3939A00086BBC0 /* AddWorkoutView.swift in Sources */,
+				89EF51A92C39F6FF0086BBC0 /* ProgramViewModel.swift in Sources */,
 				89EF51952C38B0F00086BBC0 /* ProgramRowView.swift in Sources */,
 				89EF51912C3801130086BBC0 /* DataProvider.swift in Sources */,
 				89EF518F2C3800620086BBC0 /* ProgramModel.swift in Sources */,
