@@ -7,6 +7,8 @@ import SwiftUI
 struct AddProgramView: View {
     
     @State var newProgramName: String = ""
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         
         ZStack {
@@ -15,15 +17,21 @@ struct AddProgramView: View {
             VStack{
                 TextField("Program Name", text: $newProgramName)
                     .withTextFieldFormatting()
-                Text("Create Program")
-                    .withButtonFormatting()
+                Button(action: {
+                    saveButtonPressed()
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Create Program")
+                        .withButtonFormatting()
+                }
             }
             .withEdgePadding()
             .padding(.top, 30)
         }
     }
-}
-
-#Preview {
-    AddProgramView()
+    
+    func saveButtonPressed() {
+        @State var newProgram = ProgramModel(name: newProgramName, workouts: [])
+        DataProvider.addProgram(programModel: &newProgram)
+    }
 }

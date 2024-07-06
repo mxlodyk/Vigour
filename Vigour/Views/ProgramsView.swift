@@ -6,7 +6,6 @@ import SwiftUI
 
 struct ProgramsView: View {
     
-    @State var programs: [ProgramModel] = DataProvider.getPrograms()
     @Environment(\.presentationMode) var presentationMode
     @State var showingBottomSheet = false
     
@@ -16,7 +15,7 @@ struct ProgramsView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack {
-                    ForEach(DataProvider.programs) { program in
+                    ForEach(DataProvider.getPrograms()) { program in
                         ProgramListRowView(program: program)
                     }
                     Spacer()
