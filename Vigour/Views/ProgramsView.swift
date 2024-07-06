@@ -5,16 +5,22 @@
 import SwiftUI
 
 struct ProgramsView: View {
+    
+    @State var programs: [ProgramModel] = DataProvider.getPrograms()
+    
     var body: some View {
         ZStack {
             Color.background
                 .edgesIgnoringSafeArea(.all)
-            VStack {
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                    .withButtonFormatting()
-                Spacer()
+            ScrollView {
+                VStack {
+                    ForEach(DataProvider.programs) { program in
+                        ProgramListRowView(program: program)
+                    }
+                    Spacer()
+                }
+                .withEdgePadding()
             }
-            .withEdgePadding()
         }
         .navigationBarBackButtonHidden()
     }

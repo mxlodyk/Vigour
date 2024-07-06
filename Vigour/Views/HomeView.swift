@@ -18,7 +18,7 @@ struct HomeView: View {
                     .withTitleFormatting()
                 Spacer()
                 NavigationLink(destination: MenuView()) {
-                    Image("OnButtonSVG")
+                    Image("OnButton")
                 }
             }
             .withEdgePadding()

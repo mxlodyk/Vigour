@@ -25,6 +25,8 @@
 		89EF518F2C3800620086BBC0 /* ProgramModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF518E2C3800620086BBC0 /* ProgramModel.swift */; };
 		89EF51912C3801130086BBC0 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51902C3801130086BBC0 /* DataProvider.swift */; };
 		89EF51932C38097A0086BBC0 /* ProgramsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51922C38097A0086BBC0 /* ProgramsView.swift */; };
+		89EF51952C38B0F00086BBC0 /* ProgramListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51942C38B0F00086BBC0 /* ProgramListRowView.swift */; };
+		89EF51972C38B12A0086BBC0 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51962C38B12A0086BBC0 /* WorkoutsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		89EF518E2C3800620086BBC0 /* ProgramModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramModel.swift; sourceTree = "<group>"; };
 		89EF51902C3801130086BBC0 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		89EF51922C38097A0086BBC0 /* ProgramsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsView.swift; sourceTree = "<group>"; };
+		89EF51942C38B0F00086BBC0 /* ProgramListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramListRowView.swift; sourceTree = "<group>"; };
+		89EF51962C38B12A0086BBC0 /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,8 @@
 				8984BAEE2C3687A40097E71A /* DumbbellVideoPlayerView.swift */,
 				89EF51882C37FFFE0086BBC0 /* MenuView.swift */,
 				89EF51922C38097A0086BBC0 /* ProgramsView.swift */,
+				89EF51942C38B0F00086BBC0 /* ProgramListRowView.swift */,
+				89EF51962C38B12A0086BBC0 /* WorkoutsView.swift */,
 				8984BAF22C3687CC0097E71A /* ViewModifiers.swift */,
 			);
 			path = Views;
@@ -333,11 +339,13 @@
 			files = (
 				89EF51892C37FFFE0086BBC0 /* MenuView.swift in Sources */,
 				89EF518B2C38002F0086BBC0 /* ExerciseModel.swift in Sources */,
+				89EF51972C38B12A0086BBC0 /* WorkoutsView.swift in Sources */,
 				8984BAEF2C3687A40097E71A /* DumbbellVideoPlayerView.swift in Sources */,
 				89EF51932C38097A0086BBC0 /* ProgramsView.swift in Sources */,
 				89EF518D2C3800500086BBC0 /* WorkoutModel.swift in Sources */,
 				8984BAC72C36871C0097E71A /* HomeView.swift in Sources */,
 				8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */,
+				89EF51952C38B0F00086BBC0 /* ProgramListRowView.swift in Sources */,
 				89EF51912C3801130086BBC0 /* DataProvider.swift in Sources */,
 				89EF518F2C3800620086BBC0 /* ProgramModel.swift in Sources */,
 				8984BAF32C3687CC0097E71A /* ViewModifiers.swift in Sources */,
