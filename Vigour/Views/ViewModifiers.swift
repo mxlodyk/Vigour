@@ -67,7 +67,7 @@ struct EdgePaddingModifier: ViewModifier {
         content
             .padding(.leading, 30)
             .padding(.trailing, 30)
-            .padding(.top, 50)
+            .padding(.top, 20)
             .padding(.bottom, 50)
     }
 }

@@ -5,6 +5,9 @@
 import SwiftUI
 
 struct MenuView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         ZStack {
             Color.background
@@ -17,8 +20,20 @@ struct MenuView: View {
                 Spacer()
             }
             .withEdgePadding()
+            .navigationBarBackButtonHidden()
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image("Home")
+                            .iconStyle()},
+                trailing:
+                    NavigationLink(destination: SettingsView()) {
+                        Image("Settings")
+                            .iconStyle()
+                    })
         }
-        .navigationBarBackButtonHidden()
     }
 }
 

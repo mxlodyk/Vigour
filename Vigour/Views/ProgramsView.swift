@@ -23,7 +23,8 @@ struct ProgramsView: View {
                 .withEdgePadding()
             }
             .navigationBarBackButtonHidden()
-            .navigationBarItems(leading:
+            .navigationBarItems(
+                leading:
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
                 }) {

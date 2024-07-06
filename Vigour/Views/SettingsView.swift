@@ -1,12 +1,11 @@
-//  ExerciseView.swift
+//  SettingsView.swift
 //  Vigour
 //  Created by Melody Flavel on 6/7/2024.
 
 import SwiftUI
 
-struct ExerciseView: View {
+struct SettingsView: View {
     
-    @Binding var exercise: ExerciseModel
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -15,10 +14,11 @@ struct ExerciseView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("Exercise: \(exercise.name)\nSets: \(exercise.sets)\nWeight: \(exercise.weight)\nRepetitions: \(exercise.repetitions)\nRest: \(exercise.rest)")
+                Text("Settings")
                     .withTextFormatting()
-                    .foregroundColor(themeColour)
+                Spacer()
             }
+            .withEdgePadding()
             .navigationBarBackButtonHidden()
             .navigationBarItems(leading:
                 Button(action: {

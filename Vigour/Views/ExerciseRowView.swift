@@ -9,7 +9,7 @@ struct ExerciseRowView: View {
     @State var exercise: ExerciseModel
     
     var body: some View {
-        NavigationLink(destination: ExerciseView()){
+        NavigationLink(destination: ExerciseView(exercise: $exercise)){
             Text(exercise.name)
                 .withButtonFormatting()
         }

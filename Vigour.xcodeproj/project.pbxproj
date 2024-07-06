@@ -31,6 +31,7 @@
 		89EF519B2C3917860086BBC0 /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF519A2C3917860086BBC0 /* ExercisesView.swift */; };
 		89EF519D2C391EE10086BBC0 /* ExerciseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF519C2C391EE10086BBC0 /* ExerciseRowView.swift */; };
 		89EF519F2C391FEF0086BBC0 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF519E2C391FEF0086BBC0 /* ExerciseView.swift */; };
+		89EF51A12C392FED0086BBC0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A02C392FED0086BBC0 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		89EF519A2C3917860086BBC0 /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
 		89EF519C2C391EE10086BBC0 /* ExerciseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRowView.swift; sourceTree = "<group>"; };
 		89EF519E2C391FEF0086BBC0 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		89EF51A02C392FED0086BBC0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				89EF519A2C3917860086BBC0 /* ExercisesView.swift */,
 				89EF519C2C391EE10086BBC0 /* ExerciseRowView.swift */,
 				89EF519E2C391FEF0086BBC0 /* ExerciseView.swift */,
+				89EF51A02C392FED0086BBC0 /* SettingsView.swift */,
 				8984BAF22C3687CC0097E71A /* ViewModifiers.swift */,
 			);
 			path = Views;
@@ -354,6 +357,7 @@
 				89EF518B2C38002F0086BBC0 /* ExerciseModel.swift in Sources */,
 				89EF51972C38B12A0086BBC0 /* WorkoutsView.swift in Sources */,
 				8984BAEF2C3687A40097E71A /* DumbbellVideoPlayerView.swift in Sources */,
+				89EF51A12C392FED0086BBC0 /* SettingsView.swift in Sources */,
 				89EF51932C38097A0086BBC0 /* ProgramsView.swift in Sources */,
 				89EF518D2C3800500086BBC0 /* WorkoutModel.swift in Sources */,
 				8984BAC72C36871C0097E71A /* HomeView.swift in Sources */,
