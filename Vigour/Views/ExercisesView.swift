@@ -49,7 +49,7 @@ struct ExercisesView: View {
                         })
                 .sheet(isPresented: $showingBottomSheet, content: {
                     AddExerciseView(program: $program, workout: workout)
-                        .presentationDetents([.fraction(0.4)])
+                        .presentationDetents([.fraction(0.35)])
                 })
             }
             .withEdgePadding()

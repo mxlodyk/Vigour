@@ -24,14 +24,18 @@ struct AddExerciseView: View {
             VStack {
                 TextField("Exercise Name", text: $newExerciseName)
                     .withTextFieldFormatting()
-                TextField("Sets", text: $newExerciseSets)
-                    .withTextFieldFormatting()
-                TextField("Weight", text: $newExerciseWeight)
-                    .withTextFieldFormatting()
-                TextField("Repetitions", text: $newExerciseRepetitions)
-                    .withTextFieldFormatting()
-                TextField("Rest", text: $newExerciseRest)
-                    .withTextFieldFormatting()
+                HStack {
+                    TextField("Sets", text: $newExerciseSets)
+                        .withTextFieldFormatting()
+                    TextField("Repetitions", text: $newExerciseRepetitions)
+                        .withTextFieldFormatting()
+                }
+                HStack {
+                    TextField("Weight", text: $newExerciseWeight)
+                        .withTextFieldFormatting()
+                    TextField("Rest", text: $newExerciseRest)
+                        .withTextFieldFormatting()
+                }
                 Button(action: {
                     saveButtonPressed()
                     self.presentationMode.wrappedValue.dismiss()
