@@ -7,7 +7,6 @@ import SwiftUI
 struct WorkoutsView: View {
     
     @Binding var program: ProgramModel
-    @State var programID: String
     @Environment(\.presentationMode) var presentationMode
     @State var showingBottomSheet = false
     
@@ -18,9 +17,9 @@ struct WorkoutsView: View {
             ScrollView {
                 VStack {
                     ForEach(DataProvider.getPrograms()) { program in
-                        if program.id == programID {
+                        if program.id == self.program.id {
                             ForEach(program.workouts) { workout in
-                                WorkoutRowView(workout: workout)
+                                WorkoutRowView(program: $program, workout: workout)
                             }
                         }
                     }

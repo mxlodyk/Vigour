@@ -9,7 +9,7 @@ struct ProgramListRowView: View {
     @State var program: ProgramModel
     
     var body: some View {
-        NavigationLink(destination: WorkoutsView(program: $program, programID: $program.id)) {
+        NavigationLink(destination: WorkoutsView(program: $program)) {
             Text(program.name)
                 .withButtonFormatting()
         }
