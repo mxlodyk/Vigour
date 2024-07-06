@@ -22,18 +22,18 @@ struct AddExerciseView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                TextField("Exercise Name", text: $newExerciseName)
+                TextField("", text: $newExerciseName, prompt: Text("Exercise Name").foregroundColor(textFieldTextColour))
                     .withTextFieldFormatting()
                 HStack {
-                    TextField("Sets", text: $newExerciseSets)
+                    TextField("", text: $newExerciseSets, prompt: Text("Sets").foregroundColor(textFieldTextColour))
                         .withTextFieldFormatting()
-                    TextField("Repetitions", text: $newExerciseRepetitions)
+                    TextField("", text: $newExerciseRepetitions, prompt: Text("Repetitions").foregroundColor(textFieldTextColour))
                         .withTextFieldFormatting()
                 }
                 HStack {
-                    TextField("Weight", text: $newExerciseWeight)
+                    TextField("", text: $newExerciseRepetitions, prompt: Text("Weight").foregroundColor(textFieldTextColour))
                         .withTextFieldFormatting()
-                    TextField("Rest", text: $newExerciseRest)
+                    TextField("", text: $newExerciseRest, prompt: Text("Rest").foregroundColor(textFieldTextColour))
                         .withTextFieldFormatting()
                 }
                 Button(action: {

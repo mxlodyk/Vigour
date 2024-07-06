@@ -16,7 +16,7 @@ struct AddWorkoutView: View {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
                 VStack{
-                    TextField("Workout Name", text: $newWorkoutName)
+                    TextField("", text: $newWorkoutName, prompt: Text("Workout Name").foregroundColor(textFieldTextColour))
                         .withTextFieldFormatting()
                     Button(action: {
                         saveButtonPressed()

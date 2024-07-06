@@ -15,7 +15,7 @@ struct AddProgramView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack{
-                TextField("Program Name", text: $newProgramName)
+                TextField("", text: $newProgramName, prompt: Text("Program Name").foregroundColor(textFieldTextColour))
                     .withTextFieldFormatting()
                 Button(action: {
                     saveButtonPressed()
