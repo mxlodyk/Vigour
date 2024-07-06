@@ -27,15 +27,21 @@ struct AddExerciseView: View {
                     .withTextFieldFormatting()
                 HStack {
                     TextField("", text: $newExerciseSets, prompt: Text("Sets").foregroundColor(textFieldTextColour))
-                        .withTextFieldFormatting()
+                        .withDetailFieldFormatting()
                     TextField("", text: $newExerciseRepetitions, prompt: Text("Repetitions").foregroundColor(textFieldTextColour))
-                        .withTextFieldFormatting()
+                        .withDetailFieldFormatting()
                 }
                 HStack {
+                    let options = ["KG", "LB"]
                     TextField("", text: $newExerciseWeight, prompt: Text("Weight").foregroundColor(textFieldTextColour))
-                        .withTextFieldFormatting()
+                        .withDetailFieldFormatting()
+                    DropDownList(options: options)
+                }
+                HStack {
+                    let options = ["Min", "Sec"]
                     TextField("", text: $newExerciseRest, prompt: Text("Rest").foregroundColor(textFieldTextColour))
-                        .withTextFieldFormatting()
+                        .withDetailFieldFormatting()
+                    DropDownList(options: options)
                 }
                 Button(action: {
                     saveButtonPressed()

@@ -38,6 +38,7 @@
 		89EF51A92C39F6FF0086BBC0 /* ProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A82C39F6FF0086BBC0 /* ProgramViewModel.swift */; };
 		89EF51AB2C39F9630086BBC0 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51AA2C39F9630086BBC0 /* WorkoutViewModel.swift */; };
 		89EF51AD2C3A002D0086BBC0 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51AC2C3A002D0086BBC0 /* ExerciseViewModel.swift */; };
+		89EF51AF2C3A03990086BBC0 /* DropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51AE2C3A03990086BBC0 /* DropDownList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		89EF51A82C39F6FF0086BBC0 /* ProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewModel.swift; sourceTree = "<group>"; };
 		89EF51AA2C39F9630086BBC0 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
 		89EF51AC2C3A002D0086BBC0 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		89EF51AE2C3A03990086BBC0 /* DropDownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				89EF519C2C391EE10086BBC0 /* ExerciseRowView.swift */,
 				89EF51A02C392FED0086BBC0 /* SettingsView.swift */,
 				8984BAEE2C3687A40097E71A /* DumbbellVideoPlayerView.swift */,
+				89EF51AE2C3A03990086BBC0 /* DropDownList.swift */,
 				8984BAF22C3687CC0097E71A /* ViewModifiers.swift */,
 			);
 			path = Views;
@@ -370,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89EF51AF2C3A03990086BBC0 /* DropDownList.swift in Sources */,
 				89EF519F2C391FEF0086BBC0 /* ExerciseView.swift in Sources */,
 				89EF51892C37FFFE0086BBC0 /* MenuView.swift in Sources */,
 				89EF518B2C38002F0086BBC0 /* ExerciseModel.swift in Sources */,

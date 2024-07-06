@@ -62,6 +62,26 @@ extension View {
     }
 }
 
+// Detail Field Modifier
+struct DetailFieldModifier : ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("MontserratRoman-Regular", size: 16))
+            .foregroundColor(textFieldTextColour)
+            .padding(.horizontal)
+            .frame(height: 30)
+            .frame(maxWidth: .infinity)
+            .background(textFieldColour)
+            .cornerRadius(10)
+    }
+}
+
+extension View {
+    func withDetailFieldFormatting() -> some View {
+        modifier(DetailFieldModifier())
+    }
+}
+
 // Button Modifier
 struct ButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
