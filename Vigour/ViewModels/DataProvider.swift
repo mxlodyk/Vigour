@@ -68,7 +68,7 @@ class DataProvider: ObservableObject {
     // Add Exercise
     static func addExercise(programID: String, workoutID: String, exerciseModel: ExerciseModel) {
         if let program = programs.firstIndex(where: { $0.id == programID }) {
-            if let workout = programs[program].workouts.firstIndex(where: { $0.id == workoutID}) {
+            if let workout = programs[program].workouts.firstIndex(where: { $0.id == workoutID }) {
                 programs[program].workouts[workout].exercises.append(exerciseModel)
             } else {
                 print("Program with ID \(programID) not found.")

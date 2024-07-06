@@ -9,6 +9,7 @@ struct AddExerciseView: View {
     @Binding var program: ProgramModel
     var workout: WorkoutModel
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var exerciseViewModel = ExerciseViewModel()
     
     @State var newExerciseName: String = ""
     @State var newExerciseSets: String = ""
@@ -31,7 +32,7 @@ struct AddExerciseView: View {
                         .withTextFieldFormatting()
                 }
                 HStack {
-                    TextField("", text: $newExerciseRepetitions, prompt: Text("Weight").foregroundColor(textFieldTextColour))
+                    TextField("", text: $newExerciseWeight, prompt: Text("Weight").foregroundColor(textFieldTextColour))
                         .withTextFieldFormatting()
                     TextField("", text: $newExerciseRest, prompt: Text("Rest").foregroundColor(textFieldTextColour))
                         .withTextFieldFormatting()
@@ -50,8 +51,7 @@ struct AddExerciseView: View {
     }
     
     func saveButtonPressed() {
-        //let workoutID = workout.id
-        @State var newExercise = ExerciseModel(name: newExerciseName, sets: newExerciseSets, weight: newExerciseWeight, repetitions: newExerciseRepetitions, rest: newExerciseRest)
-        DataProvider.addExercise(programID: program.id, workoutID: workout.id, exerciseModel: newExercise)
+        let newExercise = ExerciseModel(name: newExerciseName, sets: newExerciseSets, weight: newExerciseWeight, repetitions: newExerciseRepetitions, rest: newExerciseRest)
+        exerciseViewModel.addExercise(program.id, workout.id, newExercise)
     }
 }

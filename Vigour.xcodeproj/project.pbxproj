@@ -37,6 +37,7 @@
 		89EF51A72C3939AA0086BBC0 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A62C3939AA0086BBC0 /* AddExerciseView.swift */; };
 		89EF51A92C39F6FF0086BBC0 /* ProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A82C39F6FF0086BBC0 /* ProgramViewModel.swift */; };
 		89EF51AB2C39F9630086BBC0 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51AA2C39F9630086BBC0 /* WorkoutViewModel.swift */; };
+		89EF51AD2C3A002D0086BBC0 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51AC2C3A002D0086BBC0 /* ExerciseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		89EF51A62C3939AA0086BBC0 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
 		89EF51A82C39F6FF0086BBC0 /* ProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewModel.swift; sourceTree = "<group>"; };
 		89EF51AA2C39F9630086BBC0 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
+		89EF51AC2C3A002D0086BBC0 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 				89EF51902C3801130086BBC0 /* DataProvider.swift */,
 				89EF51A82C39F6FF0086BBC0 /* ProgramViewModel.swift */,
 				89EF51AA2C39F9630086BBC0 /* WorkoutViewModel.swift */,
+				89EF51AC2C3A002D0086BBC0 /* ExerciseViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				89EF51A52C3939A00086BBC0 /* AddWorkoutView.swift in Sources */,
 				89EF51A92C39F6FF0086BBC0 /* ProgramViewModel.swift in Sources */,
 				89EF51952C38B0F00086BBC0 /* ProgramRowView.swift in Sources */,
+				89EF51AD2C3A002D0086BBC0 /* ExerciseViewModel.swift in Sources */,
 				89EF51912C3801130086BBC0 /* DataProvider.swift in Sources */,
 				89EF518F2C3800620086BBC0 /* ProgramModel.swift in Sources */,
 				89EF519D2C391EE10086BBC0 /* ExerciseRowView.swift in Sources */,
