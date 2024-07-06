@@ -9,6 +9,7 @@ struct WorkoutsView: View {
     @Binding var program: ProgramModel
     @Environment(\.presentationMode) var presentationMode
     @State var showingBottomSheet = false
+    @StateObject var workoutViewModel = WorkoutViewModel()
     
     var body: some View {
         ZStack {
@@ -16,7 +17,7 @@ struct WorkoutsView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack {
-                    ForEach(DataProvider.getPrograms()) { program in
+                    ForEach(workoutViewModel.programs) { program in
                         if program.id == self.program.id {
                             ForEach(program.workouts) { workout in
                                 WorkoutRowView(program: $program, workout: workout)
@@ -43,7 +44,7 @@ struct WorkoutsView: View {
                             .iconStyle()
                     })
             .sheet(isPresented: $showingBottomSheet, content: {
-                AddWorkoutView(program: $program)
+                AddWorkoutView(program: $program, workoutViewModel: workoutViewModel)
                     .presentationDetents([.fraction(0.2 )])
             })
         }

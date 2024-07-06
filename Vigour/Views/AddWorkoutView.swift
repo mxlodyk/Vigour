@@ -9,6 +9,7 @@ struct AddWorkoutView: View {
     @Binding var program: ProgramModel
     @State var newWorkoutName: String = ""
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var workoutViewModel = WorkoutViewModel()
         
         var body: some View {
             
@@ -32,8 +33,8 @@ struct AddWorkoutView: View {
         }
         
         func saveButtonPressed() {
-            @State var newWorkout = WorkoutModel(name: newWorkoutName, exercises: [])
-            DataProvider.addWorkout(programID: program.id, workoutModel: newWorkout)
+            let newWorkout = WorkoutModel(name: newWorkoutName, exercises: [])
+            workoutViewModel.addWorkout(program.id, newWorkout)
     }
 }
 
