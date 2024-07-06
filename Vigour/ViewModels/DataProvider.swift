@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct DataProvider {
+class DataProvider: ObservableObject {
     
     static var programs: [ProgramModel] = []
     
@@ -51,10 +51,12 @@ struct DataProvider {
         return programs
     }
     
+    // Add Program
     static func addProgram(programModel: inout ProgramModel) {
         programs.append(programModel)
     }
     
+    // Add Workout
     static func addWorkout(programID: String, workoutModel: WorkoutModel) {
         if let index = programs.firstIndex(where: { $0.id == programID }) {
             programs[index].workouts.append(workoutModel)
@@ -63,6 +65,7 @@ struct DataProvider {
         }
     }
     
+    // Add Exercise
     static func addExercise(programID: String, workoutID: String, exerciseModel: ExerciseModel) {
         if let program = programs.firstIndex(where: { $0.id == programID }) {
             if let workout = programs[program].workouts.firstIndex(where: { $0.id == workoutID}) {
@@ -72,4 +75,5 @@ struct DataProvider {
             }
         }
     }
+    
 }

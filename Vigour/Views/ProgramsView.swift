@@ -8,6 +8,7 @@ struct ProgramsView: View {
     
     @State var programs: [ProgramModel] = DataProvider.getPrograms()
     @Environment(\.presentationMode) var presentationMode
+    @State var showingBottomSheet = false
     
     var body: some View {
         ZStack {
@@ -32,10 +33,16 @@ struct ProgramsView: View {
                         .iconStyle()
                 },
                 trailing:
-                    NavigationLink(destination: AddProgramView()) {
-                        Image("AddButton")
-                            .iconStyle()
-                    })
+                Button(action: {
+                    showingBottomSheet.toggle()
+                }) {
+                    Image("AddButton")
+                        .iconStyle()
+                })
+            .sheet(isPresented: $showingBottomSheet, content: {
+                AddProgramView()
+                    .presentationDetents([.fraction(0.2 )])
+            })
         }
     }
 }

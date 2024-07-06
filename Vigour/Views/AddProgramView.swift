@@ -5,13 +5,21 @@
 import SwiftUI
 
 struct AddProgramView: View {
+    
+    @State var newProgramName: String = ""
     var body: some View {
         
         ZStack {
             Color.background
                 .edgesIgnoringSafeArea(.all)
-            Text("Add Program View.")
-                .withTextFormatting()
+            VStack{
+                TextField("Program Name", text: $newProgramName)
+                    .withTextFieldFormatting()
+                Text("Create Program")
+                    .withButtonFormatting()
+            }
+            .withEdgePadding()
+            .padding(.top, 30)
         }
     }
 }

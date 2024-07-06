@@ -7,6 +7,8 @@ import SwiftUI
 
 let themeColour = Color("Theme")
 let textColour = Color("Text")
+let textFieldColour = Color("TextField")
+let textFieldTextColour = Color("TextFieldText")
 
 // Title Modifier
 struct TitleModifier: ViewModifier {
@@ -37,6 +39,26 @@ extension View {
     
     func withTextFormatting() -> some View {
         modifier(TextModifier())
+    }
+}
+
+// Text Field Modifier
+struct TextFieldModifier : ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("MontserratRoman-Regular", size: 18))
+            .foregroundColor(textFieldTextColour)
+            .padding(.horizontal)
+            .frame(height: 50)
+            .frame(maxWidth: .infinity)
+            .background(textFieldColour)
+            .cornerRadius(10)
+    }
+}
+
+extension View {
+    func withTextFieldFormatting() -> some View {
+        modifier(TextFieldModifier())
     }
 }
 
