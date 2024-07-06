@@ -21,8 +21,14 @@ struct ProgramsView: View {
                 }
                 .withEdgePadding()
             }
+            .navigationBarBackButtonHidden()
+            .navigationBarItems(
+                leading:
+                NavigationLink(destination: MenuView()) {
+                    Image("BackArrow")
+                        .iconStyle()
+                })
         }
-        .navigationBarBackButtonHidden()
     }
 }
 

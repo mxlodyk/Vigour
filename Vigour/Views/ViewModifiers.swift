@@ -78,3 +78,13 @@ extension View {
         modifier(EdgePaddingModifier())
     }
 }
+
+// Icon Modifier
+extension Image {
+    func iconStyle() -> some View {
+        self
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 40, height: 40)
+    }
+}

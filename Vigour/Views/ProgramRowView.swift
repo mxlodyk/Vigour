@@ -9,11 +9,9 @@ struct ProgramListRowView: View {
     @State var program: ProgramModel
     
     var body: some View {
-        HStack {
-            NavigationLink(destination: WorkoutsView(program: $program)){
-                Text(program.name)
+        NavigationLink(destination: WorkoutsView(program: $program, programID: $program.id)) {
+            Text(program.name)
                 .withButtonFormatting()
-            }
         }
     }
 }

@@ -7,12 +7,27 @@ import SwiftUI
 struct WorkoutsView: View {
     
     @Binding var program: ProgramModel
+    var programID: String
     
     var body: some View {
         ZStack {
             Color.background
                 .edgesIgnoringSafeArea(.all)
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            ScrollView {
+                VStack {
+                    ForEach(program.workouts) { workout in
+                        WorkoutRowView(workout: workout)
+                    }
+                }
+                .withEdgePadding()
+            }
+            .navigationBarBackButtonHidden()
+            .navigationBarItems(
+                leading:
+                NavigationLink(destination: ProgramsView()) {
+                    Image("BackArrow")
+                        .iconStyle()
+                })
         }
     }
 }
