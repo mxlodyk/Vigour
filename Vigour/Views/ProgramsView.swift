@@ -7,6 +7,7 @@ import SwiftUI
 struct ProgramsView: View {
     
     @State var programs: [ProgramModel] = DataProvider.getPrograms()
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack {
@@ -22,16 +23,13 @@ struct ProgramsView: View {
                 .withEdgePadding()
             }
             .navigationBarBackButtonHidden()
-            .navigationBarItems(
-                leading:
-                NavigationLink(destination: MenuView()) {
+            .navigationBarItems(leading:
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
                     Image("BackArrow")
                         .iconStyle()
                 })
         }
     }
-}
-
-#Preview {
-    ProgramsView()
 }

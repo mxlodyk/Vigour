@@ -5,11 +5,13 @@
 import SwiftUI
 
 struct ExerciseRowView: View {
+    
+    @State var exercise: ExerciseModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationLink(destination: ExerciseView()){
+            Text(exercise.name)
+                .withButtonFormatting()
+        }
     }
-}
-
-#Preview {
-    ExerciseRowView()
 }

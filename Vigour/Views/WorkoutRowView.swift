@@ -10,7 +10,7 @@ struct WorkoutRowView: View {
     
     var body: some View {
         
-        NavigationLink(destination: ExercisesView()){
+        NavigationLink(destination: ExercisesView(workout: $workout)){
             Text(workout.name)
                 .withButtonFormatting()
         }

@@ -8,6 +8,7 @@ struct WorkoutsView: View {
     
     @Binding var program: ProgramModel
     var programID: String
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack {
@@ -22,9 +23,10 @@ struct WorkoutsView: View {
                 .withEdgePadding()
             }
             .navigationBarBackButtonHidden()
-            .navigationBarItems(
-                leading:
-                NavigationLink(destination: ProgramsView()) {
+            .navigationBarItems(leading:
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
                     Image("BackArrow")
                         .iconStyle()
                 })
