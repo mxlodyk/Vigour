@@ -92,4 +92,15 @@ class DataProvider: ObservableObject {
         }
     }
     
+    // Delete Exercise
+    static func deleteExercise(_ programID: String, _ workoutID: String, _ exercise: ExerciseModel) {
+        if let programIndex = programs.firstIndex(where: { $0.id == programID}) {
+            if let workoutIndex = programs[programIndex].workouts.firstIndex(where: { $0.id == workoutID}) {
+                if let exerciseIndex = programs[programIndex].workouts[workoutIndex].exercises.firstIndex(where: { $0.id == exercise.id}) {
+                    programs[programIndex].workouts[workoutIndex].exercises.remove(at: exerciseIndex)
+                }
+            }
+        }
+    }
+    
 }
