@@ -21,6 +21,13 @@ struct WorkoutsView: View {
                         if program.id == self.program.id {
                             ForEach(program.workouts) { workout in
                                 WorkoutRowView(program: $program, workout: workout)
+                                    .contextMenu {
+                                        Button(action: {
+                                            workoutViewModel.deleteWorkout(programID: program.id, workout: workout)
+                                        }) {
+                                            Text("Delete")
+                                        }
+                                    }
                             }
                         }
                     }

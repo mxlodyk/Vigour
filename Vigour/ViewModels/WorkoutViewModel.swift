@@ -12,12 +12,23 @@ class WorkoutViewModel: ObservableObject {
         self.programs = DataProvider.getPrograms()
     }
     
+    // Add Workout
     func addWorkout(_ programID: String, _ workout: WorkoutModel) {
         if let index = programs.firstIndex(where: { $0.id == programID }) {
             programs[index].workouts.append(workout)
             DataProvider.addWorkout(programID: programID, workoutModel: workout)
         } else {
             print("Program with ID \(programID) not found.")
+        }
+    }
+    
+    // Delete Workout
+    func deleteWorkout(programID: String, workout: WorkoutModel) {
+        if let programIndex = programs.firstIndex(where: { $0.id == programID}) {
+            if let workoutIndex = programs[programIndex].workouts.firstIndex(where: { $0.id == workout.id}) {
+                programs[programIndex].workouts.remove(at: workoutIndex)
+                DataProvider.deleteWorkout(programID: programID, workout: workout)
+            }
         }
     }
     

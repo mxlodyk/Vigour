@@ -57,8 +57,8 @@ class DataProvider: ObservableObject {
     }
     
     // Delete Program
-    static func deleteProgram(programModel: inout ProgramModel) {
-        if let index = programs.firstIndex(where: { $0.id == programModel.id}) {
+    static func deleteProgram(program: inout ProgramModel) {
+        if let index = programs.firstIndex(where: { $0.id == program.id}) {
             programs.remove(at: index)
         }
     }
@@ -69,6 +69,15 @@ class DataProvider: ObservableObject {
             programs[index].workouts.append(workoutModel)
         } else {
             print("Program with ID \(programID) not found.")
+        }
+    }
+    
+    // Delete Workout
+    static func deleteWorkout(programID: String, workout: WorkoutModel){
+        if let programIndex = programs.firstIndex(where: { $0.id == programID}) {
+            if let workoutIndex = programs[programIndex].workouts.firstIndex(where: { $0.id == workout.id}) {
+                programs[programIndex].workouts.remove(at: workoutIndex)
+            }
         }
     }
     
