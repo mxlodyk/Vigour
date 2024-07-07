@@ -19,16 +19,16 @@ class DataProvider: ObservableObject {
                 WorkoutModel(name: "Quadriceps", exercises: [])
             ]
             program1.workouts[0].exercises = [
-                ExerciseModel(name: "Hip Thrust", sets: "4", weight: "140", repetitions: "12", rest: "120"),
-                ExerciseModel(name: "Cable Kickback", sets: "4", weight: "20", repetitions: "12", rest: "90")
+                ExerciseModel(name: "Hip Thrust", sets: "4", weight: "140", repetitions: "12", rest: "120", restUnit: "Min"),
+                ExerciseModel(name: "Cable Kickback", sets: "4", weight: "20", repetitions: "12", rest: "90", restUnit: "Min")
             ]
             program1.workouts[1].exercises = [
-                ExerciseModel(name: "Hamstring Curl", sets: "4", weight: "60", repetitions: "12", rest: "90"),
-                ExerciseModel(name: "Romanian Deadlift", sets: "4", weight: "60", repetitions: "12", rest: "90")
+                ExerciseModel(name: "Hamstring Curl", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min"),
+                ExerciseModel(name: "Romanian Deadlift", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min")
             ]
             program1.workouts[2].exercises = [
-                ExerciseModel(name: "Bulgarian Split Squat", sets: "4", weight: "60", repetitions: "12", rest: "90"),
-                ExerciseModel(name: "Leg Extension", sets: "4", weight: "60", repetitions: "12", rest: "90")
+                ExerciseModel(name: "Bulgarian Split Squat", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min"),
+                ExerciseModel(name: "Leg Extension", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min")
             ]
             programs.append(program1)
             
@@ -38,12 +38,12 @@ class DataProvider: ObservableObject {
                 WorkoutModel(name: "Lower Body", exercises: []),
             ]
             program2.workouts[0].exercises = [
-                ExerciseModel(name: "Barbell Row", sets: "4", weight: "60", repetitions: "12", rest: "90"),
-                ExerciseModel(name: "Barbell Overhead Press", sets: "4", weight: "60", repetitions: "12", rest: "90")
+                ExerciseModel(name: "Barbell Row", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min"),
+                ExerciseModel(name: "Barbell Overhead Press", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min")
             ]
             program2.workouts[1].exercises = [
-                ExerciseModel(name: "Barbell Back Squat", sets: "4", weight: "60", repetitions: "12", rest: "90"),
-                ExerciseModel(name: "Barbell Deadlift", sets: "4", weight: "60", repetitions: "12", rest: "90")
+                ExerciseModel(name: "Barbell Back Squat", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min"),
+                ExerciseModel(name: "Barbell Deadlift", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min")
             ]
             programs.append(program2)
         }

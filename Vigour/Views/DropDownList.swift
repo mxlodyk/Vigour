@@ -6,33 +6,35 @@ import SwiftUI
 
 struct DropDownList: View {
     
-    let options: [String]
-    @State private var selected = 0
+    let options: [String] = ["Min", "Sec"]
+    @Binding var newExerciseRestUnit: String
+    @State var index: Int = 0
     
     @State private var isClicked = false
     
     var body: some View {
         VStack {
             HStack {
-                    Text(options[selected])
+                    Text(options[index])
                     Spacer()
                     Image("ChangeIcon")
                         .rotationEffect(.degrees(isClicked ? -360 : 0))
                         .onTapGesture {
                             withAnimation(.snappy) { isClicked.toggle()
-                                if (selected == 0) {
-                                    selected = 1
+                                if (index == 0) {
+                                    index = 1
+                                    newExerciseRestUnit = options[index]
                                 }
                                 else {
-                                    selected = 0
+                                    index = 0
+                                    newExerciseRestUnit = options[index]
                                 }}
                         }
                 }
             .withDetailFieldFormatting()
         }
     }
-}
-
-#Preview {
-    DropDownList(options: ["Minutes", "Seconds"])
+    func getUnit() -> String {
+        return newExerciseRestUnit
+    }
 }

@@ -11,4 +11,5 @@ struct ExerciseModel: Identifiable {
     internal var weight: String
     internal var repetitions: String
     internal var rest: String
+    internal var restUnit: String
 }

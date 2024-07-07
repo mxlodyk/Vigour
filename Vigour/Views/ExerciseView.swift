@@ -15,7 +15,7 @@ struct ExerciseView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("Exercise: \(exercise.name)\nSets: \(exercise.sets)\nWeight: \(exercise.weight)\nRepetitions: \(exercise.repetitions)\nRest: \(exercise.rest)")
+                Text("Exercise: \(exercise.name)\nSets: \(exercise.sets)\nWeight: \(exercise.weight)\nRepetitions: \(exercise.repetitions)\nRest: \(exercise.rest) \(exercise.restUnit)")
                     .withTextFormatting()
                     .foregroundColor(themeColour)
             }

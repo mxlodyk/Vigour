@@ -16,6 +16,7 @@ struct AddExerciseView: View {
     @State var newExerciseWeight: String = ""
     @State var newExerciseRepetitions: String = ""
     @State var newExerciseRest: String = ""
+    @State var newExerciseRestUnit: String = "Min"
     
     var body: some View {
         
@@ -32,16 +33,13 @@ struct AddExerciseView: View {
                         .withDetailFieldFormatting()
                 }
                 HStack {
-                    let options = ["KG", "LB"]
                     TextField("", text: $newExerciseWeight, prompt: Text("Weight").foregroundColor(textFieldTextColour))
                         .withDetailFieldFormatting()
-                    DropDownList(options: options)
                 }
                 HStack {
-                    let options = ["Min", "Sec"]
                     TextField("", text: $newExerciseRest, prompt: Text("Rest").foregroundColor(textFieldTextColour))
                         .withDetailFieldFormatting()
-                    DropDownList(options: options)
+                    DropDownList(newExerciseRestUnit: $newExerciseRestUnit)
                 }
                 Button(action: {
                     saveButtonPressed()
@@ -57,7 +55,7 @@ struct AddExerciseView: View {
     }
     
     func saveButtonPressed() {
-        let newExercise = ExerciseModel(name: newExerciseName, sets: newExerciseSets, weight: newExerciseWeight, repetitions: newExerciseRepetitions, rest: newExerciseRest)
+        let newExercise = ExerciseModel(name: newExerciseName, sets: newExerciseSets, weight: newExerciseWeight, repetitions: newExerciseRepetitions, rest: newExerciseRest, restUnit: newExerciseRestUnit)
         exerciseViewModel.addExercise(program.id, workout.id, newExercise)
     }
 }
