@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-struct DropDownList: View {
+struct RestUnitView: View {
     
     let options: [String] = ["Min", "Sec"]
     @Binding var newExerciseRestUnit: String

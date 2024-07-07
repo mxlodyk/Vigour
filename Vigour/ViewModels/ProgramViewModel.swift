@@ -13,9 +13,18 @@ class ProgramViewModel: ObservableObject {
         self.programs = DataProvider.getPrograms()
     }
     
+    // Add Program
     func addProgram(_ program: ProgramModel) {
         var program = program
         programs.append(program)
         DataProvider.addProgram(programModel: &program)
+    }
+    
+    // Delete Program
+    func deleteProgram(_ program: ProgramModel) {
+        var program = program
+        if let index = programs.firstIndex(where: { $0.id == program.id}) {
+            programs.remove(at: index)
+        }
     }
 }

@@ -18,7 +18,14 @@ struct ProgramsView: View {
                 VStack {
                     ForEach(programViewModel.programs) { program in
                         ProgramListRowView(program: program)
-                    }
+                            .contextMenu {
+                                Button(action: {
+                                    programViewModel.deleteProgram(program)
+                                }) {
+                                    Text("Delete")
+                                }
+                            }
+                            }
                     Spacer()
                 }
                 .withEdgePadding()
@@ -45,4 +52,8 @@ struct ProgramsView: View {
             })
         }
     }
+}
+
+#Preview {
+    ProgramsView()
 }

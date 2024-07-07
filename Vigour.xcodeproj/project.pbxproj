@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890263CE2C3A3674001A40EA /* DeletePopUpMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890263CD2C3A3674001A40EA /* DeletePopUpMenu.swift */; };
 		8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC42C36871C0097E71A /* VigourApp.swift */; };
 		8984BAC72C36871C0097E71A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC62C36871C0097E71A /* HomeView.swift */; };
 		8984BAC92C36871D0097E71A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAC82C36871D0097E71A /* Assets.xcassets */; };
@@ -38,7 +39,7 @@
 		89EF51A92C39F6FF0086BBC0 /* ProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A82C39F6FF0086BBC0 /* ProgramViewModel.swift */; };
 		89EF51AB2C39F9630086BBC0 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51AA2C39F9630086BBC0 /* WorkoutViewModel.swift */; };
 		89EF51AD2C3A002D0086BBC0 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51AC2C3A002D0086BBC0 /* ExerciseViewModel.swift */; };
-		89EF51AF2C3A03990086BBC0 /* DropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51AE2C3A03990086BBC0 /* DropDownList.swift */; };
+		89EF51AF2C3A03990086BBC0 /* RestUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51AE2C3A03990086BBC0 /* RestUnitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		890263CD2C3A3674001A40EA /* DeletePopUpMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopUpMenu.swift; sourceTree = "<group>"; };
 		8984BAC12C36871C0097E71A /* Vigour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vigour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8984BAC42C36871C0097E71A /* VigourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourApp.swift; sourceTree = "<group>"; };
 		8984BAC62C36871C0097E71A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -92,7 +94,7 @@
 		89EF51A82C39F6FF0086BBC0 /* ProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewModel.swift; sourceTree = "<group>"; };
 		89EF51AA2C39F9630086BBC0 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
 		89EF51AC2C3A002D0086BBC0 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
-		89EF51AE2C3A03990086BBC0 /* DropDownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownList.swift; sourceTree = "<group>"; };
+		89EF51AE2C3A03990086BBC0 /* RestUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestUnitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +200,8 @@
 				89EF519C2C391EE10086BBC0 /* ExerciseRowView.swift */,
 				89EF51A02C392FED0086BBC0 /* SettingsView.swift */,
 				8984BAEE2C3687A40097E71A /* DumbbellVideoPlayerView.swift */,
-				89EF51AE2C3A03990086BBC0 /* DropDownList.swift */,
+				89EF51AE2C3A03990086BBC0 /* RestUnitView.swift */,
+				890263CD2C3A3674001A40EA /* DeletePopUpMenu.swift */,
 				8984BAF22C3687CC0097E71A /* ViewModifiers.swift */,
 			);
 			path = Views;
@@ -373,7 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89EF51AF2C3A03990086BBC0 /* DropDownList.swift in Sources */,
+				89EF51AF2C3A03990086BBC0 /* RestUnitView.swift in Sources */,
 				89EF519F2C391FEF0086BBC0 /* ExerciseView.swift in Sources */,
 				89EF51892C37FFFE0086BBC0 /* MenuView.swift in Sources */,
 				89EF518B2C38002F0086BBC0 /* ExerciseModel.swift in Sources */,
@@ -390,6 +393,7 @@
 				8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */,
 				89EF51A52C3939A00086BBC0 /* AddWorkoutView.swift in Sources */,
 				89EF51A92C39F6FF0086BBC0 /* ProgramViewModel.swift in Sources */,
+				890263CE2C3A3674001A40EA /* DeletePopUpMenu.swift in Sources */,
 				89EF51952C38B0F00086BBC0 /* ProgramRowView.swift in Sources */,
 				89EF51AD2C3A002D0086BBC0 /* ExerciseViewModel.swift in Sources */,
 				89EF51912C3801130086BBC0 /* DataProvider.swift in Sources */,

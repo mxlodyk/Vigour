@@ -39,7 +39,7 @@ struct AddExerciseView: View {
                 HStack {
                     TextField("", text: $newExerciseRest, prompt: Text("Rest").foregroundColor(textFieldTextColour))
                         .withDetailFieldFormatting()
-                    DropDownList(newExerciseRestUnit: $newExerciseRestUnit)
+                    RestUnitView(newExerciseRestUnit: $newExerciseRestUnit)
                 }
                 Button(action: {
                     saveButtonPressed()
