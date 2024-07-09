@@ -4,11 +4,13 @@
 
 import SwiftUI
 
+// Add Program View
 struct AddProgramView: View {
     
-    @State var newProgramName: String = ""
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var programViewModel: ProgramViewModel
+    
+    @ObservedObject var cd = CoreDataProvider()
+    @State var newProgramName: String = ""
     
     var body: some View {
         
@@ -31,8 +33,10 @@ struct AddProgramView: View {
         }
     }
     
+    // Save Button Pressed
     func saveButtonPressed() {
-        let newProgram = ProgramModel(name: newProgramName, workouts: [])
-        programViewModel.addProgram(newProgram)
+        guard !newProgramName.isEmpty else { return }
+        cd.addProgram(newProgramName)
+        newProgramName = ""
     }
 }

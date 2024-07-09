@@ -4,6 +4,7 @@
 
 import SwiftUI
 
+// Settings View
 struct SettingsView: View {
     
     @Environment(\.presentationMode) var presentationMode

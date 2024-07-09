@@ -4,6 +4,7 @@
 
 import SwiftUI
 
+// Menu View
 struct MenuView: View {
     
     @Environment(\.presentationMode) var presentationMode
@@ -35,8 +36,4 @@ struct MenuView: View {
                     })
         }
     }
-}
-
-#Preview {
-    MenuView()
 }

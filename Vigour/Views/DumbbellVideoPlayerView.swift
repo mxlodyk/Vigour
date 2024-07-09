@@ -5,25 +5,29 @@
 import SwiftUI
 import AVFoundation
 
+// Dumbbell Video Player View
 struct DumbbellVideoPlayerView: UIViewRepresentable {
     
     var videoName: String
 
+    // Make UI View
     func makeUIView(context: Context) -> UIView {
         return LoopingPlayerUIView(videoName: videoName)
     }
 
+    // UpdateUIView
     func updateUIView(_ uiView: UIView, context: Context) {
-        // No update code needed.
+        // No update code.
     }
-    
 }
 
+// Looping Player UI View
 class LoopingPlayerUIView: UIView {
     
     private let playerLayer = AVPlayerLayer()
     private var playerLooper: AVPlayerLooper?
 
+    // Initialise
     init(videoName: String) {
         super.init(frame: .zero)
         

@@ -4,10 +4,12 @@
 
 import SwiftUI
 
+// ExerciseView
 struct ExerciseView: View {
     
-    @Binding var exercise: ExerciseModel
     @Environment(\.presentationMode) var presentationMode
+    
+    @Binding var exercise: ExerciseEntity
     
     var body: some View {
         
@@ -15,7 +17,7 @@ struct ExerciseView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("Exercise: \(exercise.name)\nSets: \(exercise.sets)\nWeight: \(formattedWeight)\nRepetitions: \(exercise.repetitions)\nRest: \(exercise.rest) \(exercise.restUnit)")
+                Text("Exercise: \(exercise.name ?? "")\nSets: \(exercise.sets ?? "")\nRepetitions: \(exercise.repetitions ?? "")\nWeight: \(exercise.weight ?? "")\nRest: \(exercise.rest ?? "") \(exercise.restUnit ?? "Min")")
                     .withTextFormatting()
                     .foregroundColor(themeColour)
             }
@@ -28,12 +30,5 @@ struct ExerciseView: View {
                         .iconStyle()
                 })
         }
-    }
-    
-    private var formattedWeight: String {
-        let formatter = NumberFormatter()
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 2
-        return formatter.string(from: NSNumber(value: exercise.weight)) ?? "\(exercise.weight)"
     }
 }

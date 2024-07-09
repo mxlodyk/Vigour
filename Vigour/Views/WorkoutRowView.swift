@@ -4,15 +4,16 @@
 
 import SwiftUI
 
+// Workout Row View
 struct WorkoutRowView: View {
     
-    @Binding var program: ProgramModel
-    @State var workout: WorkoutModel
+    @Binding var program: ProgramEntity
+    @State var workout: WorkoutEntity
     
     var body: some View {
         
         NavigationLink(destination: ExercisesView(program: $program, workout: $workout)){
-            Text(workout.name)
+            Text(workout.name ?? "")
                 .withButtonFormatting()
         }
     }

@@ -4,19 +4,21 @@
 
 import SwiftUI
 
+// Add Exercise View
 struct AddExerciseView: View {
     
-    @Binding var program: ProgramModel
-    var workout: WorkoutModel
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var exerciseViewModel = ExerciseViewModel()
+    
+    @ObservedObject var cd = CoreDataProvider()
+    @Binding var program: ProgramEntity
+    @Binding var workout: WorkoutEntity
     
     @State var newExerciseName: String = ""
-    @State var newExerciseSets: Int = 0
-    @State var newExerciseWeight: Float = 0
-    @State var newExerciseRepetitions: Int = 0
-    @State var newExerciseRest: Int = 0
-    @State var newExerciseRestUnit: String = ""
+    @State var newExerciseSets: String = ""
+    @State var newExerciseWeight: String = ""
+    @State var newExerciseRepetitions: String = ""
+    @State var newExerciseRest: String = ""
+    @State var newExerciseRestUnit: String = "Min" // Default value
     
     var body: some View {
         
@@ -27,27 +29,16 @@ struct AddExerciseView: View {
                 TextField("", text: $newExerciseName, prompt: Text("Exercise Name").foregroundColor(textFieldTextColour))
                     .withTextFieldFormatting()
                 HStack {
-                    TextField("", text: Binding<String>(
-                        get: { String(newExerciseSets)},
-                        set: { newExerciseSets = Int($0) ?? 0}
-                    ))
+                    TextField("", text: $newExerciseSets, prompt: Text("Sets").foregroundColor(textFieldTextColour))
                     .withDetailFieldFormatting()
-                    TextField("", text: Binding<String>(
-                        get: { String(newExerciseRepetitions)},
-                        set: { newExerciseRepetitions = Int($0) ?? 0}
-                    ))
+                    TextField("", text: $newExerciseRepetitions, prompt: Text("Repetitions").foregroundColor(textFieldTextColour))
+                    .withDetailFieldFormatting()
                 }
+                TextField("", text: $newExerciseWeight, prompt: Text("Weight").foregroundColor(textFieldTextColour))
+                .withDetailFieldFormatting()
                 HStack {
-                    TextField("", text: Binding<String>(
-                        get: { String(newExerciseWeight)},
-                        set: { newExerciseWeight = Float($0) ?? 0}
-                    ))
-                }
-                HStack {
-                    TextField("", text: Binding<String>(
-                        get: { String(newExerciseRest)},
-                        set: { newExerciseRest = Int($0) ?? 0}
-                    ))
+                    TextField("", text: $newExerciseRest, prompt: Text("Rest").foregroundColor(textFieldTextColour))
+                    .withDetailFieldFormatting()
                     RestUnitView(newExerciseRestUnit: $newExerciseRestUnit)
                 }
                 Button(action: {
@@ -63,8 +54,8 @@ struct AddExerciseView: View {
         }
     }
     
+    // Save Button Pressed
     func saveButtonPressed() {
-        let newExercise = ExerciseModel(name: newExerciseName, sets: newExerciseSets, weight: newExerciseWeight, repetitions: newExerciseRepetitions, rest: newExerciseRest, restUnit: newExerciseRestUnit)
-        exerciseViewModel.addExercise(program.id, workout.id, newExercise)
+        cd.addExercise(program, workout, newExerciseName, newExerciseSets, newExerciseRepetitions, newExerciseWeight, newExerciseRest, newExerciseRestUnit)
     }
 }

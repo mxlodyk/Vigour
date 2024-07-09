@@ -4,11 +4,13 @@
 
 import SwiftUI
 
+// Programs View
 struct ProgramsView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var showingBottomSheet = false
-    @StateObject var programViewModel = ProgramViewModel()
+    
+    @StateObject var cd = CoreDataProvider()
     
     var body: some View {
         ZStack {
@@ -16,17 +18,16 @@ struct ProgramsView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack {
-                    ForEach(programViewModel.programs) { program in
-                        ProgramListRowView(program: program)
+                    ForEach(cd.programs) { program in
+                        ProgramRowView (program: program)
                             .contextMenu {
                                 Button(action: {
-                                    programViewModel.deleteProgram(program)
+                                    cd.deleteProgram(program)
                                 }) {
                                     Text("Delete")
                                 }
                             }
-                            }
-                    Spacer()
+                    }
                 }
                 .withEdgePadding()
             }
@@ -47,13 +48,9 @@ struct ProgramsView: View {
                         .iconStyle()
                 })
             .sheet(isPresented: $showingBottomSheet, content: {
-                AddProgramView(programViewModel: programViewModel)
+                AddProgramView(cd: cd)
                     .presentationDetents([.fraction(0.2 )])
             })
         }
     }
-}
-
-#Preview {
-    ProgramsView()
 }

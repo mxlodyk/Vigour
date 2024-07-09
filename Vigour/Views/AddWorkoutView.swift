@@ -4,12 +4,14 @@
 
 import SwiftUI
 
+// Add Workout View
 struct AddWorkoutView: View {
     
-    @Binding var program: ProgramModel
-    @State var newWorkoutName: String = ""
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var workoutViewModel = WorkoutViewModel()
+    
+    @ObservedObject var cd = CoreDataProvider()
+    @Binding var program: ProgramEntity
+    @State var newWorkoutName: String = ""
         
         var body: some View {
             
@@ -32,9 +34,11 @@ struct AddWorkoutView: View {
             }
         }
         
+    // Save Button Pressed
         func saveButtonPressed() {
-            let newWorkout = WorkoutModel(name: newWorkoutName, exercises: [])
-            workoutViewModel.addWorkout(program.id, newWorkout)
+            guard !newWorkoutName.isEmpty else { return }
+            cd.addWorkout(program, newWorkoutName)
+            newWorkoutName = ""
     }
 }
 

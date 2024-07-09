@@ -4,13 +4,14 @@
 
 import SwiftUI
 
+// Exercise Row View
 struct ExerciseRowView: View {
     
-    @State var exercise: ExerciseModel
+    @State var exercise: ExerciseEntity
     
     var body: some View {
         NavigationLink(destination: ExerciseView(exercise: $exercise)){
-            Text(exercise.name)
+            Text(exercise.name ?? "")
                 .withButtonFormatting()
         }
     }

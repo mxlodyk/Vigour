@@ -4,12 +4,14 @@
 
 import SwiftUI
 
+// Workouts View
 struct WorkoutsView: View {
     
-    @Binding var program: ProgramModel
     @Environment(\.presentationMode) var presentationMode
     @State var showingBottomSheet = false
-    @StateObject var workoutViewModel = WorkoutViewModel()
+    
+    @StateObject var cd = CoreDataProvider()
+    @Binding var program: ProgramEntity
     
     var body: some View {
         ZStack {
@@ -17,18 +19,16 @@ struct WorkoutsView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack {
-                    ForEach(workoutViewModel.programs) { program in
-                        if program.id == self.program.id {
-                            ForEach(program.workouts) { workout in
-                                WorkoutRowView(program: $program, workout: workout)
-                                    .contextMenu {
-                                        Button(action: {
-                                            workoutViewModel.deleteWorkout(programID: program.id, workout: workout)
-                                        }) {
-                                            Text("Delete")
-                                        }
+                    if let workouts = program.workouts?.array as? [WorkoutEntity] {
+                        ForEach(workouts) { workout in
+                            WorkoutRowView(program: $program, workout: workout)
+                                .contextMenu {
+                                    Button(action: {
+                                        cd.deleteWorkout(workout, program)
+                                    }) {
+                                        Text("Delete")
                                     }
-                            }
+                                }
                         }
                     }
                 }
@@ -51,7 +51,7 @@ struct WorkoutsView: View {
                             .iconStyle()
                     })
             .sheet(isPresented: $showingBottomSheet, content: {
-                AddWorkoutView(program: $program, workoutViewModel: workoutViewModel)
+                AddWorkoutView(cd: cd, program: $program)
                     .presentationDetents([.fraction(0.2 )])
             })
         }

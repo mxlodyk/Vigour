@@ -4,13 +4,15 @@
 
 import SwiftUI
 
+// Rest Unit View
 struct RestUnitView: View {
     
-    let options: [String] = ["Min", "Sec"]
     @Binding var newExerciseRestUnit: String
-    @State var index: Int = 0
     
+    @State var index: Int = 0
     @State private var isClicked = false
+    
+    let options: [String] = ["Min", "Sec"]
     
     var body: some View {
         VStack {
@@ -33,8 +35,5 @@ struct RestUnitView: View {
                 }
             .withDetailFieldFormatting()
         }
-    }
-    func getUnit() -> String {
-        return newExerciseRestUnit
     }
 }

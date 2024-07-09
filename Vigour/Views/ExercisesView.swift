@@ -4,14 +4,15 @@
 
 import SwiftUI
 
+// Exercises View
 struct ExercisesView: View {
     
-    @Binding var program: ProgramModel
-    @Binding var workout: WorkoutModel
     @Environment(\.presentationMode) var presentationMode
     @State var showingBottomSheet = false
-    let programs: [ProgramModel] = DataProvider.getPrograms()
-    @StateObject var exerciseViewModel = ExerciseViewModel()
+    
+    @ObservedObject var cd = CoreDataProvider()
+    @Binding var program: ProgramEntity
+    @Binding var workout: WorkoutEntity
     
     var body: some View {
         
@@ -20,47 +21,41 @@ struct ExercisesView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack {
-                    ForEach(exerciseViewModel.programs) { program in
-                        if program.id == self.program.id {
-                            ForEach(program.workouts) { workout in
-                                if workout.id == self.workout.id {
-                                    ForEach(workout.exercises) { exercise in
-                                        ExerciseRowView(exercise: exercise)
-                                            .contextMenu {
-                                                Button(action: {
-                                                    exerciseViewModel.deleteExercise(program.id, workout.id, exercise)
-                                                }) {
-                                                    Text("Delete")
-                                                }
-                                            }
+                    if let exercises = workout.exercises?.array as? [ExerciseEntity] {
+                        ForEach(exercises) { exercise in
+                            ExerciseRowView(exercise: exercise)
+                                .contextMenu {
+                                    Button(action: {
+                                        cd.deleteExercise(exercise, workout)
+                                    }) {
+                                        Text("Delete")
                                     }
                                 }
-                            }
                         }
                     }
                 }
-                .navigationBarBackButtonHidden()
-                .navigationBarItems(
-                    leading:
-                        Button(action: {
-                            self.presentationMode.wrappedValue.dismiss()
-                        }) {
-                            Image("BackButton")
-                                .iconStyle()
-                        },
-                    trailing:
-                        Button(action: {
-                            showingBottomSheet.toggle()
-                        }) {
-                            Image("AddButton")
-                                .iconStyle()
-                        })
-                .sheet(isPresented: $showingBottomSheet, content: {
-                    AddExerciseView(program: $program, workout: workout, exerciseViewModel: exerciseViewModel)
-                        .presentationDetents([.fraction(0.35)])
-                })
+                .withEdgePadding()
             }
-            .withEdgePadding()
+            .navigationBarBackButtonHidden()
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image("BackButton")
+                            .iconStyle()
+                    },
+                trailing:
+                    Button(action: {
+                        showingBottomSheet.toggle()
+                    }) {
+                        Image("AddButton")
+                            .iconStyle()
+                    })
+            .sheet(isPresented: $showingBottomSheet, content: {
+                AddExerciseView(cd: cd, program: $program, workout: $workout)
+                    .presentationDetents([.fraction(0.35)])
+            })
         }
     }
 }
