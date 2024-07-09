@@ -13,7 +13,7 @@ class ExerciseViewModel: ObservableObject {
     }
     
     // Add Exercise
-    func addExercise(_ programID: String, _ workoutID: String, _ exercise: ExerciseModel) {
+    func addExercise(_ programID: UUID, _ workoutID: UUID, _ exercise: ExerciseModel) {
         if let programIndex = programs.firstIndex(where: { $0.id == programID }) {
             if let workoutIndex = programs[programIndex].workouts.firstIndex(where: { $0.id == workoutID }) {
                 programs[programIndex].workouts[workoutIndex].exercises.append(exercise)
@@ -25,7 +25,7 @@ class ExerciseViewModel: ObservableObject {
     }
     
     // Delete Exercise
-    func deleteExercise(_ programID: String, _ workoutID: String, _ exercise: ExerciseModel) {
+    func deleteExercise(_ programID: UUID, _ workoutID: UUID, _ exercise: ExerciseModel) {
         if let programIndex = programs.firstIndex(where: { $0.id == programID}) {
             if let workoutIndex = programs[programIndex].workouts.firstIndex(where: { $0.id == workoutID}) {
                 if let exerciseIndex = programs[programIndex].workouts[workoutIndex].exercises.firstIndex(where: { $0.id == exercise.id}) {

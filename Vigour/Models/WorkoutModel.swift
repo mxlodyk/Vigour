@@ -5,7 +5,7 @@
 import Foundation
 
 struct WorkoutModel: Identifiable {
-    internal let id: String = UUID().uuidString
+    internal let id: UUID = UUID()
     internal var name: String
     internal var exercises: [ExerciseModel]
     

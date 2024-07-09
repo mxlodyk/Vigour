@@ -15,7 +15,7 @@ struct ExerciseView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("Exercise: \(exercise.name)\nSets: \(exercise.sets)\nWeight: \(exercise.weight)\nRepetitions: \(exercise.repetitions)\nRest: \(exercise.rest) \(exercise.restUnit)")
+                Text("Exercise: \(exercise.name)\nSets: \(exercise.sets)\nWeight: \(formattedWeight)\nRepetitions: \(exercise.repetitions)\nRest: \(exercise.rest) \(exercise.restUnit)")
                     .withTextFormatting()
                     .foregroundColor(themeColour)
             }
@@ -28,5 +28,12 @@ struct ExerciseView: View {
                         .iconStyle()
                 })
         }
+    }
+    
+    private var formattedWeight: String {
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 2
+        return formatter.string(from: NSNumber(value: exercise.weight)) ?? "\(exercise.weight)"
     }
 }

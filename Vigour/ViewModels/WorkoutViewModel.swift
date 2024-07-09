@@ -13,7 +13,7 @@ class WorkoutViewModel: ObservableObject {
     }
     
     // Add Workout
-    func addWorkout(_ programID: String, _ workout: WorkoutModel) {
+    func addWorkout(_ programID: UUID, _ workout: WorkoutModel) {
         if let index = programs.firstIndex(where: { $0.id == programID }) {
             programs[index].workouts.append(workout)
             DataProvider.addWorkout(programID: programID, workoutModel: workout)
@@ -23,7 +23,7 @@ class WorkoutViewModel: ObservableObject {
     }
     
     // Delete Workout
-    func deleteWorkout(programID: String, workout: WorkoutModel) {
+    func deleteWorkout(programID: UUID, workout: WorkoutModel) {
         if let programIndex = programs.firstIndex(where: { $0.id == programID}) {
             if let workoutIndex = programs[programIndex].workouts.firstIndex(where: { $0.id == workout.id}) {
                 programs[programIndex].workouts.remove(at: workoutIndex)

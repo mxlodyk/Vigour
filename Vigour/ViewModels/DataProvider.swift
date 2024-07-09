@@ -19,16 +19,16 @@ class DataProvider: ObservableObject {
                 WorkoutModel(name: "Quadriceps", exercises: [])
             ]
             program1.workouts[0].exercises = [
-                ExerciseModel(name: "Hip Thrust", sets: "4", weight: "140", repetitions: "12", rest: "120", restUnit: "Min"),
-                ExerciseModel(name: "Cable Kickback", sets: "4", weight: "20", repetitions: "12", rest: "90", restUnit: "Min")
+                ExerciseModel(name: "Hip Thrust", sets: 4, weight: 120, repetitions: 8, rest: 3, restUnit: "Min"),
+                ExerciseModel(name: "Cable Kickback", sets: 4, weight: 20, repetitions: 10, rest: 2, restUnit: "Min")
             ]
             program1.workouts[1].exercises = [
-                ExerciseModel(name: "Hamstring Curl", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min"),
-                ExerciseModel(name: "Romanian Deadlift", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min")
+                ExerciseModel(name: "Lying Hamstring Curl", sets: 4, weight: 50, repetitions: 10, rest: 2, restUnit: "Min"),
+                ExerciseModel(name: "Romanian Deadlift", sets: 4, weight: 50, repetitions: 8, rest: 3, restUnit: "Min")
             ]
             program1.workouts[2].exercises = [
-                ExerciseModel(name: "Bulgarian Split Squat", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min"),
-                ExerciseModel(name: "Leg Extension", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min")
+                ExerciseModel(name: "Bulgarian Split Squat", sets: 3, weight: 25, repetitions: 8, rest: 3, restUnit: "Min"),
+                ExerciseModel(name: "Leg Extension", sets: 4, weight: 45, repetitions: 12, rest: 2, restUnit: "Min")
             ]
             programs.append(program1)
             
@@ -38,12 +38,12 @@ class DataProvider: ObservableObject {
                 WorkoutModel(name: "Lower Body", exercises: []),
             ]
             program2.workouts[0].exercises = [
-                ExerciseModel(name: "Barbell Row", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min"),
-                ExerciseModel(name: "Barbell Overhead Press", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min")
+                ExerciseModel(name: "Barbell Row", sets: 4, weight: 60, repetitions: 12, rest: 2, restUnit: "Min"),
+                ExerciseModel(name: "Barbell Overhead Press", sets: 4, weight: 30, repetitions: 10, rest: 2, restUnit: "Min")
             ]
             program2.workouts[1].exercises = [
-                ExerciseModel(name: "Barbell Back Squat", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min"),
-                ExerciseModel(name: "Barbell Deadlift", sets: "4", weight: "60", repetitions: "12", rest: "90", restUnit: "Min")
+                ExerciseModel(name: "Barbell Back Squat", sets: 4, weight: 50.5, repetitions: 8, rest: 3, restUnit: "Min"),
+                ExerciseModel(name: "Barbell Deadlift", sets: 4, weight: 30, repetitions: 8, rest: 3, restUnit: "Min")
             ]
             programs.append(program2)
         }
@@ -64,7 +64,7 @@ class DataProvider: ObservableObject {
     }
     
     // Add Workout
-    static func addWorkout(programID: String, workoutModel: WorkoutModel) {
+    static func addWorkout(programID: UUID, workoutModel: WorkoutModel) {
         if let index = programs.firstIndex(where: { $0.id == programID }) {
             programs[index].workouts.append(workoutModel)
         } else {
@@ -73,7 +73,7 @@ class DataProvider: ObservableObject {
     }
     
     // Delete Workout
-    static func deleteWorkout(programID: String, workout: WorkoutModel){
+    static func deleteWorkout(programID: UUID, workout: WorkoutModel){
         if let programIndex = programs.firstIndex(where: { $0.id == programID}) {
             if let workoutIndex = programs[programIndex].workouts.firstIndex(where: { $0.id == workout.id}) {
                 programs[programIndex].workouts.remove(at: workoutIndex)
@@ -82,7 +82,7 @@ class DataProvider: ObservableObject {
     }
     
     // Add Exercise
-    static func addExercise(programID: String, workoutID: String, exerciseModel: ExerciseModel) {
+    static func addExercise(programID: UUID, workoutID: UUID, exerciseModel: ExerciseModel) {
         if let program = programs.firstIndex(where: { $0.id == programID }) {
             if let workout = programs[program].workouts.firstIndex(where: { $0.id == workoutID }) {
                 programs[program].workouts[workout].exercises.append(exerciseModel)
@@ -93,7 +93,7 @@ class DataProvider: ObservableObject {
     }
     
     // Delete Exercise
-    static func deleteExercise(_ programID: String, _ workoutID: String, _ exercise: ExerciseModel) {
+    static func deleteExercise(_ programID: UUID, _ workoutID: UUID, _ exercise: ExerciseModel) {
         if let programIndex = programs.firstIndex(where: { $0.id == programID}) {
             if let workoutIndex = programs[programIndex].workouts.firstIndex(where: { $0.id == workoutID}) {
                 if let exerciseIndex = programs[programIndex].workouts[workoutIndex].exercises.firstIndex(where: { $0.id == exercise.id}) {

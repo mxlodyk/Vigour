@@ -5,11 +5,11 @@
 import Foundation
 
 struct ExerciseModel: Identifiable {
-    internal let id: String = UUID().uuidString
+    internal let id: UUID = UUID()
     internal var name: String
-    internal var sets: String
-    internal var weight: String
-    internal var repetitions: String
-    internal var rest: String
+    internal var sets: Int
+    internal var weight: Float
+    internal var repetitions: Int
+    internal var rest: Int
     internal var restUnit: String
 }

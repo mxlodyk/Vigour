@@ -12,11 +12,11 @@ struct AddExerciseView: View {
     @ObservedObject var exerciseViewModel = ExerciseViewModel()
     
     @State var newExerciseName: String = ""
-    @State var newExerciseSets: String = ""
-    @State var newExerciseWeight: String = ""
-    @State var newExerciseRepetitions: String = ""
-    @State var newExerciseRest: String = ""
-    @State var newExerciseRestUnit: String = "Min"
+    @State var newExerciseSets: Int = 0
+    @State var newExerciseWeight: Float = 0
+    @State var newExerciseRepetitions: Int = 0
+    @State var newExerciseRest: Int = 0
+    @State var newExerciseRestUnit: String = ""
     
     var body: some View {
         
@@ -27,18 +27,27 @@ struct AddExerciseView: View {
                 TextField("", text: $newExerciseName, prompt: Text("Exercise Name").foregroundColor(textFieldTextColour))
                     .withTextFieldFormatting()
                 HStack {
-                    TextField("", text: $newExerciseSets, prompt: Text("Sets").foregroundColor(textFieldTextColour))
-                        .withDetailFieldFormatting()
-                    TextField("", text: $newExerciseRepetitions, prompt: Text("Repetitions").foregroundColor(textFieldTextColour))
-                        .withDetailFieldFormatting()
+                    TextField("", text: Binding<String>(
+                        get: { String(newExerciseSets)},
+                        set: { newExerciseSets = Int($0) ?? 0}
+                    ))
+                    .withDetailFieldFormatting()
+                    TextField("", text: Binding<String>(
+                        get: { String(newExerciseRepetitions)},
+                        set: { newExerciseRepetitions = Int($0) ?? 0}
+                    ))
                 }
                 HStack {
-                    TextField("", text: $newExerciseWeight, prompt: Text("Weight").foregroundColor(textFieldTextColour))
-                        .withDetailFieldFormatting()
+                    TextField("", text: Binding<String>(
+                        get: { String(newExerciseWeight)},
+                        set: { newExerciseWeight = Float($0) ?? 0}
+                    ))
                 }
                 HStack {
-                    TextField("", text: $newExerciseRest, prompt: Text("Rest").foregroundColor(textFieldTextColour))
-                        .withDetailFieldFormatting()
+                    TextField("", text: Binding<String>(
+                        get: { String(newExerciseRest)},
+                        set: { newExerciseRest = Int($0) ?? 0}
+                    ))
                     RestUnitView(newExerciseRestUnit: $newExerciseRestUnit)
                 }
                 Button(action: {
