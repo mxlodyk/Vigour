@@ -1,7 +1,8 @@
 import SwiftUI
 import Foundation
 
-struct NutritionView: View {
+// Food Search View
+struct FoodSearchView: View {
     
     @State private var foodName: String = ""
     @State private var nutritionData: [Nutrition] = []
@@ -59,6 +60,7 @@ struct NutritionView: View {
     }
 }
 
+// Nutrition
 struct Nutrition: Codable {
     let name: String
     let fatTotalG: Double?
@@ -83,7 +85,9 @@ struct Nutrition: Codable {
         }
 }
 
+// Get Nutrition Data
 func getNutritionData(query: String) async throws -> [Nutrition] {
+    
     let apiKey = "Xn/MQIMA2BR7blu1AatZAA==rnUm3JEJ1n7UhXzD"
     let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     let url = URL(string: "https://api.api-ninjas.com/v1/nutrition?query=\(encodedQuery)")!
@@ -102,5 +106,5 @@ func getNutritionData(query: String) async throws -> [Nutrition] {
 }
 
 #Preview {
-    NutritionView()
+    FoodSearchView()
 }

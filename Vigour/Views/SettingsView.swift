@@ -8,6 +8,7 @@ import SwiftUI
 struct SettingsView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @State private var isDarkModeOn = false
     
     var body: some View {
         
@@ -15,8 +16,14 @@ struct SettingsView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("Settings")
-                    .withTextFormatting()
+                HStack{
+                    Toggle("Metric", isOn: $isDarkModeOn)
+                        .tint(themeColour)
+                        .withTextFormatting()
+                    Toggle("Dark Mode", isOn: $isDarkModeOn)
+                        .tint(themeColour)
+                        .withTextFormatting()
+                }
                 Spacer()
             }
             .withEdgePadding()

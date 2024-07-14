@@ -18,7 +18,12 @@ struct MenuView: View {
                     Text("Programs")
                         .withButtonFormatting()
                 }
+                NavigationLink(destination: NutritionView()) {
+                    Text("Nutrition")
+                        .withButtonFormatting()
+                }
                 Spacer()
+                 
             }
             .withEdgePadding()
             .navigationBarBackButtonHidden()

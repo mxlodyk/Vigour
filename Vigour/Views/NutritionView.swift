@@ -1,9 +1,6 @@
-//
 //  NutritionView.swift
 //  Vigour
-//
 //  Created by Melody Flavel on 14/7/2024.
-//
 
 import SwiftUI
 

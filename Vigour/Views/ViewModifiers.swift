@@ -6,7 +6,7 @@ import Foundation
 import SwiftUI
 
 let themeColour = Color("Theme")
-let textColour = Color("Text")
+let buttonTextColour = Color("ButtonText")
 let textFieldColour = Color("TextField")
 let textFieldTextColour = Color("TextFieldText")
 
@@ -30,7 +30,7 @@ extension View {
 struct TextModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.custom("MontserratRoman-Light", size: 30))
+            .font(.custom("MontserratRoman-Light", size: 20))
             .foregroundColor(themeColour)
     }
 }
@@ -87,7 +87,7 @@ struct ButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.custom("MontserratRoman-Regular", size: 20))
-            .foregroundColor(textColour)
+            .foregroundColor(buttonTextColour)
             .frame(height: 55)
             .frame(maxWidth: .infinity)
             .background(Color(themeColour))
