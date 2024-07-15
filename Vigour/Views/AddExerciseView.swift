@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-// Add Exercise View
+// MARK: Add Exercise View
 struct AddExerciseView: View {
     
     @Environment(\.presentationMode) var presentationMode
@@ -54,7 +54,7 @@ struct AddExerciseView: View {
         }
     }
     
-    // Save Button Pressed
+    // MARK: Save Button Pressed
     func saveButtonPressed() {
         cd.addExercise(program, workout, newExerciseName, newExerciseSets, newExerciseRepetitions, newExerciseWeight, newExerciseRest, newExerciseRestUnit)
     }

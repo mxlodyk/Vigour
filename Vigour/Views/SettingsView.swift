@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-// Settings View
+// MARK: Settings View
 struct SettingsView: View {
     
     @Environment(\.presentationMode) var presentationMode

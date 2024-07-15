@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-// Home View
+// MARK: Home View
 struct HomeView: View {
     
     var body: some View {

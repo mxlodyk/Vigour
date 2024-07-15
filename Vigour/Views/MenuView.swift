@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-// Menu View
+// MARK: Menu View
 struct MenuView: View {
     
     @Environment(\.presentationMode) var presentationMode
@@ -14,6 +14,8 @@ struct MenuView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack {
+                CalendarView()
+                // DayView()
                 NavigationLink(destination: ProgramsView()) {
                     Text("Programs")
                         .withButtonFormatting()
@@ -36,4 +38,5 @@ struct MenuView: View {
                     })
         }
     }
+    
 }

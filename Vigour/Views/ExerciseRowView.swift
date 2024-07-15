@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-// Exercise Row View
+// MARK: Exercise Row View
 struct ExerciseRowView: View {
     
     @State var exercise: ExerciseEntity

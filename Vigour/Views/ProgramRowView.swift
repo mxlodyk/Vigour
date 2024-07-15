@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-// Program Row View
+// MARK: Program Row View
 struct ProgramRowView: View {
     
     @State var program: ProgramEntity

@@ -10,7 +10,7 @@ let textColour = Color("Text")
 let textFieldColour = Color("TextField")
 let textFieldTextColour = Color("TextFieldText")
 
-// Title Modifier
+// MARK: Title Modifier
 struct TitleModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -26,7 +26,7 @@ extension View {
     }
 }
 
-// Text Modifier
+// MARK: Text Modifier
 struct TextModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -42,7 +42,7 @@ extension View {
     }
 }
 
-// Text Field Modifier
+// MARK: Text Field Modifier
 struct TextFieldModifier : ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -62,7 +62,7 @@ extension View {
     }
 }
 
-// Detail Field Modifier
+// MARK: Detail Field Modifier
 struct DetailFieldModifier : ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -82,7 +82,7 @@ extension View {
     }
 }
 
-// Button Modifier
+// MARK: Button Modifier
 struct ButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -103,7 +103,7 @@ extension View {
     }
 }
 
-// Edge Padding Modifier
+// MARK: Edge Padding Modifier
 struct EdgePaddingModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -121,7 +121,7 @@ extension View {
     }
 }
 
-// Icon Modifier
+// MARK: Icon Modifier
 extension Image {
     func iconStyle() -> some View {
         self

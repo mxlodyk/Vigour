@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-// Programs View
+// MARK: Programs View
 struct ProgramsView: View {
     
     @Environment(\.presentationMode) var presentationMode

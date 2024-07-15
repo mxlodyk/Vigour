@@ -5,14 +5,14 @@
 import Foundation
 import CoreData
 
-// Core Data Manager
+// MARK: Core Data Manager
 class CoreDataManager {
     
     static let instance = CoreDataManager() // Singleton
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
     
-    // Initialise
+    // MARK: Initialise
     init() {
         // The attribute types of CoreDataStringContainer are strings to support TextField modifiers in AddExerciseView
         container = NSPersistentContainer(name: "CoreDataStringContainer")
@@ -24,7 +24,7 @@ class CoreDataManager {
         context = container.viewContext
     }
     
-    // Save
+    // MARK: Save
     func save() {
         do {
             try context.save()
@@ -35,22 +35,52 @@ class CoreDataManager {
     }
 }
 
-// Core Data Provider
+// MARK: Core Data Provider
 class CoreDataProvider: ObservableObject {
     
     let manager = CoreDataManager.instance
+    
+    @Published var currentWeek: [Date] = []
+    @Published var currentDay: Date = Date()
+    
     @Published var programs: [ProgramEntity] = []
     @Published var workouts: [WorkoutEntity] = []
     @Published var exercises: [ExerciseEntity] = []
     
-    // Initialise
+    // MARK: Initialise
     init() {
         getPrograms()
         getWorkouts()
         getExercises()
+        fetchCurrentWeek()
     }
     
-    // Get Programs
+    // MARK: Fetch Current Week
+    func fetchCurrentWeek() {
+        let today = Date()
+        let calendar = Calendar.current
+        
+        guard let week = calendar.dateInterval(of: .weekOfMonth, for: today),
+            let firstWeekDay = calendar.date(byAdding: .day, value: -calendar.component(.weekday, from: today) + 1, to: today) else {
+                return
+        }
+        currentWeek = (0..<7).compactMap { calendar.date(byAdding: .day, value: $0, to: firstWeekDay) }
+    }
+    
+    // MARK: Extract Date
+    func extractDate(date: Date, format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: date)
+    }
+    
+    // MARK: Check Current Date
+    func isToday(date: Date) -> Bool {
+        let calendar = Calendar.current
+        return calendar.isDate(currentDay, inSameDayAs: date)
+    }
+    
+    // MARK: Get Programs
     func getPrograms() {
         let request = NSFetchRequest<ProgramEntity>(entityName: "ProgramEntity")
         do {
@@ -60,7 +90,7 @@ class CoreDataProvider: ObservableObject {
         }
     }
     
-    // Add Program
+    // MARK: Add Program
     func addProgram(_ newProgramName: String) {
         let newProgram = ProgramEntity(context: manager.context)
         newProgram.id = UUID()
@@ -68,13 +98,13 @@ class CoreDataProvider: ObservableObject {
         save()
     }
     
-    // Delete Program
+    // MARK: Delete Program
     func deleteProgram(_ program: ProgramEntity) {
         manager.context.delete(program)
         save()
     }
     
-    // Get Workouts
+    // MARK: Get Workouts
     func getWorkouts() {
         let request = NSFetchRequest<WorkoutEntity>(entityName: "WorkoutEntity")
         do {
@@ -84,7 +114,7 @@ class CoreDataProvider: ObservableObject {
         }
     }
     
-    // Add Workout
+    // MARK: Add Workout
     func addWorkout(_ program: ProgramEntity, _ newWorkoutName: String) {
         let newWorkout = WorkoutEntity(context: manager.context)
         newWorkout.id = UUID()
@@ -93,13 +123,13 @@ class CoreDataProvider: ObservableObject {
         save()
     }
     
-    // Delete Workout
+    // MARK: Delete Workout
     func deleteWorkout(_ workout: WorkoutEntity, _ program: ProgramEntity) {
         workout.removeFromPrograms(program)
         save()
     }
     
-    // Get Exercises
+    // MARK: Get Exercises
     func getExercises() {
         let request = NSFetchRequest<ExerciseEntity>(entityName: "ExerciseEntity")
         do {
@@ -109,7 +139,7 @@ class CoreDataProvider: ObservableObject {
         }
     }
     
-    // Add Exercise
+    // MARK: Add Exercise
     func addExercise(_ program: ProgramEntity, _ workout: WorkoutEntity, _ newExerciseName: String, _ newExerciseSets: String, _ newExerciseRepetitions: String, _ newExerciseWeight: String, _ newExerciseRest: String, _ newExerciseRestUnit: String) {
         let newExercise = ExerciseEntity(context: manager.context)
         newExercise.id = UUID()
@@ -123,17 +153,18 @@ class CoreDataProvider: ObservableObject {
         save()
     }
     
-    // Delete Exercise
+    // MARK: Delete Exercise
     func deleteExercise(_ exercise: ExerciseEntity, _ workout: WorkoutEntity) {
         exercise.removeFromWorkouts(workout)
         save()
     }
     
-    // Save
+    // MARK: Save
     func save() {
         manager.save()
         getPrograms()
         getWorkouts()
         getExercises()
     }
+    
 }

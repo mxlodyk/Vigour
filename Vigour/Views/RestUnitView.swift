@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-// Rest Unit View
+// MARK: Rest Unit View
 struct RestUnitView: View {
     
     @Binding var newExerciseRestUnit: String

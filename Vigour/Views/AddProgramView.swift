@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-// Add Program View
+// MARK: Add Program View
 struct AddProgramView: View {
     
     @Environment(\.presentationMode) var presentationMode
@@ -33,7 +33,7 @@ struct AddProgramView: View {
         }
     }
     
-    // Save Button Pressed
+    // MARK: Save Button Pressed
     func saveButtonPressed() {
         guard !newProgramName.isEmpty else { return }
         cd.addProgram(newProgramName)

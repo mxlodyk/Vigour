@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-// Workout Row View
+// MARK: Workout Row View
 struct WorkoutRowView: View {
     
     @Binding var program: ProgramEntity

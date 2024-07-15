@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-// ExerciseView
+// MARK: ExerciseView
 struct ExerciseView: View {
     
     @Environment(\.presentationMode) var presentationMode
