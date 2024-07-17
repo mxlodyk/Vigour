@@ -8,9 +8,11 @@ import CoreData
 // MARK: Core Data Manager
 class CoreDataManager {
     
-    static let instance = CoreDataManager() // Singleton
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
+    
+    // Singleton
+    static let instance = CoreDataManager()
     
     // MARK: Initialise
     init() {
@@ -41,11 +43,12 @@ class CoreDataProvider: ObservableObject {
     let manager = CoreDataManager.instance
     
     @Published var currentWeek: [Date] = []
-    @Published var currentDay: Date = Date()
+    @Published var selectedDay: Date = Date()
     
     @Published var programs: [ProgramEntity] = []
     @Published var workouts: [WorkoutEntity] = []
     @Published var exercises: [ExerciseEntity] = []
+    @Published var loggedWorkouts: [WorkoutLogEntity] = []
     
     // MARK: Initialise
     init() {
@@ -53,6 +56,7 @@ class CoreDataProvider: ObservableObject {
         getWorkouts()
         getExercises()
         fetchCurrentWeek()
+        getLoggedWorkoutsForSelectedDay()
     }
     
     // MARK: Fetch Current Week
@@ -77,7 +81,47 @@ class CoreDataProvider: ObservableObject {
     // MARK: Check Current Date
     func isToday(date: Date) -> Bool {
         let calendar = Calendar.current
-        return calendar.isDate(currentDay, inSameDayAs: date)
+        return calendar.isDate(date, inSameDayAs: selectedDay)
+    }
+    
+    // MARK: Log Workout
+    func logWorkout(_ workout: WorkoutEntity) {
+            
+        let newLog = WorkoutLogEntity(context: manager.context)
+            newLog.date = selectedDay
+            newLog.workout = workout
+            
+            do {
+                try manager.context.save()
+                getLoggedWorkoutsForSelectedDay()
+            } catch {
+                // Handle the Core Data error appropriately
+                print("Failed to save log: \(error.localizedDescription)")
+            }
+        }
+    
+    // MARK: Delete Logged Workout
+    func deleteLoggedWorkout(_ workoutLog: WorkoutLogEntity) {
+        manager.context.delete(workoutLog)
+        save()
+    }
+    
+    // MARK: Get Logged Workouts for Current Day
+    func getLoggedWorkoutsForSelectedDay() {
+        let request = NSFetchRequest<WorkoutLogEntity>(entityName: "WorkoutLogEntity")
+        
+        let calendar = Calendar.current
+        let startOfDay = calendar.startOfDay(for: selectedDay)
+        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+        
+        request.predicate = NSPredicate(format: "date >= %@ AND date < %@", startOfDay as NSDate, endOfDay as NSDate)
+        
+        do {
+            loggedWorkouts = try manager.context.fetch(request)
+        } catch let error {
+            print("Error fetching logged workouts: \(error.localizedDescription)")
+            loggedWorkouts = []
+        }
     }
     
     // MARK: Get Programs
@@ -165,6 +209,7 @@ class CoreDataProvider: ObservableObject {
         getPrograms()
         getWorkouts()
         getExercises()
+        getLoggedWorkoutsForSelectedDay()
     }
     
 }

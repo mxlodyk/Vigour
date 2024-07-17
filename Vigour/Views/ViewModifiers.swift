@@ -130,3 +130,34 @@ extension Image {
             .frame(width: 40, height: 40)
     }
 }
+
+// MARK: Widget Text Modifier
+struct WidgetTextModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+extension View {
+    
+    func withWidgetTextFormatting() -> some View {
+        modifier(WidgetTextModifier())
+    }
+}
+
+// MARK: Widget Header Modifier
+struct WidgetHeaderModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 20))
+            .foregroundColor(textColour)
+    }
+}
+
+extension View {
+    
+    func withWidgetHeaderFormatting() -> some View {
+        modifier(WidgetHeaderModifier())
+    }
+}

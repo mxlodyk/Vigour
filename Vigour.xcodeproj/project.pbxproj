@@ -20,6 +20,11 @@
 		8984BAFB2C36888C0097E71A /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAF92C36888C0097E71A /* Montserrat.ttf */; };
 		8984BAFC2C36888C0097E71A /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAF92C36888C0097E71A /* Montserrat.ttf */; };
 		89C3E0D32C44AC820011F9B3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D22C44AC820011F9B3 /* CalendarView.swift */; };
+		89C3E0D52C44CB5E0011F9B3 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D42C44CB5E0011F9B3 /* LogView.swift */; };
+		89C3E0D72C44D3D50011F9B3 /* DailyExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */; };
+		89C3E0D92C44FBE60011F9B3 /* WorkoutWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D82C44FBE60011F9B3 /* WorkoutWidgetView.swift */; };
+		89C3E0DB2C45D26B0011F9B3 /* StepsWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0DA2C45D26B0011F9B3 /* StepsWidgetView.swift */; };
+		89C3E0DD2C461B890011F9B3 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0DC2C461B890011F9B3 /* HealthManager.swift */; };
 		89E3F4B22C3D2C19003C15B9 /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3F4B12C3D2C19003C15B9 /* CoreDataProvider.swift */; };
 		89EF51892C37FFFE0086BBC0 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51882C37FFFE0086BBC0 /* MenuView.swift */; };
 		89EF51932C38097A0086BBC0 /* ProgramsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51922C38097A0086BBC0 /* ProgramsView.swift */; };
@@ -70,6 +75,12 @@
 		8984BAF92C36888C0097E71A /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		8984BAFD2C36889C0097E71A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		89C3E0D22C44AC820011F9B3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		89C3E0D42C44CB5E0011F9B3 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyExerciseView.swift; sourceTree = "<group>"; };
+		89C3E0D82C44FBE60011F9B3 /* WorkoutWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutWidgetView.swift; sourceTree = "<group>"; };
+		89C3E0DA2C45D26B0011F9B3 /* StepsWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsWidgetView.swift; sourceTree = "<group>"; };
+		89C3E0DC2C461B890011F9B3 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
+		89C3E0DE2C461D910011F9B3 /* Vigour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vigour.entitlements; sourceTree = "<group>"; };
 		89E3F4B12C3D2C19003C15B9 /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 		89EF51882C37FFFE0086BBC0 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		89EF51922C38097A0086BBC0 /* ProgramsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsView.swift; sourceTree = "<group>"; };
@@ -135,6 +146,7 @@
 		8984BAC32C36871C0097E71A /* Vigour */ = {
 			isa = PBXGroup;
 			children = (
+				89C3E0DE2C461D910011F9B3 /* Vigour.entitlements */,
 				8984BAC42C36871C0097E71A /* VigourApp.swift */,
 				8984BAC82C36871D0097E71A /* Assets.xcassets */,
 				8984BAFD2C36889C0097E71A /* Info.plist */,
@@ -177,6 +189,10 @@
 			children = (
 				8984BAC62C36871C0097E71A /* HomeView.swift */,
 				89EF51882C37FFFE0086BBC0 /* MenuView.swift */,
+				89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */,
+				89C3E0D82C44FBE60011F9B3 /* WorkoutWidgetView.swift */,
+				89C3E0DA2C45D26B0011F9B3 /* StepsWidgetView.swift */,
+				89C3E0D42C44CB5E0011F9B3 /* LogView.swift */,
 				89C3E0D22C44AC820011F9B3 /* CalendarView.swift */,
 				89EF51922C38097A0086BBC0 /* ProgramsView.swift */,
 				89EF51962C38B12A0086BBC0 /* WorkoutsView.swift */,
@@ -208,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				89E3F4B12C3D2C19003C15B9 /* CoreDataProvider.swift */,
+				89C3E0DC2C461B890011F9B3 /* HealthManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -359,17 +376,22 @@
 				89EF51892C37FFFE0086BBC0 /* MenuView.swift in Sources */,
 				89EF51972C38B12A0086BBC0 /* WorkoutsView.swift in Sources */,
 				8984BAEF2C3687A40097E71A /* DumbbellVideoPlayerView.swift in Sources */,
+				89C3E0DB2C45D26B0011F9B3 /* StepsWidgetView.swift in Sources */,
 				89EF51A12C392FED0086BBC0 /* SettingsView.swift in Sources */,
 				89EF51932C38097A0086BBC0 /* ProgramsView.swift in Sources */,
+				89C3E0D72C44D3D50011F9B3 /* DailyExerciseView.swift in Sources */,
 				89EF51A72C3939AA0086BBC0 /* AddExerciseView.swift in Sources */,
 				8984BAC72C36871C0097E71A /* HomeView.swift in Sources */,
 				89C3E0D32C44AC820011F9B3 /* CalendarView.swift in Sources */,
 				89E3F4B22C3D2C19003C15B9 /* CoreDataProvider.swift in Sources */,
+				89C3E0DD2C461B890011F9B3 /* HealthManager.swift in Sources */,
 				89EF51A32C3938710086BBC0 /* AddProgramView.swift in Sources */,
+				89C3E0D52C44CB5E0011F9B3 /* LogView.swift in Sources */,
 				89EF51992C3915FE0086BBC0 /* WorkoutRowView.swift in Sources */,
 				8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */,
 				89EF51A52C3939A00086BBC0 /* AddWorkoutView.swift in Sources */,
 				89EF51952C38B0F00086BBC0 /* ProgramRowView.swift in Sources */,
+				89C3E0D92C44FBE60011F9B3 /* WorkoutWidgetView.swift in Sources */,
 				89EF519D2C391EE10086BBC0 /* ExerciseRowView.swift in Sources */,
 				89EF519B2C3917860086BBC0 /* ExercisesView.swift in Sources */,
 				8984BAF32C3687CC0097E71A /* ViewModifiers.swift in Sources */,
@@ -533,6 +555,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Vigour/Vigour.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Vigour/Preview Content\"";
@@ -540,11 +563,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vigour/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow access to enjoy all of the features of our application.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -563,6 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Vigour/Vigour.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Vigour/Preview Content\"";
@@ -570,11 +596,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vigour/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow access to enjoy all of the features of our application.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

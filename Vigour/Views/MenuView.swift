@@ -8,6 +8,8 @@ import SwiftUI
 struct MenuView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var cd = CoreDataProvider()
+    @StateObject var hm = HealthManager()
     
     var body: some View {
         ZStack {
@@ -15,12 +17,15 @@ struct MenuView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 CalendarView()
-                // DayView()
-                NavigationLink(destination: ProgramsView()) {
-                    Text("Programs")
-                        .withButtonFormatting()
-                }
+                    .environmentObject(cd)
+                    .environmentObject(hm)
+                DailyExerciseView()
+                    .environmentObject(cd)
+                    .environmentObject(hm)
                 Spacer()
+                NavigationLink(destination: LogView().environmentObject(cd)) {
+                    Image("LogButton")
+                }
             }
             .withEdgePadding()
             .navigationBarBackButtonHidden()
@@ -40,3 +45,7 @@ struct MenuView: View {
     }
     
 }
+
+/*#Preview {
+    MenuView().environmentObject(CoreDataProvider())
+}*/

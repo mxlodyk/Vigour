@@ -34,7 +34,7 @@ struct AddWorkoutView: View {
             }
         }
         
-    // MARK: Save Button Pressed
+        // MARK: Save Button Pressed
         func saveButtonPressed() {
             guard !newWorkoutName.isEmpty else { return }
             cd.addWorkout(program, newWorkoutName)

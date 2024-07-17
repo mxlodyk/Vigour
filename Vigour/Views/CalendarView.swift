@@ -7,7 +7,8 @@ import SwiftUI
 // MARK: Calendar View
 struct CalendarView: View {
     
-    @StateObject var cd: CoreDataProvider = CoreDataProvider()
+    @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var hm: HealthManager
     @Namespace var animation
     
     var body: some View {
@@ -41,7 +42,8 @@ struct CalendarView: View {
                         .onTapGesture {
                             // Update current day
                             withAnimation {
-                                cd.currentDay = day
+                                cd.selectedDay = day
+                                hm.selectedDay = day
                             }
                         }
                 }
