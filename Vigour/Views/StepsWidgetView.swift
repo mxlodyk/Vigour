@@ -4,21 +4,21 @@
 
 import SwiftUI
 
-struct Activity {
-    let id: Int
-    let title: String
-    let subtitle: String
-    let image: String
-    let quantity: String
-}
-
 struct StepsWidgetView: View {
     
-    @EnvironmentObject var hm: HealthManager 
+    @EnvironmentObject var hm: HealthManager
     
+    @State var showingStepGoalBottomSheet = false
+    @State var showingLogBottomSheet = false
+    @State var stepGoal: Int = 2000
+    
+    // MARK: Check if step goal has been reached
     var goalReached: Bool {
-        // Return true if step goal has been reached
-        return false
+        if Int(hm.dailySteps) >= stepGoal {
+            return true
+        } else {
+            return false
+        }
     }
     
     var body: some View {
@@ -29,25 +29,48 @@ struct StepsWidgetView: View {
                 Spacer()
                 Image(systemName: goalReached ? "checkmark.circle.fill" : "checkmark.circle")
             }
-            Text("Goal: 10,000")
-                .font(.system(size: 14))
+            HStack {
+                Text("Goal: \(stepGoal)")
+                    .font(.system(size: 14))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Button(action: {
+                    showingStepGoalBottomSheet.toggle()
+                }) {
+                    Text("Change")
+                        .font(.system(size: 14))
+                }
                 .padding(.bottom)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            VStack {
-                Text("\(Int(hm.dailySteps)) ")
-                    .withWidgetTextFormatting()
+                .sheet(isPresented: $showingStepGoalBottomSheet, content: {
+                    ChangeStepGoalView(stepGoal: $stepGoal)
+                        .presentationDetents([.fraction(0.2)])
+                })
+            }
+            ScrollView {
+                HStack {
+                    Text("\(Int(hm.dailySteps)) ")
+                        .withWidgetTextFormatting()
+                    Spacer()
+                    Image(systemName: "applewatch")
+                }
             }
             Spacer()
+            Button(action: {
+                showingLogBottomSheet.toggle()
+            }) {
+                Text("Log")
+                    .withLogButtonFormatting()
+            }
+            .sheet(isPresented: $showingLogBottomSheet, content: {
+                LogStepsView()
+            })
         }
         .padding(.leading)
         .padding(.trailing)
         .padding(.top)
+        .padding(.bottom)
+        .frame(width: 200, height: 200)
         .background(themeColour)
         .cornerRadius(25)
-        .frame(width: 200, height: 200)
-        .onAppear {
-            hm.fetchSelectedDaySteps()
-        }
     }
 }
 

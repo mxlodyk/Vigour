@@ -22,10 +22,8 @@ struct MenuView: View {
                 DailyExerciseView()
                     .environmentObject(cd)
                     .environmentObject(hm)
+                DailyNutritionView()
                 Spacer()
-                NavigationLink(destination: LogView().environmentObject(cd)) {
-                    Image("LogButton")
-                }
             }
             .withEdgePadding()
             .navigationBarBackButtonHidden()

@@ -161,3 +161,24 @@ extension View {
         modifier(WidgetHeaderModifier())
     }
 }
+
+// MARK: Log Button Modifier
+struct LogButtonModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("MontserratRoman-Bold", size: 14))
+            .foregroundColor(themeColour)
+            .frame(height: 30)
+            .frame(maxWidth: .infinity)
+            .background(Color(textColour))
+            .cornerRadius(50)
+            .shadow(radius: 10)
+    }
+}
+
+extension View {
+    
+    func withLogButtonFormatting() -> some View {
+        modifier(LogButtonModifier())
+    }
+}

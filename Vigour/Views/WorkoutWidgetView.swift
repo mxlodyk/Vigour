@@ -8,9 +8,12 @@ import SwiftUI
 struct WorkoutWidgetView: View {
     
     @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var hm: HealthManager
+    
+    @State var showingBottomSheet = false
     
     var isLogged: Bool {
-        return !cd.loggedWorkouts.isEmpty
+        return !cd.loggedWorkouts.isEmpty || !hm.dailyWorkouts.isEmpty
     }
     
     var body: some View {
@@ -24,7 +27,15 @@ struct WorkoutWidgetView: View {
                         Image(systemName: isLogged ? "checkmark.circle.fill" : "checkmark.circle")
                     }
                     .padding(.bottom)
-                    VStack {
+                    ScrollView {
+                        // New function is here
+                        if hm.dailyWorkouts.isEmpty {
+                            Text("No workouts logged on Apple Watch.")
+                        } else {
+                            ForEach(hm.dailyWorkouts, id: \.self) { workout in
+                                Text(workout.workoutName)
+                            }
+                        }
                         ForEach(cd.loggedWorkouts, id: \.self) { log in
                             Text(log.workout?.name ?? "Unnamed Workout")
                                 .withWidgetTextFormatting()
@@ -61,7 +72,19 @@ struct WorkoutWidgetView: View {
                 .padding(.leading)
                 .padding(.trailing)
             }
+            Button(action: {
+                showingBottomSheet.toggle()
+            }) {
+                Text("Log")
+                    .withLogButtonFormatting()
+            }
+            .sheet(isPresented: $showingBottomSheet, content: {
+                LogWorkoutView()
+            })
+            .padding(.leading)
+            .padding(.trailing)
         }
+        .padding(.bottom)
         .background(themeColour)
         .cornerRadius(25)
         .frame(width: 200, height: 200)

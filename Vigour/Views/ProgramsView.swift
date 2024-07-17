@@ -49,7 +49,7 @@ struct ProgramsView: View {
                 })
             .sheet(isPresented: $showingBottomSheet, content: {
                 AddProgramView(cd: cd)
-                    .presentationDetents([.fraction(0.2 )])
+                    .presentationDetents([.fraction(0.2)])
             })
         }
     }

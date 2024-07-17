@@ -30,11 +30,13 @@ struct DailyExerciseView: View {
         .onAppear {
             cd.getLoggedWorkoutsForSelectedDay()
             hm.fetchSelectedDaySteps()
+            hm.fetchSelectedDayWorkouts()
         }
         // Update view if selected day changes
         .onChange(of: cd.selectedDay) {
             cd.getLoggedWorkoutsForSelectedDay()
             hm.fetchSelectedDaySteps()
+            hm.fetchSelectedDayWorkouts()
         }
     }
     

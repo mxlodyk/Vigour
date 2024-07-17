@@ -20,11 +20,16 @@
 		8984BAFB2C36888C0097E71A /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAF92C36888C0097E71A /* Montserrat.ttf */; };
 		8984BAFC2C36888C0097E71A /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAF92C36888C0097E71A /* Montserrat.ttf */; };
 		89C3E0D32C44AC820011F9B3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D22C44AC820011F9B3 /* CalendarView.swift */; };
-		89C3E0D52C44CB5E0011F9B3 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D42C44CB5E0011F9B3 /* LogView.swift */; };
+		89C3E0D52C44CB5E0011F9B3 /* LogWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D42C44CB5E0011F9B3 /* LogWorkoutView.swift */; };
 		89C3E0D72C44D3D50011F9B3 /* DailyExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */; };
 		89C3E0D92C44FBE60011F9B3 /* WorkoutWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D82C44FBE60011F9B3 /* WorkoutWidgetView.swift */; };
 		89C3E0DB2C45D26B0011F9B3 /* StepsWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0DA2C45D26B0011F9B3 /* StepsWidgetView.swift */; };
 		89C3E0DD2C461B890011F9B3 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0DC2C461B890011F9B3 /* HealthManager.swift */; };
+		89CD9ADB2C4798BE0032E992 /* DailyNutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CD9ADA2C4798BE0032E992 /* DailyNutritionView.swift */; };
+		89CD9ADD2C47992C0032E992 /* CaloriesWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CD9ADC2C47992C0032E992 /* CaloriesWidgetView.swift */; };
+		89CD9ADF2C4799400032E992 /* MacrosWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CD9ADE2C4799400032E992 /* MacrosWidgetView.swift */; };
+		89CD9AE12C479DAC0032E992 /* LogStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CD9AE02C479DAC0032E992 /* LogStepsView.swift */; };
+		89DEA9222C478C4C0065CDED /* ChangeStepGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEA9212C478C4C0065CDED /* ChangeStepGoalView.swift */; };
 		89E3F4B22C3D2C19003C15B9 /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3F4B12C3D2C19003C15B9 /* CoreDataProvider.swift */; };
 		89EF51892C37FFFE0086BBC0 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51882C37FFFE0086BBC0 /* MenuView.swift */; };
 		89EF51932C38097A0086BBC0 /* ProgramsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51922C38097A0086BBC0 /* ProgramsView.swift */; };
@@ -75,12 +80,17 @@
 		8984BAF92C36888C0097E71A /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		8984BAFD2C36889C0097E71A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		89C3E0D22C44AC820011F9B3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		89C3E0D42C44CB5E0011F9B3 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		89C3E0D42C44CB5E0011F9B3 /* LogWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogWorkoutView.swift; sourceTree = "<group>"; };
 		89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyExerciseView.swift; sourceTree = "<group>"; };
 		89C3E0D82C44FBE60011F9B3 /* WorkoutWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutWidgetView.swift; sourceTree = "<group>"; };
 		89C3E0DA2C45D26B0011F9B3 /* StepsWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsWidgetView.swift; sourceTree = "<group>"; };
 		89C3E0DC2C461B890011F9B3 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		89C3E0DE2C461D910011F9B3 /* Vigour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vigour.entitlements; sourceTree = "<group>"; };
+		89CD9ADA2C4798BE0032E992 /* DailyNutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNutritionView.swift; sourceTree = "<group>"; };
+		89CD9ADC2C47992C0032E992 /* CaloriesWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesWidgetView.swift; sourceTree = "<group>"; };
+		89CD9ADE2C4799400032E992 /* MacrosWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacrosWidgetView.swift; sourceTree = "<group>"; };
+		89CD9AE02C479DAC0032E992 /* LogStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogStepsView.swift; sourceTree = "<group>"; };
+		89DEA9212C478C4C0065CDED /* ChangeStepGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStepGoalView.swift; sourceTree = "<group>"; };
 		89E3F4B12C3D2C19003C15B9 /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 		89EF51882C37FFFE0086BBC0 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		89EF51922C38097A0086BBC0 /* ProgramsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsView.swift; sourceTree = "<group>"; };
@@ -189,11 +199,16 @@
 			children = (
 				8984BAC62C36871C0097E71A /* HomeView.swift */,
 				89EF51882C37FFFE0086BBC0 /* MenuView.swift */,
+				89C3E0D22C44AC820011F9B3 /* CalendarView.swift */,
 				89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */,
 				89C3E0D82C44FBE60011F9B3 /* WorkoutWidgetView.swift */,
 				89C3E0DA2C45D26B0011F9B3 /* StepsWidgetView.swift */,
-				89C3E0D42C44CB5E0011F9B3 /* LogView.swift */,
-				89C3E0D22C44AC820011F9B3 /* CalendarView.swift */,
+				89DEA9212C478C4C0065CDED /* ChangeStepGoalView.swift */,
+				89C3E0D42C44CB5E0011F9B3 /* LogWorkoutView.swift */,
+				89CD9AE02C479DAC0032E992 /* LogStepsView.swift */,
+				89CD9ADA2C4798BE0032E992 /* DailyNutritionView.swift */,
+				89CD9ADC2C47992C0032E992 /* CaloriesWidgetView.swift */,
+				89CD9ADE2C4799400032E992 /* MacrosWidgetView.swift */,
 				89EF51922C38097A0086BBC0 /* ProgramsView.swift */,
 				89EF51962C38B12A0086BBC0 /* WorkoutsView.swift */,
 				89EF519A2C3917860086BBC0 /* ExercisesView.swift */,
@@ -383,14 +398,19 @@
 				89EF51A72C3939AA0086BBC0 /* AddExerciseView.swift in Sources */,
 				8984BAC72C36871C0097E71A /* HomeView.swift in Sources */,
 				89C3E0D32C44AC820011F9B3 /* CalendarView.swift in Sources */,
+				89CD9AE12C479DAC0032E992 /* LogStepsView.swift in Sources */,
 				89E3F4B22C3D2C19003C15B9 /* CoreDataProvider.swift in Sources */,
 				89C3E0DD2C461B890011F9B3 /* HealthManager.swift in Sources */,
 				89EF51A32C3938710086BBC0 /* AddProgramView.swift in Sources */,
-				89C3E0D52C44CB5E0011F9B3 /* LogView.swift in Sources */,
+				89CD9ADF2C4799400032E992 /* MacrosWidgetView.swift in Sources */,
+				89CD9ADD2C47992C0032E992 /* CaloriesWidgetView.swift in Sources */,
+				89C3E0D52C44CB5E0011F9B3 /* LogWorkoutView.swift in Sources */,
 				89EF51992C3915FE0086BBC0 /* WorkoutRowView.swift in Sources */,
 				8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */,
+				89DEA9222C478C4C0065CDED /* ChangeStepGoalView.swift in Sources */,
 				89EF51A52C3939A00086BBC0 /* AddWorkoutView.swift in Sources */,
 				89EF51952C38B0F00086BBC0 /* ProgramRowView.swift in Sources */,
+				89CD9ADB2C4798BE0032E992 /* DailyNutritionView.swift in Sources */,
 				89C3E0D92C44FBE60011F9B3 /* WorkoutWidgetView.swift in Sources */,
 				89EF519D2C391EE10086BBC0 /* ExerciseRowView.swift in Sources */,
 				89EF519B2C3917860086BBC0 /* ExercisesView.swift in Sources */,

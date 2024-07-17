@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-struct LogView: View {
+struct LogWorkoutView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -32,17 +32,18 @@ struct LogView: View {
                     cd.logWorkout(selectedWorkout!)
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
-                    Text("Log Workout")
+                    Text("Start Workout")
                         .withButtonFormatting()
                 }
             }
             .withEdgePadding()
             .padding(.top, 30)
         }
+        .navigationBarBackButtonHidden()
     }
 
 }
 
 /*#Preview {
-    LogView()
+    LogWorkoutView()
 }*/

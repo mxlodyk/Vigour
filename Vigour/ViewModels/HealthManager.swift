@@ -5,6 +5,16 @@
 import Foundation
 import HealthKit
 
+extension HKWorkout {
+    var workoutName: String {
+        switch self.workoutActivityType {
+        case .functionalStrengthTraining: return "Functional Strength Training"
+        case .traditionalStrengthTraining: return "Traditional Strength Training"
+        default: return "Other"
+        }
+    }
+}
+
 // MARK: Health Manager
 class HealthManager: ObservableObject {
     
@@ -14,11 +24,13 @@ class HealthManager: ObservableObject {
     @Published var selectedDay: Date = Date()
     
     @Published var dailySteps: Double = 0.0
+    @Published var dailyWorkouts: [HKWorkout] = []
     
     init() {
-        
+
         let steps = HKQuantityType(.stepCount)
-        let healthTypes: Set = [steps]
+        let workouts = HKObjectType.workoutType()
+        let healthTypes: Set = [steps, workouts]
         
         // MARK: Request Authorisation to Read Health Data
         Task {
@@ -58,6 +70,27 @@ class HealthManager: ObservableObject {
                         DispatchQueue.main.async {
                             self.dailySteps = stepCount
                         }
+        }
+        healthStore.execute(query)
+    }
+    
+    // MARK: Fetch Workouts
+    func fetchSelectedDayWorkouts() {
+        
+        let calendar = Calendar.current
+        let startOfDay = calendar.startOfDay(for: selectedDay)
+        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: endOfDay)
+        
+        let query = HKSampleQuery(sampleType: HKObjectType.workoutType(), predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (_, samples, error) in
+            if let error = error {
+                print("Error fetching workouts: \(error.localizedDescription)")
+                return
+            }
+            DispatchQueue.main.async {
+                self.dailyWorkouts = samples as? [HKWorkout] ?? []
+            }
         }
         healthStore.execute(query)
     }
