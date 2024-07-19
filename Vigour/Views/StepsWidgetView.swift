@@ -64,13 +64,7 @@ struct StepsWidgetView: View {
                 LogStepsView()
             })
         }
-        .padding(.leading)
-        .padding(.trailing)
-        .padding(.top)
-        .padding(.bottom)
-        .frame(width: 200, height: 200)
-        .background(themeColour)
-        .cornerRadius(25)
+        .withWidgetViewFormatting()
     }
 }
 

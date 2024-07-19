@@ -24,7 +24,7 @@ class HealthManager: ObservableObject {
     @Published var selectedDay: Date = Date()
     
     @Published var dailySteps: Double = 0.0
-    @Published var dailyWorkouts: [HKWorkout] = []
+    @Published var syncedWorkouts: [HKWorkout] = []
     
     init() {
 
@@ -89,7 +89,7 @@ class HealthManager: ObservableObject {
                 return
             }
             DispatchQueue.main.async {
-                self.dailyWorkouts = samples as? [HKWorkout] ?? []
+                self.syncedWorkouts = samples as? [HKWorkout] ?? []
             }
         }
         healthStore.execute(query)

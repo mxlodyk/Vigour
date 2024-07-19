@@ -9,6 +9,7 @@ let themeColour = Color("Theme")
 let textColour = Color("Text")
 let textFieldColour = Color("TextField")
 let textFieldTextColour = Color("TextFieldText")
+let widgetLogRowColour = Color("WidgetLogRowColour")
 
 // MARK: Title Modifier
 struct TitleModifier: ViewModifier {
@@ -93,6 +94,9 @@ struct ButtonModifier: ViewModifier {
             .background(Color(themeColour))
             .cornerRadius(30)
             .shadow(radius: 10)
+            .cornerRadius(30)
+            .shadow(color: themeColour, radius: 5)
+            .padding(.top, 5)
     }
 }
 
@@ -131,11 +135,37 @@ extension Image {
     }
 }
 
+// MARK: Widget View Modifier
+struct WidgetViewModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(.leading)
+            .padding(.trailing)
+            .padding(.top)
+            .padding(.bottom)
+            .background(themeColour)
+            .cornerRadius(25)
+            .frame(width: 350, height: 200)
+    }
+}
+
+extension View {
+    func withWidgetViewFormatting() -> some View {
+        modifier(WidgetViewModifier())
+    }
+}
+
 // MARK: Widget Text Modifier
 struct WidgetTextModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
+            .padding(.leading)
+            .font(.custom("MontserratRoman-Regular", size: 14))
+            .foregroundColor(textColour)
+            .frame(height: 30)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color(widgetLogRowColour))
+            .cornerRadius(5)
     }
 }
 
@@ -156,7 +186,6 @@ struct WidgetHeaderModifier: ViewModifier {
 }
 
 extension View {
-    
     func withWidgetHeaderFormatting() -> some View {
         modifier(WidgetHeaderModifier())
     }
@@ -172,12 +201,11 @@ struct LogButtonModifier: ViewModifier {
             .frame(maxWidth: .infinity)
             .background(Color(textColour))
             .cornerRadius(50)
-            .shadow(radius: 10)
+            .shadow(color: textColour, radius: 5)
     }
 }
 
 extension View {
-    
     func withLogButtonFormatting() -> some View {
         modifier(LogButtonModifier())
     }

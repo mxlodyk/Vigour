@@ -12,14 +12,14 @@ struct WorkoutWidgetView: View {
     
     @State var showingBottomSheet = false
     
+    // MARK: Check if user has any workouts logged in either loggedWorkouts or syncedWorkouts
     var isLogged: Bool {
-        return !cd.loggedWorkouts.isEmpty || !hm.dailyWorkouts.isEmpty
+        return !cd.loggedWorkouts.isEmpty || !hm.syncedWorkouts.isEmpty
     }
     
     var body: some View {
         VStack {
-            if !cd.loggedWorkouts.isEmpty {
-                VStack {
+            VStack {
                     HStack {
                         Text("Workouts")
                             .withWidgetHeaderFormatting()
@@ -28,50 +28,43 @@ struct WorkoutWidgetView: View {
                     }
                     .padding(.bottom)
                     ScrollView {
-                        // New function is here
-                        if hm.dailyWorkouts.isEmpty {
-                            Text("No workouts logged on Apple Watch.")
-                        } else {
-                            ForEach(hm.dailyWorkouts, id: \.self) { workout in
-                                Text(workout.workoutName)
+                        HStack {
+                            if hm.syncedWorkouts.isEmpty {
+                                Text("No workouts logged on Apple Watch.")
+                                    .withWidgetTextFormatting()
+                                    .contextMenu {
+                                        Text("No workouts logged on Apple Watch.")
+                                    }
+                            } else {
+                                ForEach(hm.syncedWorkouts, id: \.self) { workout in
+                                    Text(workout.workoutName)
+                                        .withWidgetTextFormatting()
+                                        .contextMenu {
+                                            Text("\(workout.workoutName)")
+                                        }
+                                }
                             }
+                            Spacer()
+                            Image(systemName: "applewatch")
                         }
-                        ForEach(cd.loggedWorkouts, id: \.self) { log in
-                            Text(log.workout?.name ?? "Unnamed Workout")
-                                .withWidgetTextFormatting()
-                                // Delete Button
-                                .contextMenu {
-                                    Button(action: {
-                                        cd.deleteLoggedWorkout(log)
-                                    }) {
-                                        Text("Delete")
+                                ForEach(cd.loggedWorkouts, id: \.self) { workout in
+                                    HStack {
+                                        Text(workout.workout?.name ?? "Unnamed Workout")
+                                            .withWidgetTextFormatting()
+                                            .contextMenu {
+                                                Button(action: {
+                                                    cd.deleteLoggedWorkout(workout)
+                                                }) {
+                                                    Text("Delete")
+                                                }
+                                            }
+                                            .ignoresSafeArea()
+                                        Image(systemName: "iphone")
                                     }
                                 }
-                        }
                     }
                     Spacer()
                 }
-                .padding(.top)
-                .padding(.leading)
-                .padding(.trailing)
-            } else {
-                VStack {
-                    HStack {
-                        Text("Workouts")
-                            .foregroundColor(textColour)
-                        Spacer()
-                        Image(systemName: isLogged ? "checkmark.circle.fill" : "checkmark.circle")
-                    }
-                    VStack {
-                        Text("No workout logged.")
-                            .withWidgetTextFormatting()
-                    }
-                    Spacer()
-                }
-                .padding(.top)
-                .padding(.leading)
-                .padding(.trailing)
-            }
             Button(action: {
                 showingBottomSheet.toggle()
             }) {
@@ -81,17 +74,12 @@ struct WorkoutWidgetView: View {
             .sheet(isPresented: $showingBottomSheet, content: {
                 LogWorkoutView()
             })
-            .padding(.leading)
-            .padding(.trailing)
+        } // End of Line 20 VStack.
+        .withWidgetViewFormatting()
+        .onChange(of: cd.loggedWorkouts) {
+            cd.getLoggedWorkoutsForSelectedDay()
         }
-        .padding(.bottom)
-        .background(themeColour)
-        .cornerRadius(25)
-        .frame(width: 200, height: 200)
-    }
+        
+    } // End of View.
 
-}
-
-/*#Preview {
-    WorkoutWidgetView().environmentObject(CoreDataProvider())
-}*/
+} // End of WorkoutWidgetView.
