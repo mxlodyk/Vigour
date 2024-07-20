@@ -9,7 +9,7 @@ struct ExerciseView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @StateObject var cd = CoreDataProvider()
+    @ObservedObject var cd = CoreDataProvider()
     
     @Binding var exercise: ExerciseEntity
     
@@ -23,24 +23,25 @@ struct ExerciseView: View {
                     .withTextFormatting()
                     .foregroundColor(themeColour)
                 Spacer()
-                if let sets = exercise.sets as? NSOrderedSet,
-                   let setsArray = sets.array as? [SetEntity] {
-                    ForEach(setsArray) { set in
-                        SetView(set: set)
-                            .contextMenu {
-                                Button(action: {
-                                    cd.deleteSet(set, exercise)
-                                }) {
-                                    Text("Delete")
+                ScrollView {
+                    if let sets = exercise.sets as? NSOrderedSet,
+                       let setsArray = sets.array as? [SetEntity] {
+                        ForEach(setsArray) { set in
+                            SetView(exercise: exercise, set: set).environmentObject(cd)
+                                .contextMenu {
+                                    Button(action: {
+                                        cd.deleteSet(set, exercise)
+                                    }) {
+                                        Text("Delete")
+                                    }
                                 }
-                            }
+                        }
                     }
                 }
                 NavigationLink(destination: AddSetView(exercise: exercise)) {
                     Text("+ Add Set")
                         .withTextFormatting()
                 }
-                Spacer()
             }
             .navigationBarBackButtonHidden()
             .navigationBarItems(leading:

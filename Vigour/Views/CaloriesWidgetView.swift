@@ -15,7 +15,3 @@ struct CaloriesWidgetView: View {
         .cornerRadius(25)
     }
 }
-
-/*#Preview {
-    CaloriesWidgetView()
-}*/

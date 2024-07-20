@@ -15,18 +15,30 @@ struct StartWorkoutView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text(selectedWorkout.name ?? "")
-                    .withTitleFormatting()
+                HStack {
+                    Text(selectedWorkout.name ?? "")
+                        .withTitleFormatting()
+                    Image(systemName: "shuffle")
+                }
                 Spacer()
                 // Convert NS Ordered Set to Array
-                if let exercisesSet = selectedWorkout.exercises,
-                   let exercisesArray = exercisesSet.array as? [ExerciseEntity] {
+                ScrollView {
+                    if let exercisesSet = selectedWorkout.exercises,
+                       let exercisesArray = exercisesSet.array as? [ExerciseEntity] {
                         ForEach(exercisesArray) { exercise in
                             Text(exercise.name ?? "")
+                                .withTextFormatting()
+                            if let setsSet = exercise.sets,
+                               let setsArray = setsSet.array as? [SetEntity] {
+                                ForEach(setsArray) { set in
+                                    SetView(exercise: exercise, set: set)
+                                }
+                            }
                         }
                     } // End of exercise loop.
+                }
                 Spacer()
-                NavigationLink(destination: InteractiveWorkoutView()) {
+                NavigationLink(destination: StartTimerView()) {
                     Text("Start Workout")
                         .withButtonFormatting()
                 }

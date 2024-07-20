@@ -238,7 +238,7 @@ struct SetRowModifier: ViewModifier {
             .frame(height: 70)
             .frame(maxWidth: .infinity)
             .background(Color(themeColour))
-            .cornerRadius(30)
+            .cornerRadius(5)
             .shadow(radius: 10)
             .cornerRadius(30)
             .shadow(color: themeColour, radius: 5)
@@ -252,5 +252,21 @@ extension View {
     
     func withSetRowFormatting() -> some View {
         modifier(SetRowModifier())
+    }
+}
+
+// MARK: Timer Text Modifier
+struct TimerTextModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(themeColour)
+            .font(.custom("MontserratRoman-Bold", size: 65))
+    }
+}
+
+extension View {
+    
+    func withTimerTextFormatting() -> some View {
+        modifier(TimerTextModifier())
     }
 }

@@ -1,11 +1,17 @@
 //  InteractiveWorkoutView.swift
 //  Vigour
-//  Created by Melody Flavel on 19/7/2024.
+//  Created by Melody Flavel on 20/7/2024.
 
 import SwiftUI
 
 struct InteractiveWorkoutView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        ZStack {
+            Color.background
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("Interactive Workout View.")
+            }
+        } // End of background ZStack.
+    } // End of body view.
+} // End of InteractiveWorkoutView view.
