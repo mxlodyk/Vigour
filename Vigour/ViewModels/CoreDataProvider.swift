@@ -17,7 +17,11 @@ class CoreDataManager {
     // MARK: Initialise
     init() {
         // The attribute types of CoreDataStringContainer are strings to support TextField modifiers in AddExerciseView
-        container = NSPersistentContainer(name: "CoreDataStringContainer")
+        container = NSPersistentContainer(name: "CoreDataModel")
+        /*let description = container.persistentStoreDescriptions.first
+        description?.shouldMigrateStoreAutomatically = true
+        description?.shouldInferMappingModelAutomatically = true*/
+        
         container.loadPersistentStores { (description, error) in
             if let error = error {
                 print("Error loading Core Data. \(error)")
@@ -48,6 +52,7 @@ class CoreDataProvider: ObservableObject {
     @Published var programs: [ProgramEntity] = []
     @Published var workouts: [WorkoutEntity] = []
     @Published var exercises: [ExerciseEntity] = []
+    @Published var sets: [SetEntity] = []
     @Published var loggedWorkouts: [WorkoutLogEntity] = []
     
     // MARK: Initialise
@@ -55,6 +60,7 @@ class CoreDataProvider: ObservableObject {
         getPrograms()
         getWorkouts()
         getExercises()
+        getSets()
         fetchCurrentWeek()
         getLoggedWorkoutsForSelectedDay()
     }
@@ -184,16 +190,39 @@ class CoreDataProvider: ObservableObject {
     }
     
     // MARK: Add Exercise
-    func addExercise(_ program: ProgramEntity, _ workout: WorkoutEntity, _ newExerciseName: String, _ newExerciseSets: String, _ newExerciseRepetitions: String, _ newExerciseWeight: String, _ newExerciseRest: String, _ newExerciseRestUnit: String) {
+    func addExercise(_ program: ProgramEntity, _ workout: WorkoutEntity, _ newExerciseName: String) {
         let newExercise = ExerciseEntity(context: manager.context)
         newExercise.id = UUID()
         newExercise.name = newExerciseName
-        newExercise.sets = newExerciseSets
-        newExercise.repetitions = newExerciseRepetitions
-        newExercise.weight = newExerciseWeight
-        newExercise.rest = newExerciseRest
-        newExercise.restUnit = newExerciseRestUnit
         newExercise.addToWorkouts(workout)
+        save()
+    }
+    
+    // MARK: Get Sets
+    func getSets() {
+        let request = NSFetchRequest<SetEntity>(entityName: "SetEntity")
+        do {
+            sets = try manager.context.fetch(request)
+        } catch let error {
+            print("Error fetching Core Data. \(error.localizedDescription)")
+        }
+    }
+    
+    // MARK: Add Set
+    func addSet(_ exercise: ExerciseEntity, _ weight: String, _ repetitions: String, _ tempo: String, _ restTime: String, _ restUnit: String) {
+        let newSet = SetEntity(context: manager.context)
+        newSet.id = UUID()
+        newSet.weight = weight
+        newSet.repetitions = repetitions
+        newSet.tempo = tempo
+        newSet.restTime = restTime
+        newSet.restUnit = restUnit
+        newSet.addToExercise(exercise)
+        save()
+    }
+    
+    func deleteSet(_ set: SetEntity, _ exercise: ExerciseEntity) {
+        set.removeFromExercise(exercise)
         save()
     }
     
@@ -209,6 +238,7 @@ class CoreDataProvider: ObservableObject {
         getPrograms()
         getWorkouts()
         getExercises()
+        getSets()
         getLoggedWorkoutsForSelectedDay()
     }
     

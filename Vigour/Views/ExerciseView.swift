@@ -9,6 +9,8 @@ struct ExerciseView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @StateObject var cd = CoreDataProvider()
+    
     @Binding var exercise: ExerciseEntity
     
     var body: some View {
@@ -17,9 +19,28 @@ struct ExerciseView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("Exercise: \(exercise.name ?? "")\nSets: \(exercise.sets ?? "")\nRepetitions: \(exercise.repetitions ?? "")\nWeight: \(exercise.weight ?? "")\nRest: \(exercise.rest ?? "") \(exercise.restUnit ?? "Min")")
+                Text("\(exercise.name ?? "" )")
                     .withTextFormatting()
                     .foregroundColor(themeColour)
+                Spacer()
+                if let sets = exercise.sets as? NSOrderedSet,
+                   let setsArray = sets.array as? [SetEntity] {
+                    ForEach(setsArray) { set in
+                        SetView(set: set)
+                            .contextMenu {
+                                Button(action: {
+                                    cd.deleteSet(set, exercise)
+                                }) {
+                                    Text("Delete")
+                                }
+                            }
+                    }
+                }
+                NavigationLink(destination: AddSetView(exercise: exercise)) {
+                    Text("+ Add Set")
+                        .withTextFormatting()
+                }
+                Spacer()
             }
             .navigationBarBackButtonHidden()
             .navigationBarItems(leading:

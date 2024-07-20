@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22158.8" systemVersion="23A5276g" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="ExerciseEntity" representedClassName="ExerciseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="programs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProgramEntity" inverseName="exercises" inverseEntity="ProgramEntity"/>
+        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SetEntity" inverseName="exercises" inverseEntity="SetEntity"/>
+        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutEntity" inverseName="exercises" inverseEntity="WorkoutEntity"/>
+    </entity>
+    <entity name="ProgramEntity" representedClassName="ProgramEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseEntity" inverseName="programs" inverseEntity="ExerciseEntity"/>
+        <relationship name="sets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SetEntity" inverseName="programs" inverseEntity="SetEntity"/>
+        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WorkoutEntity" inverseName="programs" inverseEntity="WorkoutEntity"/>
+    </entity>
+    <entity name="SetEntity" representedClassName="SetEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="repetitions" optional="YES" attributeType="String"/>
+        <attribute name="restTime" optional="YES" attributeType="String"/>
+        <attribute name="restUnit" optional="YES" attributeType="String"/>
+        <attribute name="weight" optional="YES" attributeType="String"/>
+        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseEntity" inverseName="sets" inverseEntity="ExerciseEntity"/>
+        <relationship name="programs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProgramEntity" inverseName="sets" inverseEntity="ProgramEntity"/>
+        <relationship name="workouts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutEntity" inverseName="sets" inverseEntity="WorkoutEntity"/>
+    </entity>
+    <entity name="WorkoutEntity" representedClassName="WorkoutEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ExerciseEntity" inverseName="workouts" inverseEntity="ExerciseEntity"/>
+        <relationship name="programs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProgramEntity" inverseName="workouts" inverseEntity="ProgramEntity"/>
+        <relationship name="sets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SetEntity" inverseName="workouts" inverseEntity="SetEntity"/>
+        <relationship name="workoutLog" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WorkoutLogEntity" inverseName="workout" inverseEntity="WorkoutLogEntity"/>
+    </entity>
+    <entity name="WorkoutLogEntity" representedClassName="WorkoutLogEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutEntity" inverseName="workoutLog" inverseEntity="WorkoutEntity"/>
+    </entity>
+</model>

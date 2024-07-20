@@ -14,11 +14,6 @@ struct AddExerciseView: View {
     @Binding var workout: WorkoutEntity
     
     @State var newExerciseName: String = ""
-    @State var newExerciseSets: String = ""
-    @State var newExerciseWeight: String = ""
-    @State var newExerciseRepetitions: String = ""
-    @State var newExerciseRest: String = ""
-    @State var newExerciseRestUnit: String = "Min" // Default value
     
     var body: some View {
         
@@ -28,19 +23,6 @@ struct AddExerciseView: View {
             VStack {
                 TextField("", text: $newExerciseName, prompt: Text("Exercise Name").foregroundColor(textFieldTextColour))
                     .withTextFieldFormatting()
-                HStack {
-                    TextField("", text: $newExerciseSets, prompt: Text("Sets").foregroundColor(textFieldTextColour))
-                    .withDetailFieldFormatting()
-                    TextField("", text: $newExerciseRepetitions, prompt: Text("Repetitions").foregroundColor(textFieldTextColour))
-                    .withDetailFieldFormatting()
-                }
-                TextField("", text: $newExerciseWeight, prompt: Text("Weight").foregroundColor(textFieldTextColour))
-                .withDetailFieldFormatting()
-                HStack {
-                    TextField("", text: $newExerciseRest, prompt: Text("Rest").foregroundColor(textFieldTextColour))
-                    .withDetailFieldFormatting()
-                    RestUnitView(newExerciseRestUnit: $newExerciseRestUnit)
-                }
                 Button(action: {
                     saveButtonPressed()
                     self.presentationMode.wrappedValue.dismiss()
@@ -56,6 +38,8 @@ struct AddExerciseView: View {
     
     // MARK: Save Button Pressed
     func saveButtonPressed() {
-        cd.addExercise(program, workout, newExerciseName, newExerciseSets, newExerciseRepetitions, newExerciseWeight, newExerciseRest, newExerciseRestUnit)
+        guard !newExerciseName.isEmpty else { return }
+        cd.addExercise(program, workout, newExerciseName)
+        newExerciseName = ""
     }
 }

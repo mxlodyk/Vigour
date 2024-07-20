@@ -50,13 +50,5 @@ struct CalendarView: View {
             }
             .padding(.horizontal)
         }
-        DayView()
-    }
-    
-    // MARK: Day View
-    func DayView() -> some View {
-        LazyVStack() {
-            // Incomplete.
-        }
     }
 }

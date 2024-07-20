@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890C0E312C4B4F500010BBEA /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E2F2C4B4F500010BBEA /* CoreDataModel.xcdatamodeld */; };
+		890C0E332C4B56500010BBEA /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E322C4B56500010BBEA /* SetView.swift */; };
 		8961188A2C4A044300E0F89E /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896118892C4A044300E0F89E /* StartWorkoutView.swift */; };
 		8961188C2C4A2B7500E0F89E /* InteractiveWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961188B2C4A2B7500E0F89E /* InteractiveWorkoutView.swift */; };
+		8961188E2C4A31ED00E0F89E /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961188D2C4A31ED00E0F89E /* AddSetView.swift */; };
 		8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC42C36871C0097E71A /* VigourApp.swift */; };
 		8984BAC72C36871C0097E71A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC62C36871C0097E71A /* HomeView.swift */; };
 		8984BAC92C36871D0097E71A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAC82C36871D0097E71A /* Assets.xcassets */; };
@@ -46,7 +49,6 @@
 		89EF51A52C3939A00086BBC0 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A42C3939A00086BBC0 /* AddWorkoutView.swift */; };
 		89EF51A72C3939AA0086BBC0 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A62C3939AA0086BBC0 /* AddExerciseView.swift */; };
 		89EF51AF2C3A03990086BBC0 /* RestUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51AE2C3A03990086BBC0 /* RestUnitView.swift */; };
-		89F1B4CC2C3DD969002F559B /* CoreDataStringContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89F1B4CA2C3DD969002F559B /* CoreDataStringContainer.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +69,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		890C0E302C4B4F500010BBEA /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		890C0E322C4B56500010BBEA /* SetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetView.swift; sourceTree = "<group>"; };
 		896118892C4A044300E0F89E /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
 		8961188B2C4A2B7500E0F89E /* InteractiveWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveWorkoutView.swift; sourceTree = "<group>"; };
+		8961188D2C4A31ED00E0F89E /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
 		8984BAC12C36871C0097E71A /* Vigour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vigour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8984BAC42C36871C0097E71A /* VigourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourApp.swift; sourceTree = "<group>"; };
 		8984BAC62C36871C0097E71A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -109,7 +114,6 @@
 		89EF51A42C3939A00086BBC0 /* AddWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutView.swift; sourceTree = "<group>"; };
 		89EF51A62C3939AA0086BBC0 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
 		89EF51AE2C3A03990086BBC0 /* RestUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestUnitView.swift; sourceTree = "<group>"; };
-		89F1B4CB2C3DD969002F559B /* CoreDataStringContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStringContainer.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,9 +223,11 @@
 				89EF51962C38B12A0086BBC0 /* WorkoutsView.swift */,
 				89EF519A2C3917860086BBC0 /* ExercisesView.swift */,
 				89EF519E2C391FEF0086BBC0 /* ExerciseView.swift */,
+				890C0E322C4B56500010BBEA /* SetView.swift */,
 				89EF51A22C3938710086BBC0 /* AddProgramView.swift */,
 				89EF51A42C3939A00086BBC0 /* AddWorkoutView.swift */,
 				89EF51A62C3939AA0086BBC0 /* AddExerciseView.swift */,
+				8961188D2C4A31ED00E0F89E /* AddSetView.swift */,
 				89EF51AE2C3A03990086BBC0 /* RestUnitView.swift */,
 				89EF51942C38B0F00086BBC0 /* ProgramRowView.swift */,
 				89EF51982C3915FE0086BBC0 /* WorkoutRowView.swift */,
@@ -236,7 +242,7 @@
 		8984BAF52C3687F00097E71A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				89F1B4CA2C3DD969002F559B /* CoreDataStringContainer.xcdatamodeld */,
+				890C0E2F2C4B4F500010BBEA /* CoreDataModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -392,8 +398,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				89EF51AF2C3A03990086BBC0 /* RestUnitView.swift in Sources */,
-				89F1B4CC2C3DD969002F559B /* CoreDataStringContainer.xcdatamodeld in Sources */,
 				89EF519F2C391FEF0086BBC0 /* ExerciseView.swift in Sources */,
+				890C0E312C4B4F500010BBEA /* CoreDataModel.xcdatamodeld in Sources */,
+				890C0E332C4B56500010BBEA /* SetView.swift in Sources */,
 				89EF51892C37FFFE0086BBC0 /* MenuView.swift in Sources */,
 				89EF51972C38B12A0086BBC0 /* WorkoutsView.swift in Sources */,
 				8961188A2C4A044300E0F89E /* StartWorkoutView.swift in Sources */,
@@ -408,6 +415,7 @@
 				89C3E0D32C44AC820011F9B3 /* CalendarView.swift in Sources */,
 				89CD9AE12C479DAC0032E992 /* LogStepsView.swift in Sources */,
 				89E3F4B22C3D2C19003C15B9 /* CoreDataProvider.swift in Sources */,
+				8961188E2C4A31ED00E0F89E /* AddSetView.swift in Sources */,
 				89C3E0DD2C461B890011F9B3 /* HealthManager.swift in Sources */,
 				89EF51A32C3938710086BBC0 /* AddProgramView.swift in Sources */,
 				89CD9ADF2C4799400032E992 /* MacrosWidgetView.swift in Sources */,
@@ -762,13 +770,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		89F1B4CA2C3DD969002F559B /* CoreDataStringContainer.xcdatamodeld */ = {
+		890C0E2F2C4B4F500010BBEA /* CoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				89F1B4CB2C3DD969002F559B /* CoreDataStringContainer.xcdatamodel */,
+				890C0E302C4B4F500010BBEA /* CoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 89F1B4CB2C3DD969002F559B /* CoreDataStringContainer.xcdatamodel */;
-			path = CoreDataStringContainer.xcdatamodeld;
+			currentVersion = 890C0E302C4B4F500010BBEA /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

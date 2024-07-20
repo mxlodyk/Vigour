@@ -12,7 +12,7 @@ struct RestUnitView: View {
     @State var index: Int = 0
     @State private var isClicked = false
     
-    let options: [String] = ["Min", "Sec"]
+    let options: [String] = ["Minute(s)", "Seconds"]
     
     var body: some View {
         VStack {
@@ -20,6 +20,8 @@ struct RestUnitView: View {
                     Text(options[index])
                     Spacer()
                     Image("ChangeIcon")
+                    .resizable()
+                    .frame(width: 20, height: 20)
                         .rotationEffect(.degrees(isClicked ? -360 : 0))
                         .onTapGesture {
                             withAnimation(.snappy) { isClicked.toggle()

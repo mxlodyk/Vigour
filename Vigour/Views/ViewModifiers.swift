@@ -67,11 +67,10 @@ extension View {
 struct DetailFieldModifier : ViewModifier {
     func body(content: Content) -> some View {
         content
+            .padding(.leading, 5)
             .font(.custom("MontserratRoman-Regular", size: 16))
             .foregroundColor(textFieldTextColour)
-            .padding(.horizontal)
             .frame(height: 30)
-            .frame(maxWidth: .infinity)
             .background(textFieldColour)
             .cornerRadius(10)
     }
@@ -208,5 +207,50 @@ struct LogButtonModifier: ViewModifier {
 extension View {
     func withLogButtonFormatting() -> some View {
         modifier(LogButtonModifier())
+    }
+}
+
+// MARK: Widget Text Modifier
+struct SetTextModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("MontserratRoman-Regular", size: 14))
+            .foregroundColor(textColour)
+            .frame(height: 60)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color(widgetLogRowColour))
+            .cornerRadius(5)
+    }
+}
+
+extension View {
+    
+    func withSetTextFormatting() -> some View {
+        modifier(SetTextModifier())
+    }
+}
+
+// MARK: Set Row Modifier
+struct SetRowModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(textColour)
+            .frame(height: 70)
+            .frame(maxWidth: .infinity)
+            .background(Color(themeColour))
+            .cornerRadius(30)
+            .shadow(radius: 10)
+            .cornerRadius(30)
+            .shadow(color: themeColour, radius: 5)
+            .padding(.top, 5)
+            .padding(.leading)
+            .padding(.trailing)
+    }
+}
+
+extension View {
+    
+    func withSetRowFormatting() -> some View {
+        modifier(SetRowModifier())
     }
 }
