@@ -11,6 +11,8 @@
 		890C0E332C4B56500010BBEA /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E322C4B56500010BBEA /* SetView.swift */; };
 		890C0E352C4B6F890010BBEA /* EditSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E342C4B6F890010BBEA /* EditSetView.swift */; };
 		890C0E372C4BB25B0010BBEA /* InteractiveWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E362C4BB25B0010BBEA /* InteractiveWorkoutView.swift */; };
+		890C0E3B2C4BBB030010BBEA /* WorkoutCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E3A2C4BBB030010BBEA /* WorkoutCompletionView.swift */; };
+		890C0E3D2C4BD8170010BBEA /* ExerciseTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E3C2C4BD8170010BBEA /* ExerciseTimerView.swift */; };
 		8961188A2C4A044300E0F89E /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896118892C4A044300E0F89E /* StartWorkoutView.swift */; };
 		8961188C2C4A2B7500E0F89E /* StartTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961188B2C4A2B7500E0F89E /* StartTimerView.swift */; };
 		8961188E2C4A31ED00E0F89E /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961188D2C4A31ED00E0F89E /* AddSetView.swift */; };
@@ -75,6 +77,8 @@
 		890C0E322C4B56500010BBEA /* SetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetView.swift; sourceTree = "<group>"; };
 		890C0E342C4B6F890010BBEA /* EditSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSetView.swift; sourceTree = "<group>"; };
 		890C0E362C4BB25B0010BBEA /* InteractiveWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveWorkoutView.swift; sourceTree = "<group>"; };
+		890C0E3A2C4BBB030010BBEA /* WorkoutCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCompletionView.swift; sourceTree = "<group>"; };
+		890C0E3C2C4BD8170010BBEA /* ExerciseTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTimerView.swift; sourceTree = "<group>"; };
 		896118892C4A044300E0F89E /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
 		8961188B2C4A2B7500E0F89E /* StartTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTimerView.swift; sourceTree = "<group>"; };
 		8961188D2C4A31ED00E0F89E /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 				896118892C4A044300E0F89E /* StartWorkoutView.swift */,
 				8961188B2C4A2B7500E0F89E /* StartTimerView.swift */,
 				890C0E362C4BB25B0010BBEA /* InteractiveWorkoutView.swift */,
+				890C0E3C2C4BD8170010BBEA /* ExerciseTimerView.swift */,
+				890C0E3A2C4BBB030010BBEA /* WorkoutCompletionView.swift */,
 				89CD9AE02C479DAC0032E992 /* LogStepsView.swift */,
 				89CD9ADA2C4798BE0032E992 /* DailyNutritionView.swift */,
 				89CD9ADC2C47992C0032E992 /* CaloriesWidgetView.swift */,
@@ -405,6 +411,7 @@
 			files = (
 				89EF51AF2C3A03990086BBC0 /* RestUnitView.swift in Sources */,
 				89EF519F2C391FEF0086BBC0 /* ExerciseView.swift in Sources */,
+				890C0E3D2C4BD8170010BBEA /* ExerciseTimerView.swift in Sources */,
 				890C0E312C4B4F500010BBEA /* CoreDataModel.xcdatamodeld in Sources */,
 				890C0E372C4BB25B0010BBEA /* InteractiveWorkoutView.swift in Sources */,
 				890C0E332C4B56500010BBEA /* SetView.swift in Sources */,
@@ -431,6 +438,7 @@
 				89EF51992C3915FE0086BBC0 /* WorkoutRowView.swift in Sources */,
 				8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */,
 				89DEA9222C478C4C0065CDED /* ChangeStepGoalView.swift in Sources */,
+				890C0E3B2C4BBB030010BBEA /* WorkoutCompletionView.swift in Sources */,
 				89EF51A52C3939A00086BBC0 /* AddWorkoutView.swift in Sources */,
 				89EF51952C38B0F00086BBC0 /* ProgramRowView.swift in Sources */,
 				89CD9ADB2C4798BE0032E992 /* DailyNutritionView.swift in Sources */,

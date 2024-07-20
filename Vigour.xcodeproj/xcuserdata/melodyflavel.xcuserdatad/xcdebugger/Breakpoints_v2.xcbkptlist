@@ -16,5 +16,68 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81288095-900F-4F27-A9FB-7E7C898572C4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vigour/Views/InteractiveExerciseView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "81288095-900F-4F27-A9FB-7E7C898572C4 - 432cfc42e4d23318"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vigour.InteractiveExerciseView.body.getter : some"
+                  moduleName = "Vigour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melodyflavel/Desktop/Vigour/Vigour/Vigour/Views/InteractiveExerciseView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "81288095-900F-4F27-A9FB-7E7C898572C4 - 432cfc42e4d23318"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vigour.InteractiveExerciseView.body.getter : some"
+                  moduleName = "Vigour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melodyflavel/Desktop/Vigour/Vigour/Vigour/Views/InteractiveExerciseView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "81288095-900F-4F27-A9FB-7E7C898572C4 - 432cfc42e4d23318"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vigour.InteractiveExerciseView.body.getter : some"
+                  moduleName = "Vigour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melodyflavel/Desktop/Vigour/Vigour/Vigour/Views/InteractiveExerciseView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "224">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -10,8 +10,6 @@ struct WorkoutWidgetView: View {
     @EnvironmentObject var cd: CoreDataProvider
     @EnvironmentObject var hm: HealthManager
     
-    @State var showingBottomSheet = false
-    
     // MARK: Check if user has any workouts logged in either loggedWorkouts or syncedWorkouts
     var isLogged: Bool {
         return !cd.loggedWorkouts.isEmpty || !hm.syncedWorkouts.isEmpty
@@ -65,15 +63,10 @@ struct WorkoutWidgetView: View {
                     }
                     Spacer()
                 }
-            Button(action: {
-                showingBottomSheet.toggle()
-            }) {
+            NavigationLink(destination: LogWorkoutView().environmentObject(cd)) {
                 Text("Log")
                     .withLogButtonFormatting()
             }
-            .sheet(isPresented: $showingBottomSheet, content: {
-                LogWorkoutView()
-            })
         } // End of Line 20 VStack.
         .withWidgetViewFormatting()
         .onChange(of: cd.loggedWorkouts) {

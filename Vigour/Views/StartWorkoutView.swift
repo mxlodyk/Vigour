@@ -7,7 +7,7 @@ import SwiftUI
 // MARK: Start Workout View
 struct StartWorkoutView: View {
     
-    @State var selectedWorkout: WorkoutEntity
+    @EnvironmentObject var selectedWorkout: WorkoutEntity
     @EnvironmentObject var cd: CoreDataProvider
     
     var body: some View {
@@ -38,7 +38,7 @@ struct StartWorkoutView: View {
                     } // End of exercise loop.
                 }
                 Spacer()
-                NavigationLink(destination: StartTimerView()) {
+                NavigationLink(destination: StartTimerView().environmentObject(selectedWorkout)) {
                     Text("Start Workout")
                         .withButtonFormatting()
                 }

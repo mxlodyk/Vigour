@@ -1,18 +1,18 @@
-//  StartTimerView.swift
+//  ExerciseTimerView.swift
 //  Vigour
-//  Created by Melody Flavel on 19/7/2024.
+//  Created by Melody Flavel on 20/7/2024.
 
 import SwiftUI
 
-// MARK: Start Timer View
-struct StartTimerView: View {
+struct ExerciseTimerView: View {
     
-    //@State var start = false
-    @State var to : CGFloat = 10
-    @State var count = 10
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State var to : CGFloat = 10 // Edit
+    @State var count = 10 // Edit
     @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var navigateToInteractiveWorkoutView = false
-    @EnvironmentObject var selectedWorkout: WorkoutEntity
+    var restTime: String
+    var restUnit: String
     
     var body: some View {
         ZStack {
@@ -37,10 +37,7 @@ struct StartTimerView: View {
                     }
                 }
             }
-            NavigationLink(destination: InteractiveWorkoutView().environmentObject(selectedWorkout), isActive: $navigateToInteractiveWorkoutView) {
-                EmptyView()
-            }
-        } // End of background ZStack view.
+            } // End of background ZStack view.
         .navigationBarBackButtonHidden()
         .onReceive(self.time) { (_) in
             if self.count != 0 {
@@ -51,9 +48,9 @@ struct StartTimerView: View {
             } else {
                 withAnimation(.default) {
                     self.to = 1
-                    self.navigateToInteractiveWorkoutView = true
+                    self.presentationMode.wrappedValue.dismiss()
                 }
             }
         }
-    } // End of body view.
-} // End of StartTimerView view.
+        }
+    }
