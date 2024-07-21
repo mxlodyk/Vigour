@@ -13,6 +13,7 @@
 		890C0E372C4BB25B0010BBEA /* InteractiveWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E362C4BB25B0010BBEA /* InteractiveWorkoutView.swift */; };
 		890C0E3B2C4BBB030010BBEA /* WorkoutCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E3A2C4BBB030010BBEA /* WorkoutCompletionView.swift */; };
 		890C0E3D2C4BD8170010BBEA /* ExerciseTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E3C2C4BD8170010BBEA /* ExerciseTimerView.swift */; };
+		895557282C4DACFC00768C2E /* DropDownMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895557272C4DACFC00768C2E /* DropDownMenuView.swift */; };
 		8961188A2C4A044300E0F89E /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896118892C4A044300E0F89E /* StartWorkoutView.swift */; };
 		8961188C2C4A2B7500E0F89E /* StartTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961188B2C4A2B7500E0F89E /* StartTimerView.swift */; };
 		8961188E2C4A31ED00E0F89E /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961188D2C4A31ED00E0F89E /* AddSetView.swift */; };
@@ -83,6 +84,7 @@
 		890C0E362C4BB25B0010BBEA /* InteractiveWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveWorkoutView.swift; sourceTree = "<group>"; };
 		890C0E3A2C4BBB030010BBEA /* WorkoutCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCompletionView.swift; sourceTree = "<group>"; };
 		890C0E3C2C4BD8170010BBEA /* ExerciseTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTimerView.swift; sourceTree = "<group>"; };
+		895557272C4DACFC00768C2E /* DropDownMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuView.swift; sourceTree = "<group>"; };
 		896118892C4A044300E0F89E /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
 		8961188B2C4A2B7500E0F89E /* StartTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTimerView.swift; sourceTree = "<group>"; };
 		8961188D2C4A31ED00E0F89E /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				89EF51982C3915FE0086BBC0 /* WorkoutRowView.swift */,
 				89EF519C2C391EE10086BBC0 /* ExerciseRowView.swift */,
 				89EF51A02C392FED0086BBC0 /* SettingsView.swift */,
+				895557272C4DACFC00768C2E /* DropDownMenuView.swift */,
 				8984BAEE2C3687A40097E71A /* DumbbellVideoPlayerView.swift */,
 				8984BAF22C3687CC0097E71A /* ViewModifiers.swift */,
 			);
@@ -450,6 +453,7 @@
 				89CD9ADF2C4799400032E992 /* MacrosWidgetView.swift in Sources */,
 				89CD9ADD2C47992C0032E992 /* CaloriesWidgetView.swift in Sources */,
 				89C3E0D52C44CB5E0011F9B3 /* LogWorkoutView.swift in Sources */,
+				895557282C4DACFC00768C2E /* DropDownMenuView.swift in Sources */,
 				89EF51992C3915FE0086BBC0 /* WorkoutRowView.swift in Sources */,
 				8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */,
 				89DEA9222C478C4C0065CDED /* ChangeStepGoalView.swift in Sources */,

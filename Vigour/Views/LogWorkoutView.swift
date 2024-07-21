@@ -11,7 +11,7 @@ struct LogWorkoutView: View {
     
     @EnvironmentObject var cd: CoreDataProvider
     @EnvironmentObject var hm: HealthManager
-    @State var selectedWorkout: WorkoutEntity?
+    @State private var selection: String?
     
     var body: some View {
         NavigationView {
@@ -26,21 +26,12 @@ struct LogWorkoutView: View {
                         .foregroundColor(themeColour)
                     Spacer()
                     // MARK: Dropdown Menu
-                    Picker("Select a workout", selection: $selectedWorkout) {
-                        ForEach(cd.workouts, id: \.self) { workout in
-                            Text(workout.name ?? "Unknown Workout").tag(workout as WorkoutEntity?)
-                        }
-                    }
-                    .pickerStyle(MenuPickerStyle())
-                    if let workout = selectedWorkout {
-                        NavigationLink(destination: StartWorkoutView().environmentObject(selectedWorkout!).environmentObject(cd).environmentObject(hm)) {
-                        Text("Select Workout")
-                            .withButtonFormatting()
-                        }
-                    } else {
-                        Button(action: {
-                            print("No workout selected")
-                        }) {
+                    DropDownMenuView(title: "Workout", prompt: "Select",
+                                     options: cd.workouts.map { $0.name ?? ""}, // Map workout names to Strings for DropDownMenuView
+                                     selection: $selection)
+                    if let workoutName = selection,
+                       let workout = cd.workouts.first(where: { $0.name == workoutName }) {
+                        NavigationLink(destination: StartWorkoutView().environmentObject(workout).environmentObject(cd).environmentObject(hm)) {
                             Text("Start Workout")
                                 .withButtonFormatting()
                         }
