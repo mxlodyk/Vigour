@@ -28,6 +28,9 @@
 		8984BAFA2C36888C0097E71A /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAF92C36888C0097E71A /* Montserrat.ttf */; };
 		8984BAFB2C36888C0097E71A /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAF92C36888C0097E71A /* Montserrat.ttf */; };
 		8984BAFC2C36888C0097E71A /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAF92C36888C0097E71A /* Montserrat.ttf */; };
+		89B4C6EE2C4C771100EE3822 /* DailyMentalHealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C6ED2C4C771100EE3822 /* DailyMentalHealthView.swift */; };
+		89B4C6F02C4C775E00EE3822 /* MindfulnessWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C6EF2C4C775E00EE3822 /* MindfulnessWidgetView.swift */; };
+		89B4C6F22C4C776500EE3822 /* SleepWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C6F12C4C776500EE3822 /* SleepWidgetView.swift */; };
 		89C3E0D32C44AC820011F9B3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D22C44AC820011F9B3 /* CalendarView.swift */; };
 		89C3E0D52C44CB5E0011F9B3 /* LogWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D42C44CB5E0011F9B3 /* LogWorkoutView.swift */; };
 		89C3E0D72C44D3D50011F9B3 /* DailyExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */; };
@@ -96,6 +99,9 @@
 		8984BAF22C3687CC0097E71A /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		8984BAF92C36888C0097E71A /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		8984BAFD2C36889C0097E71A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		89B4C6ED2C4C771100EE3822 /* DailyMentalHealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMentalHealthView.swift; sourceTree = "<group>"; };
+		89B4C6EF2C4C775E00EE3822 /* MindfulnessWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulnessWidgetView.swift; sourceTree = "<group>"; };
+		89B4C6F12C4C776500EE3822 /* SleepWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepWidgetView.swift; sourceTree = "<group>"; };
 		89C3E0D22C44AC820011F9B3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		89C3E0D42C44CB5E0011F9B3 /* LogWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogWorkoutView.swift; sourceTree = "<group>"; };
 		89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyExerciseView.swift; sourceTree = "<group>"; };
@@ -217,6 +223,8 @@
 				89EF51882C37FFFE0086BBC0 /* MenuView.swift */,
 				89C3E0D22C44AC820011F9B3 /* CalendarView.swift */,
 				89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */,
+				89CD9ADA2C4798BE0032E992 /* DailyNutritionView.swift */,
+				89B4C6ED2C4C771100EE3822 /* DailyMentalHealthView.swift */,
 				89C3E0D82C44FBE60011F9B3 /* WorkoutWidgetView.swift */,
 				89C3E0DA2C45D26B0011F9B3 /* StepsWidgetView.swift */,
 				89DEA9212C478C4C0065CDED /* ChangeStepGoalView.swift */,
@@ -227,9 +235,10 @@
 				890C0E3C2C4BD8170010BBEA /* ExerciseTimerView.swift */,
 				890C0E3A2C4BBB030010BBEA /* WorkoutCompletionView.swift */,
 				89CD9AE02C479DAC0032E992 /* LogStepsView.swift */,
-				89CD9ADA2C4798BE0032E992 /* DailyNutritionView.swift */,
 				89CD9ADC2C47992C0032E992 /* CaloriesWidgetView.swift */,
 				89CD9ADE2C4799400032E992 /* MacrosWidgetView.swift */,
+				89B4C6EF2C4C775E00EE3822 /* MindfulnessWidgetView.swift */,
+				89B4C6F12C4C776500EE3822 /* SleepWidgetView.swift */,
 				89EF51922C38097A0086BBC0 /* ProgramsView.swift */,
 				89EF51962C38B12A0086BBC0 /* WorkoutsView.swift */,
 				89EF519A2C3917860086BBC0 /* ExercisesView.swift */,
@@ -423,6 +432,7 @@
 				89EF51A12C392FED0086BBC0 /* SettingsView.swift in Sources */,
 				89EF51932C38097A0086BBC0 /* ProgramsView.swift in Sources */,
 				89C3E0D72C44D3D50011F9B3 /* DailyExerciseView.swift in Sources */,
+				89B4C6F22C4C776500EE3822 /* SleepWidgetView.swift in Sources */,
 				8961188C2C4A2B7500E0F89E /* StartTimerView.swift in Sources */,
 				89EF51A72C3939AA0086BBC0 /* AddExerciseView.swift in Sources */,
 				8984BAC72C36871C0097E71A /* HomeView.swift in Sources */,
@@ -430,6 +440,7 @@
 				89CD9AE12C479DAC0032E992 /* LogStepsView.swift in Sources */,
 				89E3F4B22C3D2C19003C15B9 /* CoreDataProvider.swift in Sources */,
 				8961188E2C4A31ED00E0F89E /* AddSetView.swift in Sources */,
+				89B4C6F02C4C775E00EE3822 /* MindfulnessWidgetView.swift in Sources */,
 				89C3E0DD2C461B890011F9B3 /* HealthManager.swift in Sources */,
 				89EF51A32C3938710086BBC0 /* AddProgramView.swift in Sources */,
 				89CD9ADF2C4799400032E992 /* MacrosWidgetView.swift in Sources */,
@@ -441,6 +452,7 @@
 				890C0E3B2C4BBB030010BBEA /* WorkoutCompletionView.swift in Sources */,
 				89EF51A52C3939A00086BBC0 /* AddWorkoutView.swift in Sources */,
 				89EF51952C38B0F00086BBC0 /* ProgramRowView.swift in Sources */,
+				89B4C6EE2C4C771100EE3822 /* DailyMentalHealthView.swift in Sources */,
 				89CD9ADB2C4798BE0032E992 /* DailyNutritionView.swift in Sources */,
 				89C3E0D92C44FBE60011F9B3 /* WorkoutWidgetView.swift in Sources */,
 				890C0E352C4B6F890010BBEA /* EditSetView.swift in Sources */,

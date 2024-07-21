@@ -8,11 +8,32 @@ struct ExerciseTimerView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @State var to : CGFloat = 10 // Edit
-    @State var count = 10 // Edit
+    @State var to : CGFloat = 0
+    @State var count: Int
+    @State var initialCount: Int
     @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var restTime: String
     var restUnit: String
+    
+    init(restTime: String, restUnit: String) {
+        self.restTime = restTime
+        self.restUnit = restUnit
+        
+        var initialValue: Int = 10
+        
+        // Convert restTime to seconds based on restUnit
+        if let restTimeValue = Int(restTime) {
+            if restUnit.lowercased() == "minutes" {
+                initialValue = restTimeValue * 60
+            } else if restUnit.lowercased() == "seconds" {
+                initialValue = restTimeValue
+            }
+        }
+        _count = State(initialValue: initialValue)
+        _initialCount = State(initialValue: initialValue)
+        _to = State(initialValue: CGFloat(_count.wrappedValue))
+
+        }
     
     var body: some View {
         ZStack {
@@ -36,6 +57,14 @@ struct ExerciseTimerView: View {
                             .withTimerTextFormatting()
                     }
                 }
+                Button(action: {
+                    self.count = 0
+                    withAnimation(.default) {
+                        self.to = 0
+                    }
+                }) {
+                    Image("SkipButton")
+                }
             }
             } // End of background ZStack view.
         .navigationBarBackButtonHidden()
@@ -43,7 +72,7 @@ struct ExerciseTimerView: View {
             if self.count != 0 {
                 self.count -= 1
                 withAnimation(.default) {
-                    self.to = CGFloat(self.count) / 10
+                    self.to = CGFloat(self.count) / CGFloat(self.initialCount)
                 }
             } else {
                 withAnimation(.default) {

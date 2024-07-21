@@ -9,6 +9,7 @@ struct StartWorkoutView: View {
     
     @EnvironmentObject var selectedWorkout: WorkoutEntity
     @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var hm: HealthManager
     
     var body: some View {
         ZStack {

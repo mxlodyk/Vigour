@@ -12,7 +12,7 @@ struct RestUnitView: View {
     @State var index: Int = 0
     @State private var isClicked = false
     
-    let options: [String] = ["Minute(s)", "Seconds"]
+    let options: [String] = ["Minutes", "Seconds"]
     
     var body: some View {
         VStack {

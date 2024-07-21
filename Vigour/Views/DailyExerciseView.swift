@@ -41,7 +41,3 @@ struct DailyExerciseView: View {
     }
     
 }
-
-/*#Preview {
-    DailyExerciseView().environmentObject(CoreDataProvider())
-}*/

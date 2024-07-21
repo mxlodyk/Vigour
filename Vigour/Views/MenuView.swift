@@ -15,7 +15,7 @@ struct MenuView: View {
         ZStack {
             Color.background
                 .edgesIgnoringSafeArea(.all)
-            VStack {
+            ScrollView (showsIndicators: false) {
                 CalendarView()
                     .environmentObject(cd)
                     .environmentObject(hm)
@@ -23,7 +23,7 @@ struct MenuView: View {
                     .environmentObject(cd)
                     .environmentObject(hm)
                 DailyNutritionView()
-                Spacer()
+                DailyMentalHealthView()
             }
             .withEdgePadding()
             .navigationBarBackButtonHidden()

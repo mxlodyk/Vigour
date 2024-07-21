@@ -10,6 +10,7 @@ struct LogWorkoutView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var hm: HealthManager
     @State var selectedWorkout: WorkoutEntity?
     
     var body: some View {

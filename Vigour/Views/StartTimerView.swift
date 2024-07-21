@@ -48,6 +48,8 @@ struct StartTimerView: View {
                 withAnimation(.default) {
                     self.to = CGFloat(self.count) / 10
                 }
+                print(self.to)
+                print(self.count)
             } else {
                 withAnimation(.default) {
                     self.to = 1

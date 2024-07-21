@@ -79,5 +79,83 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0557E679-9FD5-4D68-A600-5BAC3538C309"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vigour/Views/StartTimerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "0557E679-9FD5-4D68-A600-5BAC3538C309 - 4b20e4eb57bc67bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vigour.StartTimerView.body.getter : some"
+                  moduleName = "Vigour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melodyflavel/Desktop/Vigour/Vigour/Vigour/Views/StartTimerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1004">
+               </Location>
+               <Location
+                  uuid = "0557E679-9FD5-4D68-A600-5BAC3538C309 - badc3f9f64fb09bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Foundation.Date) -&gt; () in Vigour.StartTimerView.body.getter : some"
+                  moduleName = "Vigour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melodyflavel/Desktop/Vigour/Vigour/Vigour/Views/StartTimerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "0557E679-9FD5-4D68-A600-5BAC3538C309 - badc3f9f64fb09bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Foundation.Date) -&gt; () in Vigour.StartTimerView.body.getter : some"
+                  moduleName = "Vigour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melodyflavel/Desktop/Vigour/Vigour/Vigour/Views/StartTimerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "0557E679-9FD5-4D68-A600-5BAC3538C309 - 4b20e4eb57bc67bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vigour.StartTimerView.body.getter : some"
+                  moduleName = "Vigour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melodyflavel/Desktop/Vigour/Vigour/Vigour/Views/StartTimerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "804">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
