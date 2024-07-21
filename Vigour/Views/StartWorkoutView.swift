@@ -32,7 +32,7 @@ struct StartWorkoutView: View {
                             if let setsSet = exercise.sets,
                                let setsArray = setsSet.array as? [SetEntity] {
                                 ForEach(setsArray) { set in
-                                    SetView(exercise: exercise, set: set)
+                                    InteractiveSetView(exercise: exercise, set: set)
                                 }
                             }
                         }

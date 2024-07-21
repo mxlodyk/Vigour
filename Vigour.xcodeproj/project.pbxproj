@@ -41,6 +41,7 @@
 		89CD9ADD2C47992C0032E992 /* CaloriesWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CD9ADC2C47992C0032E992 /* CaloriesWidgetView.swift */; };
 		89CD9ADF2C4799400032E992 /* MacrosWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CD9ADE2C4799400032E992 /* MacrosWidgetView.swift */; };
 		89CD9AE12C479DAC0032E992 /* LogStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CD9AE02C479DAC0032E992 /* LogStepsView.swift */; };
+		89D261772C4D019900F3DBB1 /* InteractiveSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D261762C4D019900F3DBB1 /* InteractiveSetView.swift */; };
 		89DEA9222C478C4C0065CDED /* ChangeStepGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEA9212C478C4C0065CDED /* ChangeStepGoalView.swift */; };
 		89E3F4B22C3D2C19003C15B9 /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3F4B12C3D2C19003C15B9 /* CoreDataProvider.swift */; };
 		89EF51892C37FFFE0086BBC0 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51882C37FFFE0086BBC0 /* MenuView.swift */; };
@@ -113,6 +114,7 @@
 		89CD9ADC2C47992C0032E992 /* CaloriesWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesWidgetView.swift; sourceTree = "<group>"; };
 		89CD9ADE2C4799400032E992 /* MacrosWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacrosWidgetView.swift; sourceTree = "<group>"; };
 		89CD9AE02C479DAC0032E992 /* LogStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogStepsView.swift; sourceTree = "<group>"; };
+		89D261762C4D019900F3DBB1 /* InteractiveSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveSetView.swift; sourceTree = "<group>"; };
 		89DEA9212C478C4C0065CDED /* ChangeStepGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStepGoalView.swift; sourceTree = "<group>"; };
 		89E3F4B12C3D2C19003C15B9 /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 		89EF51882C37FFFE0086BBC0 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				89EF519A2C3917860086BBC0 /* ExercisesView.swift */,
 				89EF519E2C391FEF0086BBC0 /* ExerciseView.swift */,
 				890C0E322C4B56500010BBEA /* SetView.swift */,
+				89D261762C4D019900F3DBB1 /* InteractiveSetView.swift */,
 				890C0E342C4B6F890010BBEA /* EditSetView.swift */,
 				89EF51A22C3938710086BBC0 /* AddProgramView.swift */,
 				89EF51A42C3939A00086BBC0 /* AddWorkoutView.swift */,
@@ -438,6 +441,7 @@
 				8984BAC72C36871C0097E71A /* HomeView.swift in Sources */,
 				89C3E0D32C44AC820011F9B3 /* CalendarView.swift in Sources */,
 				89CD9AE12C479DAC0032E992 /* LogStepsView.swift in Sources */,
+				89D261772C4D019900F3DBB1 /* InteractiveSetView.swift in Sources */,
 				89E3F4B22C3D2C19003C15B9 /* CoreDataProvider.swift in Sources */,
 				8961188E2C4A31ED00E0F89E /* AddSetView.swift in Sources */,
 				89B4C6F02C4C775E00EE3822 /* MindfulnessWidgetView.swift in Sources */,

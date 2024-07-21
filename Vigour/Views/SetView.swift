@@ -13,15 +13,31 @@ struct SetView: View {
     
     var body: some View {
         HStack {
-            Text("Weight\n\(set.weight ?? "N/A")")
-                .withSetTextFormatting()
+            VStack {
+                Text("Weight")
+                    .withSetHeaderFormatting()
+                Text(set.weight ?? "N/A")
+                    .withSetValueFormatting()
+            }
                 .padding(.leading)
-            Text("Repetitions\n\(set.repetitions ?? "N/A")")
-                .withSetTextFormatting()
-            Text("Tempo\n\(set.tempo ?? "N/A")")
-                .withSetTextFormatting()
-            Text("Rest\n\(set.restTime ?? "N/A") \(set.restUnit ?? "N/A")")
-                .withSetTextFormatting()
+            VStack {
+                Text("Repetitions")
+                    .withSetHeaderFormatting()
+                Text(set.repetitions ?? "N/A")
+                    .withSetValueFormatting()
+            }
+            VStack {
+                Text("Tempo")
+                    .withSetHeaderFormatting()
+                Text(set.tempo ?? "N/A")
+                    .withSetValueFormatting()
+            }
+            VStack {
+                Text("Rest")
+                    .withSetHeaderFormatting()
+                Text("\(set.restTime ?? "N/A") \(set.restUnit ?? "N/A")")
+                    .withSetValueFormatting()
+            }
             VStack {
                 Image(systemName: "pencil")
                     .padding(.top)
@@ -36,7 +52,7 @@ struct SetView: View {
             }
             .padding(.trailing)
         }
-        .withSetRowFormatting()
+        .withSetFormatting()
     }
     
     // MARK: Copy Button Pressed

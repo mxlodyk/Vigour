@@ -18,7 +18,7 @@ struct LogWorkoutView: View {
             ZStack {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
-                VStack{
+                VStack {
                     Text("Log each set you complete to log your workout!")
                         .withTextFormatting()
                     Text("To accelerate your training regimen and make the most of your time in the gym, log each exercise as soon as it has been completed to start the rest timer.")
@@ -46,6 +46,7 @@ struct LogWorkoutView: View {
                         }
                     }
                 } // End of text and dropdown menu VStack.
+                .padding()
             } // End of background ZStack.
         } // End of navigation view.
         .navigationBarBackButtonHidden()

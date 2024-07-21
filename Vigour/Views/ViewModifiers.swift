@@ -10,6 +10,7 @@ let textColour = Color("Text")
 let textFieldColour = Color("TextField")
 let textFieldTextColour = Color("TextFieldText")
 let widgetLogRowColour = Color("WidgetLogRowColour")
+let backgroundColour = Color("Background")
 
 // MARK: Title Modifier
 struct TitleModifier: ViewModifier {
@@ -210,33 +211,50 @@ extension View {
     }
 }
 
-// MARK: Widget Text Modifier
-struct SetTextModifier: ViewModifier {
+// MARK: Set Value Modifier
+struct SetValueModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.custom("MontserratRoman-Regular", size: 14))
-            .foregroundColor(textColour)
-            .frame(height: 60)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .font(.custom("MontserratRoman-Bold", size: 16))
+            .foregroundColor(backgroundColour)
+            .frame(width: 55, height: 55)
+            .frame(alignment: .center)
             .background(Color(widgetLogRowColour))
-            .cornerRadius(5)
+            .cornerRadius(10)
     }
 }
 
 extension View {
     
-    func withSetTextFormatting() -> some View {
-        modifier(SetTextModifier())
+    func withSetValueFormatting() -> some View {
+        modifier(SetValueModifier())
     }
 }
 
-// MARK: Set Row Modifier
-struct SetRowModifier: ViewModifier {
+// MARK: Set Header Modifier
+struct SetHeaderModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .foregroundColor(textColour)
-            .frame(height: 70)
-            .frame(maxWidth: .infinity)
+            .font(.custom("MontserratRoman-Bold", size: 12))
+            .foregroundColor(.white)
+            .frame(alignment: .center)
+    }
+}
+
+extension View {
+    
+    func withSetHeaderFormatting() -> some View {
+        modifier(SetHeaderModifier())
+    }
+}
+
+// MARK: Set Modifier
+struct SetModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .frame(height: 160)
+            .frame(width: 350)
             .background(Color(themeColour))
             .cornerRadius(5)
             .shadow(radius: 10)
@@ -250,8 +268,33 @@ struct SetRowModifier: ViewModifier {
 
 extension View {
     
-    func withSetRowFormatting() -> some View {
-        modifier(SetRowModifier())
+    func withSetFormatting() -> some View {
+        modifier(SetModifier())
+    }
+}
+
+// MARK: Interative Set Modifier
+struct InteractiveSetModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .frame(height: 160)
+            .frame(width: 290)
+            .background(Color(themeColour))
+            .cornerRadius(5)
+            .shadow(radius: 10)
+            .cornerRadius(30)
+            .shadow(color: themeColour, radius: 5)
+            .padding(.top, 5)
+            .padding(.leading)
+            .padding(.trailing)
+    }
+}
+
+extension View {
+    
+    func withInteractiveSetFormatting() -> some View {
+        modifier(InteractiveSetModifier())
     }
 }
 

@@ -25,29 +25,25 @@ struct InteractiveWorkoutView: View {
                     let currentExercise = exercisesArray[currentExerciseIndex]
                     VStack {
                         Text(currentExercise.name ?? "")
+                            .withTextFormatting()
                         if let setsSet = currentExercise.sets,
                            let setsArray = setsSet.array as? [SetEntity] {
                             let currentSet = setsArray[currentSetIndex]
-                            HStack {
-                                Text(currentSet.weight ?? "")
-                                Text(currentSet.repetitions ?? "")
-                                Text(currentSet.tempo ?? "")
-                                Text(currentSet.restTime ?? "")
-                                Text(currentSet.restUnit ?? "")
+                            InteractiveSetView(exercise: currentExercise, set: currentSet)
                                 Button(action: {
                                     nextSet = currentSet
                                     navigateToExerciseTimerView = true
                                 }) {
-                                    Text("Done")
+                                    Text("COMPLETE SET")
                                         .withButtonFormatting()
                                 }
+                                .padding()
                                 NavigationLink(destination: ExerciseTimerView(restTime: nextSet?.restTime ?? "", restUnit: nextSet?.restUnit ?? ""), isActive: $navigateToExerciseTimerView) {
                                     EmptyView()
                                 }
                                 NavigationLink(destination: WorkoutCompletionView().environmentObject(selectedWorkout), isActive: $navigateToWorkoutCompletionView) {
                                     EmptyView()
                                 }
-                            }
                         }
                     }
                 } else {
