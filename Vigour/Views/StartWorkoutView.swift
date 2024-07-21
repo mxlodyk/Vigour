@@ -39,7 +39,7 @@ struct StartWorkoutView: View {
                     } // End of exercise loop.
                 }
                 Spacer()
-                NavigationLink(destination: StartTimerView().environmentObject(selectedWorkout)) {
+                NavigationLink(destination: StartTimerView().environmentObject(selectedWorkout).environmentObject(cd)) {
                     Text("Start Workout")
                         .withButtonFormatting()
                 }

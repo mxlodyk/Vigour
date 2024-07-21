@@ -6,7 +6,7 @@ import SwiftUI
 
 @main
 struct VigourApp: App {
-    
+
     var body: some Scene {
         WindowGroup {
             NavigationView {

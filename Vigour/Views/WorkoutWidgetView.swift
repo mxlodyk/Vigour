@@ -63,7 +63,7 @@ struct WorkoutWidgetView: View {
                     }
                     Spacer()
                 }
-            NavigationLink(destination: LogWorkoutView().environmentObject(cd)) {
+            NavigationLink(destination: LogWorkoutView().environmentObject(cd).environmentObject(hm)) {
                 Text("Log")
                     .withLogButtonFormatting()
             }

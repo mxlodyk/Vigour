@@ -13,6 +13,8 @@ struct StartTimerView: View {
     @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var navigateToInteractiveWorkoutView = false
     @EnvironmentObject var selectedWorkout: WorkoutEntity
+    @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var hm: HealthManager
     
     var body: some View {
         ZStack {
@@ -48,8 +50,6 @@ struct StartTimerView: View {
                 withAnimation(.default) {
                     self.to = CGFloat(self.count) / 10
                 }
-                print(self.to)
-                print(self.count)
             } else {
                 withAnimation(.default) {
                     self.to = 1

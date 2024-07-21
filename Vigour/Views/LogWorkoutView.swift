@@ -33,7 +33,7 @@ struct LogWorkoutView: View {
                     }
                     .pickerStyle(MenuPickerStyle())
                     if let workout = selectedWorkout {
-                        NavigationLink(destination: StartWorkoutView().environmentObject(selectedWorkout!)) {
+                        NavigationLink(destination: StartWorkoutView().environmentObject(selectedWorkout!).environmentObject(cd).environmentObject(hm)) {
                         Text("Select Workout")
                             .withButtonFormatting()
                         }
