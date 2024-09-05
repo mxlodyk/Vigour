@@ -19,12 +19,17 @@ Vigour is a fitness application designed to help users manage and track their wo
 - **User-Friendly and Interactive Interface**: Easy-to-use and interactive interface with smooth navigation and clean design.
 
 - ## Screenshots
-- ![HomeView](Screenshots/HomeView.png)
-- ![WorkoutsWidgetView](Screenshots/WorkoutsWidgetView.png)
-- ![StepsWidgetView](Screenshots/StepsWidgetView.png)
-- ![AddProgramView](Screenshots/AddProgramView.png)
-- ![AddWorkoutView](Screenshots/AddWorkoutView.png)
-- ![AddExerciseView](Screenshots/AddExerciseView.png)
-- ![AddSetView](Screenshots/AddSetView.png)
-- ![LogWorkoutView](Screenshots/LogWorkoutView.png)
-- ![StartTimerView](Screenshots/StartTimerView.png)
+## Screenshots
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="Screenshots/HomeView.png" alt="Home View" width="200"/>
+  <img src="Screenshots/WorkoutsWidgetView.png" alt="Workouts Widget View" width="200"/>
+  <img src="Screenshots/StepsWidgetView.png" alt="Steps Widget View" width="200"/>
+  <img src="Screenshots/AddProgramView.png" alt="Add Program View" width="200"/>
+  <img src="Screenshots/AddWorkoutView.png" alt="Add Workout View" width="200"/>
+  <img src="Screenshots/AddExerciseView.png" alt="Add Exercise View" width="200"/>
+  <img src="Screenshots/AddSetView.png" alt="Add Set View" width="200"/>
+  <img src="Screenshots/LogWorkoutView.png" alt="Log Workout View" width="200"/>
+  <img src="Screenshots/StartTimerView.png" alt="Start Timer View" width="200"/>
+</div>
+
