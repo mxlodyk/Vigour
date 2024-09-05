@@ -41,6 +41,15 @@ struct AddSetView: View {
             }
             .withEdgePadding()
         }
+        .navigationBarBackButtonHidden()
+        .navigationBarItems(
+            leading:
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image("BackButton")
+                        .iconStyle()
+                })
     }
     
     // MARK: Save Button Pressed

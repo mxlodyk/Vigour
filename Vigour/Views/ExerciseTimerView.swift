@@ -64,6 +64,8 @@ struct ExerciseTimerView: View {
                     }
                 }) {
                     Image("SkipButton")
+                        .resizable()
+                        .frame(width: 50, height: 50)
                 }
             }
             } // End of background ZStack view.

@@ -40,9 +40,11 @@ struct ExerciseView: View {
                 }
                 NavigationLink(destination: AddSetView(exercise: exercise)) {
                     Text("+ Add Set")
-                        .withTextFormatting()
+                        .withButtonFormatting()
                 }
             }
+            .padding(.leading)
+            .padding(.trailing)
             .navigationBarBackButtonHidden()
             .navigationBarItems(leading:
                 Button(action: {

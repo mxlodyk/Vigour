@@ -54,6 +54,7 @@ struct ExercisesView: View {
                     })
             .sheet(isPresented: $showingBottomSheet, content: {
                 AddExerciseView(cd: cd, program: $program, workout: $workout)
+                    .presentationDetents([.fraction(0.2)])
             })
         }
     }

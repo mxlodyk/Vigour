@@ -19,12 +19,15 @@ struct LogWorkoutView: View {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
                 VStack {
-                    Text("Log each set you complete to log your workout!")
+                    Spacer()
+                    Text("Log your workout and maintain your streak!")
+                        .multilineTextAlignment(.center) // Center alignment
                         .withTextFormatting()
                     Text("To accelerate your training regimen and make the most of your time in the gym, log each exercise as soon as it has been completed to start the rest timer.")
+                        .multilineTextAlignment(.center) // Center alignment
                         .font(.custom("MontserratRoman-Regular", size: 16))
                         .foregroundColor(themeColour)
-                    Spacer()
+                        .padding()
                     // MARK: Dropdown Menu
                     DropDownMenuView(title: "Workout", prompt: "Select",
                                      options: cd.workouts.map { $0.name ?? ""}, // Map workout names to Strings for DropDownMenuView

@@ -97,6 +97,8 @@ struct ButtonModifier: ViewModifier {
             .cornerRadius(30)
             .shadow(color: themeColour, radius: 5)
             .padding(.top, 5)
+            .padding(.leading)
+            .padding(.trailing)
     }
 }
 
