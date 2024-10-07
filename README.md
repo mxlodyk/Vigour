@@ -22,9 +22,9 @@ Vigour is a fitness application designed to help users manage and track their wo
 ## Screenshots
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="Screenshots/HomeView.png" alt="Home View" width="200"/>
-  <img src="Screenshots/WorkoutsWidgetView.png" alt="Workouts Widget View" width="200"/>
-  <img src="Screenshots/StepsWidgetView.png" alt="Steps Widget View" width="200"/>
+  <img src="Screenshots/HomeView2.png" alt="Home View" width="200"/>
+  <img src="Screenshots/WorkoutsWidgetView2.png" alt="Workouts Widget View" width="200"/>
+  <img src="Screenshots/StepsWidgetView2.png" alt="Steps Widget View" width="200"/>
   <img src="Screenshots/AddProgramView.png" alt="Add Program View" width="200"/>
   <img src="Screenshots/AddWorkoutView.png" alt="Add Workout View" width="200"/>
   <img src="Screenshots/AddExerciseView.png" alt="Add Exercise View" width="200"/>
