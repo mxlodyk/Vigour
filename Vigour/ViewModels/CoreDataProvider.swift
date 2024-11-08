@@ -18,9 +18,6 @@ class CoreDataManager {
     init() {
         // The attribute types of CoreDataStringContainer are strings to support TextField modifiers in AddExerciseView
         container = NSPersistentContainer(name: "CoreDataModel")
-        /*let description = container.persistentStoreDescriptions.first
-        description?.shouldMigrateStoreAutomatically = true
-        description?.shouldInferMappingModelAutomatically = true*/
         
         container.loadPersistentStores { (description, error) in
             if let error = error {

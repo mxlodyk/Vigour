@@ -32,6 +32,7 @@
 		89B4C6EE2C4C771100EE3822 /* DailyMentalHealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C6ED2C4C771100EE3822 /* DailyMentalHealthView.swift */; };
 		89B4C6F02C4C775E00EE3822 /* MindfulnessWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C6EF2C4C775E00EE3822 /* MindfulnessWidgetView.swift */; };
 		89B4C6F22C4C776500EE3822 /* SleepWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C6F12C4C776500EE3822 /* SleepWidgetView.swift */; };
+		89BE24F72CB9DBB100E754EE /* CaloriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE24F62CB9DBB100E754EE /* CaloriesView.swift */; };
 		89C3E0D32C44AC820011F9B3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D22C44AC820011F9B3 /* CalendarView.swift */; };
 		89C3E0D52C44CB5E0011F9B3 /* LogWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D42C44CB5E0011F9B3 /* LogWorkoutView.swift */; };
 		89C3E0D72C44D3D50011F9B3 /* DailyExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */; };
@@ -105,6 +106,7 @@
 		89B4C6ED2C4C771100EE3822 /* DailyMentalHealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMentalHealthView.swift; sourceTree = "<group>"; };
 		89B4C6EF2C4C775E00EE3822 /* MindfulnessWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulnessWidgetView.swift; sourceTree = "<group>"; };
 		89B4C6F12C4C776500EE3822 /* SleepWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepWidgetView.swift; sourceTree = "<group>"; };
+		89BE24F62CB9DBB100E754EE /* CaloriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesView.swift; sourceTree = "<group>"; };
 		89C3E0D22C44AC820011F9B3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		89C3E0D42C44CB5E0011F9B3 /* LogWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogWorkoutView.swift; sourceTree = "<group>"; };
 		89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyExerciseView.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				890C0E3A2C4BBB030010BBEA /* WorkoutCompletionView.swift */,
 				89CD9AE02C479DAC0032E992 /* LogStepsView.swift */,
 				89CD9ADC2C47992C0032E992 /* CaloriesWidgetView.swift */,
+				89BE24F62CB9DBB100E754EE /* CaloriesView.swift */,
 				89CD9ADE2C4799400032E992 /* MacrosWidgetView.swift */,
 				89B4C6EF2C4C775E00EE3822 /* MindfulnessWidgetView.swift */,
 				89B4C6F12C4C776500EE3822 /* SleepWidgetView.swift */,
@@ -462,6 +465,7 @@
 				89EF51952C38B0F00086BBC0 /* ProgramRowView.swift in Sources */,
 				89B4C6EE2C4C771100EE3822 /* DailyMentalHealthView.swift in Sources */,
 				89CD9ADB2C4798BE0032E992 /* DailyNutritionView.swift in Sources */,
+				89BE24F72CB9DBB100E754EE /* CaloriesView.swift in Sources */,
 				89C3E0D92C44FBE60011F9B3 /* WorkoutWidgetView.swift in Sources */,
 				890C0E352C4B6F890010BBEA /* EditSetView.swift in Sources */,
 				89EF519D2C391EE10086BBC0 /* ExerciseRowView.swift in Sources */,
@@ -647,7 +651,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mxlodyk.Vigour;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxlodyk.Vigor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -680,7 +684,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mxlodyk.Vigour;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxlodyk.Vigor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

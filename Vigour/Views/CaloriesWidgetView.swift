@@ -9,7 +9,12 @@ struct CaloriesWidgetView: View {
         VStack {
             Text("Calories")
                 .withWidgetHeaderFormatting()
+            NavigationLink(destination: CaloriesView()) {
+                Text("Log")
+                    .withLogButtonFormatting()
+            }
         }
+    
         .frame(width: 200, height: 200)
         .background(themeColour)
         .cornerRadius(25)
