@@ -57,5 +57,9 @@ struct StartTimerView: View {
                 }
             }
         }
+        // Invalidate timer.
+        .onDisappear {
+            self.time.upstream.connect().cancel()
+        }
     } // End of body view.
 } // End of StartTimerView view.

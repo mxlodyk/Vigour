@@ -83,5 +83,9 @@ struct ExerciseTimerView: View {
                 }
             }
         }
+        // Invalidate timer.
+        .onDisappear {
+            self.time.upstream.connect().cancel()
+        }
         }
     }
