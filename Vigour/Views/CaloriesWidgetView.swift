@@ -9,7 +9,7 @@ struct CaloriesWidgetView: View {
         VStack {
             Text("Calories")
                 .withWidgetHeaderFormatting()
-            NavigationLink(destination: CaloriesView()) {
+            NavigationLink(destination: FoodSearchView()) {
                 Text("Log")
                     .withLogButtonFormatting()
             }

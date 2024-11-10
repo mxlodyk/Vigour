@@ -6,6 +6,7 @@ import Foundation
 import SwiftUI
 
 let themeColour = Color("Theme")
+let textColour = Color("Text")
 let buttonTextColour = Color("ButtonText")
 let textFieldColour = Color("TextField")
 let textFieldTextColour = Color("TextFieldText")
