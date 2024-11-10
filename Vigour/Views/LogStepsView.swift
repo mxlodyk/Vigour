@@ -12,7 +12,3 @@ struct LogStepsView: View {
         }
     }
 }
-
-/*#Preview {
-    LogStepsView()
-}*/

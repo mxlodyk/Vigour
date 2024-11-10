@@ -44,5 +44,12 @@ struct LogWorkoutView: View {
             } // End of background ZStack.
         } // End of navigation view.
         .navigationBarBackButtonHidden()
+        .navigationBarItems(leading:
+            Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Image("BackButton")
+                    .iconStyle()
+            })
     } // End of body view.
 } // End of LogWorkoutView.
