@@ -8,6 +8,7 @@ import SwiftUI
 struct SettingsView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @State private var isDarkModeOn = false
     
     var body: some View {
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		890C0E312C4B4F500010BBEA /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E2F2C4B4F500010BBEA /* CoreDataModel.xcdatamodeld */; };
 		890C0E332C4B56500010BBEA /* SetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E322C4B56500010BBEA /* SetView.swift */; };
 		890C0E352C4B6F890010BBEA /* EditSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E342C4B6F890010BBEA /* EditSetView.swift */; };
@@ -17,6 +18,13 @@
 		8961188A2C4A044300E0F89E /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896118892C4A044300E0F89E /* StartWorkoutView.swift */; };
 		8961188C2C4A2B7500E0F89E /* StartTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961188B2C4A2B7500E0F89E /* StartTimerView.swift */; };
 		8961188E2C4A31ED00E0F89E /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961188D2C4A31ED00E0F89E /* AddSetView.swift */; };
+=======
+		891793882C436307004DCB56 /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891793872C436307004DCB56 /* NutritionView.swift */; };
+		895782AE2C423934001FDABF /* FoodSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895782AD2C423934001FDABF /* FoodSearchView.swift */; };
+		89589DF02C40A67300845160 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89589DEF2C40A67300845160 /* HealthManager.swift */; };
+		89589DF22C411A6F00845160 /* ActivityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89589DF12C411A6F00845160 /* ActivityCard.swift */; };
+		896291C32CE0597F00D8F49F /* food.txt in Resources */ = {isa = PBXBuildFile; fileRef = 896291C22CE0597F00D8F49F /* food.txt */; };
+>>>>>>> feature/nutrition
 		8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC42C36871C0097E71A /* VigourApp.swift */; };
 		8984BAC72C36871C0097E71A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC62C36871C0097E71A /* HomeView.swift */; };
 		8984BAC92C36871D0097E71A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAC82C36871D0097E71A /* Assets.xcassets */; };
@@ -59,6 +67,11 @@
 		89EF51A52C3939A00086BBC0 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A42C3939A00086BBC0 /* AddWorkoutView.swift */; };
 		89EF51A72C3939AA0086BBC0 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51A62C3939AA0086BBC0 /* AddExerciseView.swift */; };
 		89EF51AF2C3A03990086BBC0 /* RestUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EF51AE2C3A03990086BBC0 /* RestUnitView.swift */; };
+<<<<<<< HEAD
+=======
+		89F1B4CC2C3DD969002F559B /* CoreDataStringContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89F1B4CA2C3DD969002F559B /* CoreDataStringContainer.xcdatamodeld */; };
+		89F1B4DA2C3DE4D5002F559B /* ThemeChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F1B4D92C3DE4D5002F559B /* ThemeChangeView.swift */; };
+>>>>>>> feature/nutrition
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		890C0E302C4B4F500010BBEA /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		890C0E322C4B56500010BBEA /* SetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetView.swift; sourceTree = "<group>"; };
 		890C0E342C4B6F890010BBEA /* EditSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSetView.swift; sourceTree = "<group>"; };
@@ -89,6 +103,13 @@
 		896118892C4A044300E0F89E /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
 		8961188B2C4A2B7500E0F89E /* StartTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTimerView.swift; sourceTree = "<group>"; };
 		8961188D2C4A31ED00E0F89E /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
+=======
+		891793872C436307004DCB56 /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
+		895782AD2C423934001FDABF /* FoodSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchView.swift; sourceTree = "<group>"; };
+		89589DEF2C40A67300845160 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
+		89589DF12C411A6F00845160 /* ActivityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCard.swift; sourceTree = "<group>"; };
+		896291C22CE0597F00D8F49F /* food.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = food.txt; sourceTree = "<group>"; };
+>>>>>>> feature/nutrition
 		8984BAC12C36871C0097E71A /* Vigour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vigour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8984BAC42C36871C0097E71A /* VigourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourApp.swift; sourceTree = "<group>"; };
 		8984BAC62C36871C0097E71A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -134,6 +155,11 @@
 		89EF51A42C3939A00086BBC0 /* AddWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutView.swift; sourceTree = "<group>"; };
 		89EF51A62C3939AA0086BBC0 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
 		89EF51AE2C3A03990086BBC0 /* RestUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestUnitView.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		89F1B4CB2C3DD969002F559B /* CoreDataStringContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStringContainer.xcdatamodel; sourceTree = "<group>"; };
+		89F1B4D92C3DE4D5002F559B /* ThemeChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChangeView.swift; sourceTree = "<group>"; };
+>>>>>>> feature/nutrition
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,11 +212,16 @@
 			children = (
 				89C3E0DE2C461D910011F9B3 /* Vigour.entitlements */,
 				8984BAC42C36871C0097E71A /* VigourApp.swift */,
+				896291C22CE0597F00D8F49F /* food.txt */,
 				8984BAC82C36871D0097E71A /* Assets.xcassets */,
 				8984BAFD2C36889C0097E71A /* Info.plist */,
 				8984BAF52C3687F00097E71A /* Models */,
 				8984BAF62C3687F80097E71A /* ViewModels */,
 				8984BAF42C3687D90097E71A /* Views */,
+<<<<<<< HEAD
+=======
+				8984BAF82C3688470097E71A /* Helpers */,
+>>>>>>> feature/nutrition
 				8984BAF72C3688410097E71A /* Fonts */,
 				8984BACA2C36871D0097E71A /* Preview Content */,
 			);
@@ -227,6 +258,7 @@
 			children = (
 				8984BAC62C36871C0097E71A /* HomeView.swift */,
 				89EF51882C37FFFE0086BBC0 /* MenuView.swift */,
+<<<<<<< HEAD
 				89C3E0D22C44AC820011F9B3 /* CalendarView.swift */,
 				89C3E0D62C44D3D50011F9B3 /* DailyExerciseView.swift */,
 				89CD9ADA2C4798BE0032E992 /* DailyNutritionView.swift */,
@@ -246,7 +278,11 @@
 				89CD9ADE2C4799400032E992 /* MacrosWidgetView.swift */,
 				89B4C6EF2C4C775E00EE3822 /* MindfulnessWidgetView.swift */,
 				89B4C6F12C4C776500EE3822 /* SleepWidgetView.swift */,
+=======
+				891793872C436307004DCB56 /* NutritionView.swift */,
+>>>>>>> feature/nutrition
 				89EF51922C38097A0086BBC0 /* ProgramsView.swift */,
+				895782AD2C423934001FDABF /* FoodSearchView.swift */,
 				89EF51962C38B12A0086BBC0 /* WorkoutsView.swift */,
 				89EF519A2C3917860086BBC0 /* ExercisesView.swift */,
 				89EF519E2C391FEF0086BBC0 /* ExerciseView.swift */,
@@ -262,7 +298,11 @@
 				89EF51982C3915FE0086BBC0 /* WorkoutRowView.swift */,
 				89EF519C2C391EE10086BBC0 /* ExerciseRowView.swift */,
 				89EF51A02C392FED0086BBC0 /* SettingsView.swift */,
+<<<<<<< HEAD
 				895557272C4DACFC00768C2E /* DropDownMenuView.swift */,
+=======
+				89589DF12C411A6F00845160 /* ActivityCard.swift */,
+>>>>>>> feature/nutrition
 				8984BAEE2C3687A40097E71A /* DumbbellVideoPlayerView.swift */,
 				8984BAF22C3687CC0097E71A /* ViewModifiers.swift */,
 			);
@@ -272,7 +312,12 @@
 		8984BAF52C3687F00097E71A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				890C0E2F2C4B4F500010BBEA /* CoreDataModel.xcdatamodeld */,
+=======
+				89F1B4CA2C3DD969002F559B /* CoreDataStringContainer.xcdatamodeld */,
+				89589DEF2C40A67300845160 /* HealthManager.swift */,
+>>>>>>> feature/nutrition
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,6 +339,17 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
+		8984BAF82C3688470097E71A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				89F1B4D92C3DE4D5002F559B /* ThemeChangeView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+>>>>>>> feature/nutrition
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -400,6 +456,7 @@
 			files = (
 				8984BACC2C36871D0097E71A /* Preview Assets.xcassets in Resources */,
 				8984BAC92C36871D0097E71A /* Assets.xcassets in Resources */,
+				896291C32CE0597F00D8F49F /* food.txt in Resources */,
 				8984BAFA2C36888C0097E71A /* Montserrat.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,9 +497,13 @@
 				89C3E0DB2C45D26B0011F9B3 /* StepsWidgetView.swift in Sources */,
 				89EF51A12C392FED0086BBC0 /* SettingsView.swift in Sources */,
 				89EF51932C38097A0086BBC0 /* ProgramsView.swift in Sources */,
+<<<<<<< HEAD
 				89C3E0D72C44D3D50011F9B3 /* DailyExerciseView.swift in Sources */,
 				89B4C6F22C4C776500EE3822 /* SleepWidgetView.swift in Sources */,
 				8961188C2C4A2B7500E0F89E /* StartTimerView.swift in Sources */,
+=======
+				89F1B4DA2C3DE4D5002F559B /* ThemeChangeView.swift in Sources */,
+>>>>>>> feature/nutrition
 				89EF51A72C3939AA0086BBC0 /* AddExerciseView.swift in Sources */,
 				8984BAC72C36871C0097E71A /* HomeView.swift in Sources */,
 				89C3E0D32C44AC820011F9B3 /* CalendarView.swift in Sources */,
@@ -453,10 +514,14 @@
 				89B4C6F02C4C775E00EE3822 /* MindfulnessWidgetView.swift in Sources */,
 				89C3E0DD2C461B890011F9B3 /* HealthManager.swift in Sources */,
 				89EF51A32C3938710086BBC0 /* AddProgramView.swift in Sources */,
+<<<<<<< HEAD
 				89CD9ADF2C4799400032E992 /* MacrosWidgetView.swift in Sources */,
 				89CD9ADD2C47992C0032E992 /* CaloriesWidgetView.swift in Sources */,
 				89C3E0D52C44CB5E0011F9B3 /* LogWorkoutView.swift in Sources */,
 				895557282C4DACFC00768C2E /* DropDownMenuView.swift in Sources */,
+=======
+				89589DF02C40A67300845160 /* HealthManager.swift in Sources */,
+>>>>>>> feature/nutrition
 				89EF51992C3915FE0086BBC0 /* WorkoutRowView.swift in Sources */,
 				8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */,
 				89DEA9222C478C4C0065CDED /* ChangeStepGoalView.swift in Sources */,
@@ -469,7 +534,10 @@
 				89C3E0D92C44FBE60011F9B3 /* WorkoutWidgetView.swift in Sources */,
 				890C0E352C4B6F890010BBEA /* EditSetView.swift in Sources */,
 				89EF519D2C391EE10086BBC0 /* ExerciseRowView.swift in Sources */,
+				895782AE2C423934001FDABF /* FoodSearchView.swift in Sources */,
 				89EF519B2C3917860086BBC0 /* ExercisesView.swift in Sources */,
+				891793882C436307004DCB56 /* NutritionView.swift in Sources */,
+				89589DF22C411A6F00845160 /* ActivityCard.swift in Sources */,
 				8984BAF32C3687CC0097E71A /* ViewModifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
