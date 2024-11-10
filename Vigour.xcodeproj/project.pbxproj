@@ -11,6 +11,7 @@
 		895782AE2C423934001FDABF /* FoodSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895782AD2C423934001FDABF /* FoodSearchView.swift */; };
 		89589DF02C40A67300845160 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89589DEF2C40A67300845160 /* HealthManager.swift */; };
 		89589DF22C411A6F00845160 /* ActivityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89589DF12C411A6F00845160 /* ActivityCard.swift */; };
+		896291C32CE0597F00D8F49F /* food.txt in Resources */ = {isa = PBXBuildFile; fileRef = 896291C22CE0597F00D8F49F /* food.txt */; };
 		8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC42C36871C0097E71A /* VigourApp.swift */; };
 		8984BAC72C36871C0097E71A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC62C36871C0097E71A /* HomeView.swift */; };
 		8984BAC92C36871D0097E71A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAC82C36871D0097E71A /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		895782AD2C423934001FDABF /* FoodSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchView.swift; sourceTree = "<group>"; };
 		89589DEF2C40A67300845160 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		89589DF12C411A6F00845160 /* ActivityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCard.swift; sourceTree = "<group>"; };
+		896291C22CE0597F00D8F49F /* food.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = food.txt; sourceTree = "<group>"; };
 		8984BAC12C36871C0097E71A /* Vigour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vigour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8984BAC42C36871C0097E71A /* VigourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourApp.swift; sourceTree = "<group>"; };
 		8984BAC62C36871C0097E71A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				8984BAC42C36871C0097E71A /* VigourApp.swift */,
+				896291C22CE0597F00D8F49F /* food.txt */,
 				8984BAC82C36871D0097E71A /* Assets.xcassets */,
 				8984BAFD2C36889C0097E71A /* Info.plist */,
 				8984BAF52C3687F00097E71A /* Models */,
@@ -346,6 +349,7 @@
 			files = (
 				8984BACC2C36871D0097E71A /* Preview Assets.xcassets in Resources */,
 				8984BAC92C36871D0097E71A /* Assets.xcassets in Resources */,
+				896291C32CE0597F00D8F49F /* food.txt in Resources */,
 				8984BAFA2C36888C0097E71A /* Montserrat.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,13 +6,41 @@ struct FoodSearchView: View {
     
     @State private var foodName: String = ""
     @State private var nutritionData: [Nutrition] = []
+    @State private var foodList: [String] = []
+    @State private var suggestions: [String] = []
+    @State private var showSuggestions: Bool = false
     
     var body: some View {
         VStack {
             TextField("Enter food name", text: $foodName)
                 .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .onChange(of: foodName) {
+                    if foodName.count > 0 {
+                        suggestions = foodList.filter { $0.lowercased().hasPrefix(foodName.lowercased()) }
+                        showSuggestions = !suggestions.isEmpty
+                    } else {
+                        showSuggestions = false
+                    }
+                }
+            // MARK: Dropdown Menu: Food Suggestions.
+            if showSuggestions {
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        ForEach(suggestions, id: \.self) { suggestion in
+                            Text(suggestion)
+                                .onTapGesture {
+                                    foodName = suggestion
+                                    showSuggestions = false
+                                }
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .frame(maxHeight: 100)
+            }
             
+            // MARK: Search Button.
             Button("Search") {
                 Task {
                     do {
@@ -24,6 +52,7 @@ struct FoodSearchView: View {
             }
             .padding()
             
+            // MARK: Nutrition Data.
             List(nutritionData, id: \.name) { item in
                 VStack(alignment: .leading) {
                     Text("Name: \(item.name)")
@@ -53,10 +82,24 @@ struct FoodSearchView: View {
                         Text("Sugar: \(sugarG) g")
                     }
                 }
-                .padding(.vertical, 4)
             }
         }
         .padding()
+        .onAppear {
+            loadFoodList()
+        }
+    }
+    
+    // MARK: Load Food List (food.txt)
+    private func loadFoodList() {
+        if let fileURL = Bundle.main.url(forResource: "food", withExtension: "txt") {
+            do {
+                let contents = try String(contentsOf: fileURL)
+                foodList = contents.components(separatedBy: .newlines).filter { !$0.isEmpty }
+            } catch {
+                print("Error loading food list: \(error)")
+            }
+        }
     }
 }
 
