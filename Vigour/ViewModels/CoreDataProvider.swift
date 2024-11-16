@@ -51,6 +51,7 @@ class CoreDataProvider: ObservableObject {
     @Published var exercises: [ExerciseEntity] = []
     @Published var sets: [SetEntity] = []
     @Published var loggedWorkouts: [WorkoutLogEntity] = []
+    @Published var loggedFood: [FoodLogEntity] = []
     
     // MARK: Initialise
     init() {
@@ -60,6 +61,7 @@ class CoreDataProvider: ObservableObject {
         getSets()
         fetchCurrentWeek()
         getLoggedWorkoutsForSelectedDay()
+        getLoggedFoodForSelectedDay() // NEW
     }
     
     // MARK: Fetch Current Week
@@ -103,6 +105,22 @@ class CoreDataProvider: ObservableObject {
             }
         }
     
+    // MARK: Log Food
+    func logFood(_ food: FoodEntity) {
+            
+        let newLog = FoodLogEntity(context: manager.context)
+            newLog.date = selectedDay
+            newLog.food = food
+            
+            do {
+                try manager.context.save()
+                getLoggedFoodForSelectedDay()
+            } catch {
+                // Handle the Core Data error appropriately
+                print("Failed to save log: \(error.localizedDescription)")
+            }
+        }
+    
     // MARK: Delete Logged Workout
     func deleteLoggedWorkout(_ workoutLog: WorkoutLogEntity) {
         manager.context.delete(workoutLog)
@@ -124,6 +142,24 @@ class CoreDataProvider: ObservableObject {
         } catch let error {
             print("Error fetching logged workouts: \(error.localizedDescription)")
             loggedWorkouts = []
+        }
+    }
+    
+    // MARK: Get Logged Workouts for Current Day
+    func getLoggedFoodForSelectedDay() {
+        let request = NSFetchRequest<FoodLogEntity>(entityName: "FoodLogEntity")
+        
+        let calendar = Calendar.current
+        let startOfDay = calendar.startOfDay(for: selectedDay)
+        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+        
+        request.predicate = NSPredicate(format: "date >= %@ AND date < %@", startOfDay as NSDate, endOfDay as NSDate)
+        
+        do {
+            loggedFood = try manager.context.fetch(request)
+        } catch let error {
+            print("Error fetching logged workouts: \(error.localizedDescription)")
+            loggedFood = []
         }
     }
     
@@ -237,6 +273,7 @@ class CoreDataProvider: ObservableObject {
         getExercises()
         getSets()
         getLoggedWorkoutsForSelectedDay()
+        getLoggedFoodForSelectedDay() // NEW
     }
     
 }

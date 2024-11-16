@@ -1,8 +1,9 @@
 import SwiftUI
 import Foundation
 
-// Food Search View
+// MARK: Food Search View
 struct FoodSearchView: View {
+    
     
     @State private var foodName: String = ""
     @State private var nutritionData: [Nutrition] = []
@@ -83,6 +84,14 @@ struct FoodSearchView: View {
                     }
                 }
             }
+            if !nutritionData.isEmpty {
+                Button(action: {
+                    addButtonPressed()
+                }) {
+                    Text("Add Food")
+                        .withButtonFormatting()
+                }
+            }
         }
         .padding()
         .onAppear {
@@ -100,6 +109,10 @@ struct FoodSearchView: View {
                 print("Error loading food list: \(error)")
             }
         }
+    }
+    
+    private func addButtonPressed() {
+        print("add food")
     }
 }
 
@@ -148,6 +161,8 @@ func getNutritionData(query: String) async throws -> [Nutrition] {
     return try decoder.decode([Nutrition].self, from: data)
 }
 
+/*
 #Preview {
     FoodSearchView()
 }
+*/

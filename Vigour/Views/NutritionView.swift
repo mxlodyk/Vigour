@@ -10,6 +10,8 @@ struct NutritionView: View {
     }
 }
 
-#Preview {
-    NutritionView()
-}
+/*
+ #Preview {
+ NutritionView()
+ }
+ */

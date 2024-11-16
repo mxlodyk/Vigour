@@ -91,6 +91,7 @@
 		890C0E3A2C4BBB030010BBEA /* WorkoutCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCompletionView.swift; sourceTree = "<group>"; };
 		890C0E3C2C4BD8170010BBEA /* ExerciseTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTimerView.swift; sourceTree = "<group>"; };
 		891793872C436307004DCB56 /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
+		8931941B2CE0760E00D55436 /* CoreDataModel2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel2.xcdatamodel; sourceTree = "<group>"; };
 		895557272C4DACFC00768C2E /* DropDownMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuView.swift; sourceTree = "<group>"; };
 		895782AD2C423934001FDABF /* FoodSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchView.swift; sourceTree = "<group>"; };
 		89589DF12C411A6F00845160 /* ActivityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCard.swift; sourceTree = "<group>"; };
@@ -841,11 +842,13 @@
 		890C0E2F2C4B4F500010BBEA /* CoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				8931941B2CE0760E00D55436 /* CoreDataModel2.xcdatamodel */,
 				890C0E302C4B4F500010BBEA /* CoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 890C0E302C4B4F500010BBEA /* CoreDataModel.xcdatamodel */;
+			currentVersion = 8931941B2CE0760E00D55436 /* CoreDataModel2.xcdatamodel */;
 			path = CoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
+			usesTabs = 0;
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */

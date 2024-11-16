@@ -16,6 +16,3 @@ struct MacrosWidgetView: View {
     }
 }
 
-/*#Preview {
-    MacrosWidgetView()
-}*/

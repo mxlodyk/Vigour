@@ -26,6 +26,8 @@ struct ActivityCard: View {
     }
 }
 
-#Preview {
-    ActivityCard()
-}
+/*
+ #Preview {
+ ActivityCard()
+ }
+ */

@@ -21,6 +21,12 @@ struct WorkoutWidgetView: View {
                     HStack {
                         Text("Workouts")
                             .withWidgetHeaderFormatting()
+                        NavigationLink(destination: ProgramsView()) {
+                            Image("TempEditIcon")
+                                //.iconStyle()
+                                .resizable()
+                                .frame(width: 15, height: 15)
+                        }
                         Spacer()
                         Image(systemName: isLogged ? "checkmark.circle.fill" : "checkmark.circle")
                     }

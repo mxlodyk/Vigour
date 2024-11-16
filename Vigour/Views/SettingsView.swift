@@ -18,11 +18,7 @@ struct SettingsView: View {
             VStack {
                 Text("Settings")
                     .withTextFormatting()
-                NavigationLink(destination: ProgramsView()) {
-                    Text("Programs")
-                        .withButtonFormatting()
-                }
-                Spacer()
+                // Settings.
             }
             .withEdgePadding()
             .navigationBarBackButtonHidden()
