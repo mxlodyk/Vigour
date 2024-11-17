@@ -8,7 +8,8 @@ struct AddSetView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @ObservedObject var cd = CoreDataProvider()
+    //@ObservedObject var edp = ExerciseDataProvider()
+    @EnvironmentObject var edp: ExerciseDataProvider
     
     var exercise: ExerciseEntity
     @State var newWeight: String = ""
@@ -54,6 +55,6 @@ struct AddSetView: View {
     
     // MARK: Save Button Pressed
     func saveButtonPressed() {
-        cd.addSet(exercise, newWeight, newRepetitions, newTempo, newRestTime, newRestUnit)
+        edp.addSet(exercise, newWeight, newRepetitions, newTempo, newRestTime, newRestUnit)
     }
 }

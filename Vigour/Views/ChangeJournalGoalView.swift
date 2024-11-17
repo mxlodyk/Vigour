@@ -36,7 +36,7 @@ struct ChangeJournalGoalView: View {
     // MARK: Save Button Pressed
     func saveButtonPressed() {
         journalGoal = Int16(journalGoalText) ?? 0
-        CoreDataProvider().saveJournalGoal(journalGoal)
+        ExerciseDataProvider().saveJournalGoal(journalGoal)
     }
 }
 

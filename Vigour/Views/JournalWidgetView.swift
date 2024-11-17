@@ -7,7 +7,8 @@ import SwiftUI
 struct JournalWidgetView: View {
     
     @State var showingChangeGoalBottomSheet = false
-    @State var journalGoal: Int16 = CoreDataProvider().getJournalGoal()
+    @EnvironmentObject var edp: ExerciseDataProvider
+    @State var journalGoal: Int16 = 0
     
     var body: some View {
         VStack {
@@ -39,5 +40,8 @@ struct JournalWidgetView: View {
         }
         }
         .withWidgetViewFormatting()
+        .onAppear {
+            journalGoal = edp.getJournalGoal()
+        }
     }
 }

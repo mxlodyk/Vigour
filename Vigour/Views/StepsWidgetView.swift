@@ -6,11 +6,11 @@ import SwiftUI
 
 struct StepsWidgetView: View {
     
+    @EnvironmentObject var edp: ExerciseDataProvider
     @EnvironmentObject var hm: HealthManager
-    
     @State var showingStepGoalBottomSheet = false
     @State var showingLogBottomSheet = false
-    @State var stepGoal: Int32 = CoreDataProvider().getStepGoal()
+    @State var stepGoal: Int32 = 0
     
     // MARK: Check if step goal has been reached
     var goalReached: Bool {
@@ -65,9 +65,8 @@ struct StepsWidgetView: View {
             })
         }
         .withWidgetViewFormatting()
+        .onAppear {
+            stepGoal = edp.getStepGoal()
+        }
     }
 }
-
-/*#Preview {
-    StepsWidgetView()
-}*/

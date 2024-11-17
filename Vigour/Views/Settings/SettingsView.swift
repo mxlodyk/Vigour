@@ -7,9 +7,10 @@ import SwiftUI
 // MARK: Settings View
 struct SettingsView: View {
     
+    @EnvironmentObject var edp: ExerciseDataProvider
     @Environment(\.presentationMode) var presentationMode
     @State private var isDarkModeOn = false
-    @State private var selectedSystem: MeasurementSystem = CoreDataProvider().getMeasurementSystem()
+    @State private var selectedSystem: MeasurementSystem = .metric
     
     var body: some View {
         
@@ -29,7 +30,7 @@ struct SettingsView: View {
                     }
                     .pickerStyle(MenuPickerStyle())
                     .onChange(of: selectedSystem) { newSystem in
-                        CoreDataProvider().saveMeasurementSystem(newSystem)
+                        edp.saveMeasurementSystem(newSystem)
                     }
                 }
                 Spacer()
@@ -43,6 +44,9 @@ struct SettingsView: View {
                     Image("BackButton")
                         .iconStyle()
                 })
+        }
+        .onAppear {
+            selectedSystem = edp.getMeasurementSystem() ?? .metric
         }
     }
 }

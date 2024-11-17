@@ -36,6 +36,6 @@ struct ChangeStepGoalView: View {
     // MARK: Save Button Pressed
     func saveButtonPressed() {
         stepGoal = Int32(stepGoalText) ?? 0
-        CoreDataProvider().saveStepGoal(stepGoal)
+        ExerciseDataProvider().saveStepGoal(stepGoal)
     }
 }

@@ -1,4 +1,4 @@
-//  CoreDataProvider.swift
+//  ExerciseDataProvider.swift
 //  Vigour
 //  Created by Melody Flavel on 9/7/2024.
 
@@ -7,41 +7,8 @@ import CoreData
 
 // MARK: REFACTOR TO CALENDARDATAPROVIDER, NUTRITIONDATAPROVIDER, EXERCISEDATAPROVIDER, MENTALHEALTHDATAPROVIDER
 
-// MARK: Core Data Manager
-class CoreDataManager {
-    
-    let container: NSPersistentContainer
-    let context: NSManagedObjectContext
-    
-    // Singleton
-    static let instance = CoreDataManager()
-    
-    // MARK: Initialise
-    init() {
-        // The attribute types of CoreDataStringContainer are strings to support TextField modifiers in AddExerciseView
-        container = NSPersistentContainer(name: "CoreDataModel")
-        
-        container.loadPersistentStores { (description, error) in
-            if let error = error {
-                print("Error loading Core Data. \(error)")
-            }
-        }
-        context = container.viewContext
-    }
-    
-    // MARK: Save
-    func save() {
-        do {
-            try context.save()
-            print("Saved Core Data successfully.")
-        } catch let error {
-            print("Error saving Core Data. \(error.localizedDescription)")
-        }
-    }
-}
-
 // MARK: Core Data Provider
-class CoreDataProvider: ObservableObject {
+class ExerciseDataProvider: ObservableObject {
     
     let manager = CoreDataManager.instance
     
@@ -57,6 +24,7 @@ class CoreDataProvider: ObservableObject {
         
     // MARK: Initialise
     init() {
+        print("ExerciseDataProvider initialized")
         getPrograms()
         getWorkouts()
         getExercises()

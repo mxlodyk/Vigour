@@ -7,7 +7,7 @@ import SwiftUI
 // MARK: Daily Exercise View
 struct DailyExerciseView: View {
     
-    @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var edp: ExerciseDataProvider
     @EnvironmentObject var hm: HealthManager
     
     var body: some View {
@@ -20,7 +20,7 @@ struct DailyExerciseView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack (spacing: 20) {
                     WorkoutWidgetView()
-                        .environmentObject(cd)
+                        .environmentObject(edp)
                     StepsWidgetView()
                         .environmentObject(hm)
                 }
@@ -28,13 +28,13 @@ struct DailyExerciseView: View {
         }
         // Update view when view appears
         .onAppear {
-            cd.getLoggedWorkoutsForSelectedDay()
+            edp.getLoggedWorkoutsForSelectedDay()
             hm.fetchSelectedDaySteps()
             hm.fetchSelectedDayWorkouts()
         }
         // Update view if selected day changes
-        .onChange(of: cd.selectedDay) {
-            cd.getLoggedWorkoutsForSelectedDay()
+        .onChange(of: edp.selectedDay) {
+            edp.getLoggedWorkoutsForSelectedDay()
             hm.fetchSelectedDaySteps()
             hm.fetchSelectedDayWorkouts()
         }

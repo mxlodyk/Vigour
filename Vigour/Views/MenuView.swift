@@ -8,8 +8,8 @@ import SwiftUI
 struct MenuView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @StateObject var cd = CoreDataProvider()
-    @StateObject var hm = HealthManager()
+    @EnvironmentObject var edp: ExerciseDataProvider
+    @EnvironmentObject var hm: HealthManager
     
     var body: some View {
         ZStack {
@@ -17,10 +17,10 @@ struct MenuView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView (showsIndicators: false) {
                 CalendarView()
-                    .environmentObject(cd)
+                    .environmentObject(edp)
                     .environmentObject(hm)
                 DailyExerciseView()
-                    .environmentObject(cd)
+                    .environmentObject(edp)
                     .environmentObject(hm)
                 DailyNutritionView()
                 DailyMentalHealthView()
@@ -35,7 +35,7 @@ struct MenuView: View {
                         Image("HomeButton")
                             .iconStyle()},
                 trailing:
-                    NavigationLink(destination: SettingsView()) {
+                    NavigationLink(destination: SettingsView().environmentObject(edp)) {
                         Image("SettingsButton")
                             .iconStyle()
                     })

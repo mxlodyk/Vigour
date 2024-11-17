@@ -6,7 +6,7 @@ import SwiftUI
 
 struct InteractiveSetView: View {
     
-    @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var cd: ExerciseDataProvider
     
     @StateObject var exercise: ExerciseEntity
     @State var set: SetEntity

@@ -7,12 +7,12 @@ import SwiftUI
 // MARK: Workout Widget View
 struct WorkoutWidgetView: View {
     
-    @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var edp: ExerciseDataProvider
     @EnvironmentObject var hm: HealthManager
     
     // MARK: Check if user has any workouts logged in either loggedWorkouts or syncedWorkouts
     var isLogged: Bool {
-        return !cd.loggedWorkouts.isEmpty || !hm.syncedWorkouts.isEmpty
+        return !edp.loggedWorkouts.isEmpty || !hm.syncedWorkouts.isEmpty
     }
     
     var body: some View {
@@ -51,13 +51,13 @@ struct WorkoutWidgetView: View {
                             Spacer()
                             Image(systemName: "applewatch")
                         }
-                                ForEach(cd.loggedWorkouts, id: \.self) { workout in
+                                ForEach(edp.loggedWorkouts, id: \.self) { workout in
                                     HStack {
                                         Text(workout.workout?.name ?? "Unnamed Workout")
                                             .withWidgetTextFormatting()
                                             .contextMenu {
                                                 Button(action: {
-                                                    cd.deleteLoggedWorkout(workout)
+                                                    edp.deleteLoggedWorkout(workout)
                                                 }) {
                                                     Text("Delete")
                                                 }
@@ -69,14 +69,14 @@ struct WorkoutWidgetView: View {
                     }
                     Spacer()
                 }
-            NavigationLink(destination: LogWorkoutView().environmentObject(cd).environmentObject(hm)) {
+            NavigationLink(destination: LogWorkoutView().environmentObject(edp).environmentObject(hm)) {
                 Text("Log")
                     .withLogButtonFormatting()
             }
         } // End of Line 20 VStack.
         .withWidgetViewFormatting()
-        .onChange(of: cd.loggedWorkouts) {
-            cd.getLoggedWorkoutsForSelectedDay()
+        .onChange(of: edp.loggedWorkouts) {
+            edp.getLoggedWorkoutsForSelectedDay()
         }
         
     } // End of View.

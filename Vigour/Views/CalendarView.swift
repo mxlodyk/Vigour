@@ -7,31 +7,31 @@ import SwiftUI
 // MARK: Calendar View
 struct CalendarView: View {
     
-    @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var edp: ExerciseDataProvider
     @EnvironmentObject var hm: HealthManager
     @Namespace var animation
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                ForEach(cd.currentWeek, id: \.self) { day in
+                ForEach(edp.currentWeek, id: \.self) { day in
                     VStack(spacing: 10) {
-                        Text(cd.extractDate(date: day, format: "dd"))
-                        Text(cd.extractDate(date: day, format: "EEE"))
+                        Text(edp.extractDate(date: day, format: "dd"))
+                        Text(edp.extractDate(date: day, format: "EEE"))
                         // MARK: Selection Indicator
                         Circle()
                             .fill(textColour)
                             .frame(width: 8, height: 8)
-                            .opacity(cd.isToday(date: day) ? 1 : 0)
+                            .opacity(edp.isToday(date: day) ? 1 : 0)
                     }
-                    .foregroundStyle(cd.isToday(date: day) ? .primary : .secondary)
-                    .foregroundColor(cd.isToday(date: day) ? textColour : themeColour)
+                    .foregroundStyle(edp.isToday(date: day) ? .primary : .secondary)
+                    .foregroundColor(edp.isToday(date: day) ? textColour : themeColour)
                     // MARK: Capsule Shape
                     .frame(width: 45, height: 90)
                     .background(
                         ZStack {
                             // MARK: Matched Geometry Effect
-                            if cd.isToday(date: day) {
+                            if edp.isToday(date: day) {
                                 Capsule()
                                     .fill(themeColour)
                                     .matchedGeometryEffect(id: "CURRENTDAY", in: animation)
@@ -42,7 +42,7 @@ struct CalendarView: View {
                         .onTapGesture {
                             // Update current day
                             withAnimation {
-                                cd.selectedDay = day
+                                edp.selectedDay = day
                                 hm.selectedDay = day
                             }
                         }

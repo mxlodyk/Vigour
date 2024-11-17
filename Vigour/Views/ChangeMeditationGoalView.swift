@@ -36,7 +36,7 @@ struct ChangeMeditationGoalView: View {
     // MARK: Save Button Pressed
     func saveButtonPressed() {
         meditationGoal = Int16(meditationGoalText) ?? 0
-        CoreDataProvider().saveMeditationGoal(meditationGoal)
+        ExerciseDataProvider().saveMeditationGoal(meditationGoal)
     }
 }
 

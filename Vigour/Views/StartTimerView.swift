@@ -13,7 +13,7 @@ struct StartTimerView: View {
     @State var time = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var navigateToInteractiveWorkoutView = false
     @EnvironmentObject var selectedWorkout: WorkoutEntity
-    @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var edp: ExerciseDataProvider
     @EnvironmentObject var hm: HealthManager
     
     var body: some View {

@@ -9,7 +9,8 @@ struct ExerciseView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @ObservedObject var cd = CoreDataProvider()
+    @EnvironmentObject var edp: ExerciseDataProvider
+    //@ObservedObject var cd = ExerciseDataProvider()
     
     @Binding var exercise: ExerciseEntity
     
@@ -27,10 +28,10 @@ struct ExerciseView: View {
                     if let sets = exercise.sets as? NSOrderedSet,
                        let setsArray = sets.array as? [SetEntity] {
                         ForEach(setsArray) { set in
-                            SetView(exercise: exercise, set: set).environmentObject(cd)
+                            SetView(exercise: exercise, set: set).environmentObject(edp)
                                 .contextMenu {
                                     Button(action: {
-                                        cd.deleteSet(set, exercise)
+                                        edp.deleteSet(set, exercise)
                                     }) {
                                         Text("Delete")
                                     }

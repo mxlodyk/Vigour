@@ -8,6 +8,7 @@ struct ChangeCalorieGoalView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @EnvironmentObject var edp: ExerciseDataProvider
     @Binding var calorieGoal: Int16
     @State var calorieGoalText: String = ""
     
@@ -36,6 +37,6 @@ struct ChangeCalorieGoalView: View {
     // MARK: Save Button Pressed
     func saveButtonPressed() {
         calorieGoal = Int16(calorieGoalText) ?? 0
-        CoreDataProvider().saveCalorieGoal(calorieGoal)
+        edp.saveCalorieGoal(calorieGoal)
     }
 }

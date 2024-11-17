@@ -6,8 +6,9 @@ import SwiftUI
 
 struct MeditationWidgetView: View {
     
+    @EnvironmentObject var edp: ExerciseDataProvider
     @State var showingMeditationGoalBottomSheet = false
-    @State var meditationGoal: Int16 = CoreDataProvider().getMeditationGoal()
+    @State var meditationGoal: Int16 = 0
     
     var body: some View {
         VStack {
@@ -39,5 +40,8 @@ struct MeditationWidgetView: View {
             }
         }
         .withWidgetViewFormatting()
+        .onAppear {
+            meditationGoal = edp.getMeditationGoal()
+        }
     }
 }

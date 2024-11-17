@@ -10,7 +10,7 @@ struct ProgramsView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var showingBottomSheet = false
     
-    @StateObject var cd = CoreDataProvider()
+    @EnvironmentObject var edp: ExerciseDataProvider
     
     var body: some View {
         ZStack {
@@ -18,11 +18,11 @@ struct ProgramsView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack {
-                    ForEach(cd.programs) { program in
+                    ForEach(edp.programs) { program in
                         ProgramRowView (program: program)
                             .contextMenu {
                                 Button(action: {
-                                    cd.deleteProgram(program)
+                                    edp.deleteProgram(program)
                                 }) {
                                     Text("Delete")
                                 }
@@ -48,7 +48,7 @@ struct ProgramsView: View {
                         .iconStyle()
                 })
             .sheet(isPresented: $showingBottomSheet, content: {
-                AddProgramView(cd: cd)
+                AddProgramView().environmentObject(edp)
                     .presentationDetents([.fraction(0.2)])
             })
         }

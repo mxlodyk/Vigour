@@ -6,7 +6,7 @@ import SwiftUI
 
 struct SetView: View {
     
-    @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var edp: ExerciseDataProvider
     
     @StateObject var exercise: ExerciseEntity
     @State var set: SetEntity
@@ -62,6 +62,6 @@ struct SetView: View {
         let copiedTempo = set.tempo
         let copiedRestTime = set.restTime
         let copiedRestUnit = set.restUnit
-        cd.addSet(exercise, copiedWeight ?? "", copiedRepetitions ?? "", copiedTempo ?? "", copiedRestTime ?? "", copiedRestUnit ?? "")
+        edp.addSet(exercise, copiedWeight ?? "", copiedRepetitions ?? "", copiedTempo ?? "", copiedRestTime ?? "", copiedRestUnit ?? "")
     }
 }

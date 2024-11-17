@@ -9,7 +9,8 @@ struct AddProgramView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @ObservedObject var cd = CoreDataProvider()
+    //@ObservedObject var cd = ExerciseDataProvider()
+    @EnvironmentObject var edp: ExerciseDataProvider
     @State var newProgramName: String = ""
     
     var body: some View {
@@ -36,7 +37,7 @@ struct AddProgramView: View {
     // MARK: Save Button Pressed
     func saveButtonPressed() {
         guard !newProgramName.isEmpty else { return }
-        cd.addProgram(newProgramName)
+        edp.addProgram(newProgramName)
         newProgramName = ""
     }
 }

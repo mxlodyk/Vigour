@@ -4,6 +4,8 @@ import Foundation
 // MARK: Food Search View
 struct FoodSearchView: View {
     
+    @EnvironmentObject var edp: ExerciseDataProvider
+    @State private var measurementSystem: MeasurementSystem?
     @State private var foodName: String = ""
     @State private var nutritionData: [Nutrition] = []
     @State private var foodList: [String] = []
@@ -34,7 +36,7 @@ struct FoodSearchView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.leading, 30)
                         .padding(.trailing, 20)
-                    Text(CoreDataProvider().getMeasurementSystem().rawValue == "Metric" ? "grams" : "pounds")
+                    Text(measurementSystem?.rawValue == "Metric" ? "grams" : "pounds")
                         .withTextFormatting()
                 }
                 // MARK: Dropdown Menu: Food Suggestions.
@@ -60,7 +62,7 @@ struct FoodSearchView: View {
                     Task {
                         let quantity = Double(quantityText) ?? 0.0
                         do {
-                            nutritionData = try await getNutritionData(foodQuery: foodName, quantityQuery: quantity) //
+                            nutritionData = try await getNutritionData(foodQuery: foodName, quantityQuery: quantity, measurementSystem: measurementSystem!)
                         } catch {
                             print("Error: \(error)")
                         }
@@ -109,9 +111,10 @@ struct FoodSearchView: View {
                 }
             }
             .padding()
-            .onAppear {
-                loadFoodList()
-            }
+        }
+        .onAppear {
+            measurementSystem = edp.getMeasurementSystem()
+            loadFoodList()
         }
     } // End of ZStack
     // MARK: Load Food List (food.txt)
@@ -157,11 +160,11 @@ struct Nutrition: Codable {
 }
 
 // Get Nutrition Data
-func getNutritionData(foodQuery: String, quantityQuery: Double) async throws -> [Nutrition] {
+func getNutritionData(foodQuery: String, quantityQuery: Double, measurementSystem: MeasurementSystem) async throws -> [Nutrition] {
     
     let apiKey = "Xn/MQIMA2BR7blu1AatZAA==rnUm3JEJ1n7UhXzD"
     let encodedFoodQuery = foodQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-    let unit = CoreDataProvider().getMeasurementSystem().rawValue.lowercased() == "metric" ? "g" : "lb"
+    let unit = measurementSystem.rawValue.lowercased() == "metric" ? "g" : "lb"
     let url = URL(string: "https://api.api-ninjas.com/v1/nutrition?query=\(quantityQuery)\(unit) \(encodedFoodQuery)")! // ADD TEHM TO QUERY
     
     var request = URLRequest(url: url)

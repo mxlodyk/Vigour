@@ -10,7 +10,7 @@ struct ExercisesView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var showingBottomSheet = false
     
-    @ObservedObject var cd = CoreDataProvider()
+    @ObservedObject var edp = ExerciseDataProvider()
     @Binding var program: ProgramEntity
     @Binding var workout: WorkoutEntity
     
@@ -26,7 +26,7 @@ struct ExercisesView: View {
                             ExerciseRowView(exercise: exercise)
                                 .contextMenu {
                                     Button(action: {
-                                        cd.deleteExercise(exercise, workout)
+                                        edp.deleteExercise(exercise, workout)
                                     }) {
                                         Text("Delete")
                                     }
@@ -53,7 +53,7 @@ struct ExercisesView: View {
                             .iconStyle()
                     })
             .sheet(isPresented: $showingBottomSheet, content: {
-                AddExerciseView(cd: cd, program: $program, workout: $workout)
+                AddExerciseView(program: $program, workout: $workout).environmentObject(edp)
                     .presentationDetents([.fraction(0.2)])
             })
         }

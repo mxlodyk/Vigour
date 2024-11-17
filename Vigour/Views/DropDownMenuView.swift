@@ -73,6 +73,3 @@ struct DropDownMenuView: View {
     }
 }
 
-/*#Preview {
-    DropDownMenuView(title: "Workout", prompt: "Select", options: ["Glutes", "Hamstrings", "Quads"], selection: .constant("Glutes"))
-}*/

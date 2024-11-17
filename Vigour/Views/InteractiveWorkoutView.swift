@@ -7,7 +7,7 @@ import SwiftUI
 struct InteractiveWorkoutView: View {
     
     @EnvironmentObject var selectedWorkout: WorkoutEntity
-    @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var edp: ExerciseDataProvider
     @EnvironmentObject var hm: HealthManager
     @State private var currentExerciseIndex = 0
     @State private var currentSetIndex = 0
@@ -67,7 +67,7 @@ struct InteractiveWorkoutView: View {
                         } else {
                             navigateToWorkoutCompletionView = true
                             navigateToExerciseTimerView = false
-                            cd.logWorkout(selectedWorkout)
+                            edp.logWorkout(selectedWorkout)
                         }
                     }
                 }

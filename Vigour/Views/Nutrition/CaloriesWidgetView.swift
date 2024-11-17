@@ -6,9 +6,10 @@ import SwiftUI
 
 struct CaloriesWidgetView: View {
     
+    @EnvironmentObject var edp: ExerciseDataProvider
     @State var showingCalorieGoalBottomSheet = false
     @State var showingLogBottomSheet = false
-    @State var calorieGoal: Int16 = CoreDataProvider().getCalorieGoal()
+    @State var calorieGoal: Int16 = 0
     
     var body: some View {
         VStack {
@@ -47,5 +48,8 @@ struct CaloriesWidgetView: View {
             })
         }
         .withWidgetViewFormatting()
+        .onAppear {
+            calorieGoal = edp.getCalorieGoal()
+        }
     }
 }

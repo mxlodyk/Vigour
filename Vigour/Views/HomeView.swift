@@ -7,6 +7,9 @@ import SwiftUI
 // MARK: Home View
 struct HomeView: View {
     
+    @EnvironmentObject var edp: ExerciseDataProvider
+    @EnvironmentObject var hm: HealthManager
+    
     var body: some View {
         ZStack {
             Color.background
@@ -19,7 +22,7 @@ struct HomeView: View {
                 Text("VIGOUR")
                     .withHeading1Formatting()
                 Spacer()
-                NavigationLink(destination: MenuView()) {
+                NavigationLink(destination: MenuView().environmentObject(edp).environmentObject(hm)) {
                     Image("OnButton")
                 }
             }

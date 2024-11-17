@@ -8,7 +8,7 @@ import SwiftUI
 struct WorkoutCompletionView: View {
     
     @EnvironmentObject var selectedWorkout: WorkoutEntity
-    @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var edp: ExerciseDataProvider
     @EnvironmentObject var hm: HealthManager
     @State private var navigateToMenuView = false
     

@@ -9,7 +9,7 @@ struct LogWorkoutView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @EnvironmentObject var cd: CoreDataProvider
+    @EnvironmentObject var cd: ExerciseDataProvider
     @EnvironmentObject var hm: HealthManager
     @State private var selection: String?
     
