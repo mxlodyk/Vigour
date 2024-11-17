@@ -7,6 +7,7 @@ import SwiftUI
 struct CaloriesWidgetView: View {
     
     @State var showingCalorieGoalBottomSheet = false
+    @State var showingLogBottomSheet = false
     @State var calorieGoal: Int16 = CoreDataProvider().getCalorieGoal()
     
     var body: some View {
@@ -33,10 +34,17 @@ struct CaloriesWidgetView: View {
                 .font(.system(size: 14))
                 .frame(maxWidth: .infinity, alignment: .leading)
             Spacer()
-            NavigationLink(destination: FoodSearchView()) {
+        
+            Button(action: {
+                showingLogBottomSheet.toggle()
+            }) {
                 Text("Log")
                     .withLogButtonFormatting()
             }
+            .sheet(isPresented: $showingLogBottomSheet, content: {
+                LogCaloriesView()
+                    .presentationDetents([.fraction(0.2 )])
+            })
         }
         .withWidgetViewFormatting()
     }

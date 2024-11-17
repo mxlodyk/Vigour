@@ -17,7 +17,7 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
                 Spacer()
                 Text("VIGOUR")
-                    .withTitleFormatting()
+                    .withHeading1Formatting()
                 Spacer()
                 NavigationLink(destination: MenuView()) {
                     Image("OnButton")

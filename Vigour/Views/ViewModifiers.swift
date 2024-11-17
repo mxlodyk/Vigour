@@ -13,8 +13,8 @@ let textFieldTextColour = Color("TextFieldText")
 let widgetLogRowColour = Color("WidgetLogRowColour")
 let backgroundColour = Color("Background")
 
-// MARK: Title Modifier
-struct TitleModifier: ViewModifier {
+// MARK: Heading 1 Modifier
+struct Heading1Modifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.custom("MontserratRoman-Regular", size: 60))
@@ -23,9 +23,23 @@ struct TitleModifier: ViewModifier {
 }
 
 extension View {
-    
-    func withTitleFormatting() -> some View {
-        modifier(TitleModifier())
+    func withHeading1Formatting() -> some View {
+        modifier(Heading1Modifier())
+    }
+}
+
+// MARK: Heading 2 Modifier
+struct Heading2Modifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("MontserratRoman-Regular", size: 40))
+            .foregroundColor(themeColour)
+    }
+}
+
+extension View {
+    func withHeading2Formatting() -> some View {
+        modifier(Heading2Modifier())
     }
 }
 

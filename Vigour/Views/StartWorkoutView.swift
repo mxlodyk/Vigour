@@ -18,7 +18,7 @@ struct StartWorkoutView: View {
             VStack {
                 HStack {
                     Text(selectedWorkout.name ?? "")
-                        .withTitleFormatting()
+                        .withHeading1Formatting()
                     Image(systemName: "shuffle")
                 }
                 Spacer()
