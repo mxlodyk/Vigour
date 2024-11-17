@@ -35,6 +35,10 @@
 		8984BAFC2C36888C0097E71A /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAF92C36888C0097E71A /* Montserrat.ttf */; };
 		89A93DCB2CE9706A00F019AA /* ChangeCalorieGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A93DCA2CE9706A00F019AA /* ChangeCalorieGoalView.swift */; };
 		89A93DCD2CE9772C00F019AA /* ChangeMacroGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A93DCC2CE9772C00F019AA /* ChangeMacroGoalView.swift */; };
+		89A93DCF2CE978F600F019AA /* ChangeMeditationGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A93DCE2CE978F600F019AA /* ChangeMeditationGoalView.swift */; };
+		89A93DD12CE979C100F019AA /* LogMeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A93DD02CE979C100F019AA /* LogMeditationView.swift */; };
+		89A93DD32CE97B2A00F019AA /* LogJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A93DD22CE97B2A00F019AA /* LogJournalView.swift */; };
+		89A93DD52CE97BCC00F019AA /* ChangeJournalGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A93DD42CE97BCC00F019AA /* ChangeJournalGoalView.swift */; };
 		89B4C6EE2C4C771100EE3822 /* DailyMentalHealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C6ED2C4C771100EE3822 /* DailyMentalHealthView.swift */; };
 		89B4C6F02C4C775E00EE3822 /* MeditationWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C6EF2C4C775E00EE3822 /* MeditationWidgetView.swift */; };
 		89B4C6F22C4C776500EE3822 /* JournalWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4C6F12C4C776500EE3822 /* JournalWidgetView.swift */; };
@@ -118,6 +122,10 @@
 		89A93DC92CE966DE00F019AA /* CoreDataModel3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel3.xcdatamodel; sourceTree = "<group>"; };
 		89A93DCA2CE9706A00F019AA /* ChangeCalorieGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCalorieGoalView.swift; sourceTree = "<group>"; };
 		89A93DCC2CE9772C00F019AA /* ChangeMacroGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMacroGoalView.swift; sourceTree = "<group>"; };
+		89A93DCE2CE978F600F019AA /* ChangeMeditationGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMeditationGoalView.swift; sourceTree = "<group>"; };
+		89A93DD02CE979C100F019AA /* LogMeditationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMeditationView.swift; sourceTree = "<group>"; };
+		89A93DD22CE97B2A00F019AA /* LogJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogJournalView.swift; sourceTree = "<group>"; };
+		89A93DD42CE97BCC00F019AA /* ChangeJournalGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeJournalGoalView.swift; sourceTree = "<group>"; };
 		89B4C6ED2C4C771100EE3822 /* DailyMentalHealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMentalHealthView.swift; sourceTree = "<group>"; };
 		89B4C6EF2C4C775E00EE3822 /* MeditationWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationWidgetView.swift; sourceTree = "<group>"; };
 		89B4C6F12C4C776500EE3822 /* JournalWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalWidgetView.swift; sourceTree = "<group>"; };
@@ -265,7 +273,11 @@
 				89CD9ADE2C4799400032E992 /* MacrosWidgetView.swift */,
 				89A93DCC2CE9772C00F019AA /* ChangeMacroGoalView.swift */,
 				89B4C6EF2C4C775E00EE3822 /* MeditationWidgetView.swift */,
+				89A93DD02CE979C100F019AA /* LogMeditationView.swift */,
+				89A93DCE2CE978F600F019AA /* ChangeMeditationGoalView.swift */,
 				89B4C6F12C4C776500EE3822 /* JournalWidgetView.swift */,
+				89A93DD42CE97BCC00F019AA /* ChangeJournalGoalView.swift */,
+				89A93DD22CE97B2A00F019AA /* LogJournalView.swift */,
 				891793872C436307004DCB56 /* NutritionView.swift */,
 				89EF51922C38097A0086BBC0 /* ProgramsView.swift */,
 				895782AD2C423934001FDABF /* FoodSearchView.swift */,
@@ -474,6 +486,7 @@
 				89A93DCD2CE9772C00F019AA /* ChangeMacroGoalView.swift in Sources */,
 				89EF51932C38097A0086BBC0 /* ProgramsView.swift in Sources */,
 				89C3E0D72C44D3D50011F9B3 /* DailyExerciseView.swift in Sources */,
+				89A93DD52CE97BCC00F019AA /* ChangeJournalGoalView.swift in Sources */,
 				89B4C6F22C4C776500EE3822 /* JournalWidgetView.swift in Sources */,
 				8961188C2C4A2B7500E0F89E /* StartTimerView.swift in Sources */,
 				89F1B4DA2C3DE4D5002F559B /* ThemeChangeView.swift in Sources */,
@@ -489,6 +502,7 @@
 				89C3E0DD2C461B890011F9B3 /* HealthManager.swift in Sources */,
 				89EF51A32C3938710086BBC0 /* AddProgramView.swift in Sources */,
 				89CD9ADF2C4799400032E992 /* MacrosWidgetView.swift in Sources */,
+				89A93DD32CE97B2A00F019AA /* LogJournalView.swift in Sources */,
 				89CD9ADD2C47992C0032E992 /* CaloriesWidgetView.swift in Sources */,
 				89C3E0D52C44CB5E0011F9B3 /* LogWorkoutView.swift in Sources */,
 				895557282C4DACFC00768C2E /* DropDownMenuView.swift in Sources */,
@@ -504,9 +518,11 @@
 				89C3E0D92C44FBE60011F9B3 /* WorkoutWidgetView.swift in Sources */,
 				890C0E352C4B6F890010BBEA /* EditSetView.swift in Sources */,
 				89EF519D2C391EE10086BBC0 /* ExerciseRowView.swift in Sources */,
+				89A93DD12CE979C100F019AA /* LogMeditationView.swift in Sources */,
 				895782AE2C423934001FDABF /* FoodSearchView.swift in Sources */,
 				89EF519B2C3917860086BBC0 /* ExercisesView.swift in Sources */,
 				891793882C436307004DCB56 /* NutritionView.swift in Sources */,
+				89A93DCF2CE978F600F019AA /* ChangeMeditationGoalView.swift in Sources */,
 				89589DF22C411A6F00845160 /* ActivityCard.swift in Sources */,
 				8984BAF32C3687CC0097E71A /* ViewModifiers.swift in Sources */,
 			);
