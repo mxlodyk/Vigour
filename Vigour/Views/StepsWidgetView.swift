@@ -26,25 +26,25 @@ struct StepsWidgetView: View {
             HStack {
                 Text("Steps")
                     .withWidgetHeaderFormatting()
-                Spacer()
-                Image(systemName: goalReached ? "checkmark.circle.fill" : "checkmark.circle")
-            }
-            HStack {
-                Text("Goal: \(stepGoal)")
-                    .font(.system(size: 14))
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 Button(action: {
                     showingStepGoalBottomSheet.toggle()
                 }) {
-                    Text("Change")
-                        .font(.system(size: 14))
+                    Image("TempEditIcon")
+                        //.iconStyle()
+                        .resizable()
+                        .frame(width: 15, height: 15)
                 }
-                .padding(.bottom)
+                //.padding(.bottom)
                 .sheet(isPresented: $showingStepGoalBottomSheet, content: {
                     ChangeStepGoalView(stepGoal: $stepGoal)
                         .presentationDetents([.fraction(0.2)])
                 })
+                Spacer()
+                Image(systemName: goalReached ? "checkmark.circle.fill" : "checkmark.circle")
             }
+            Text("Goal: \(stepGoal)")
+                .font(.system(size: 14))
+                .frame(maxWidth: .infinity, alignment: .leading)
             ScrollView {
                 HStack {
                     Text("\(Int(hm.dailySteps)) ")
