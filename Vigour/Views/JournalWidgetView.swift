@@ -1,13 +1,13 @@
-//  SleepWidgetView.swift
+//  JournalWidgetView.swift
 //  Vigour
 //  Created by Melody Flavel on 21/7/2024.
 
 import SwiftUI
 
-struct SleepWidgetView: View {
+struct JournalWidgetView: View {
     var body: some View {
         VStack {
-            Text("Mindfulness")
+            Text("Journal")
                 .withWidgetHeaderFormatting()
         }
         .frame(width: 200, height: 200)

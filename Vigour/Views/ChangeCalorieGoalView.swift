@@ -1,15 +1,15 @@
-//  ChangeStepGoalView.swift
+//  ChangeCalorieGoalView.swift
 //  Vigour
-//  Created by Melody Flavel on 17/7/2024.
+//  Created by Melody Flavel on 17/11/2024.
 
 import SwiftUI
 
-struct ChangeStepGoalView: View {
+struct ChangeCalorieGoalView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @Binding var stepGoal: Int
-    @State var stepGoalText: String = ""
+    @Binding var calorieGoal: Int
+    @State var calorieGoalText: String = ""
     
     var body: some View {
         
@@ -17,14 +17,14 @@ struct ChangeStepGoalView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                TextField("", text: $stepGoalText, prompt: Text("Step Goal").foregroundColor(textFieldTextColour))
+                TextField("", text: $calorieGoalText, prompt: Text("Calorie Goal").foregroundColor(textFieldTextColour))
                     .withTextFieldFormatting()
                 
                 Button(action: {
                     saveButtonPressed()
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
-                    Text("Change Step Goal")
+                    Text("Change Calorie Goal")
                         .withButtonFormatting()
                 }
             }
@@ -35,6 +35,6 @@ struct ChangeStepGoalView: View {
     
     // MARK: Save Button Pressed
     func saveButtonPressed() {
-        stepGoal = Int(stepGoalText) ?? 0
+        calorieGoal = Int(calorieGoalText) ?? 0
     }
 }

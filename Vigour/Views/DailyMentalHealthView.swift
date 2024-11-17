@@ -14,8 +14,8 @@ struct DailyMentalHealthView: View {
             // MARK: Daily Exercise Widgets
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack (spacing: 20) {
-                    MindfulnessWidgetView()
-                    SleepWidgetView()
+                    MeditationWidgetView()
+                    JournalWidgetView()
                 }
             }
         }

@@ -5,18 +5,39 @@
 import SwiftUI
 
 struct CaloriesWidgetView: View {
+    
+    @State var showingCalorieGoalBottomSheet = false
+    @State var calorieGoal: Int = 2000
+    
     var body: some View {
         VStack {
-            Text("Calories")
-                .withWidgetHeaderFormatting()
+            HStack {
+                Text("Calories")
+                    .withWidgetHeaderFormatting()
+                Button(action: {
+                    showingCalorieGoalBottomSheet.toggle()
+                }) {
+                    Image("TempEditIcon")
+                        //.iconStyle()
+                        .resizable()
+                        .frame(width: 15, height: 15)
+                }
+                .sheet(isPresented: $showingCalorieGoalBottomSheet, content: {
+                    ChangeCalorieGoalView(calorieGoal: $calorieGoal)
+                        .presentationDetents([.fraction(0.2)])
+                })
+                Spacer()
+                Image(systemName: "checkmark.circle") // MARK: TO DO: Fill circle if calorie goal is reached.
+            }
+            Text("Goal: \(calorieGoal)")
+                .font(.system(size: 14))
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Spacer()
             NavigationLink(destination: FoodSearchView()) {
                 Text("Log")
                     .withLogButtonFormatting()
             }
         }
-    
-        .frame(width: 200, height: 200)
-        .background(themeColour)
-        .cornerRadius(25)
+        .withWidgetViewFormatting()
     }
 }
