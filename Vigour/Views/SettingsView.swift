@@ -9,6 +9,7 @@ struct SettingsView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State private var isDarkModeOn = false
+    @State private var selectedSystem: MeasurementSystem = CoreDataProvider().getMeasurementSystem()
     
     var body: some View {
         
@@ -18,7 +19,20 @@ struct SettingsView: View {
             VStack {
                 Text("Settings")
                     .withTextFormatting()
-                // Settings.
+                HStack {
+                    Text("System")
+                    Spacer()
+                    Picker("System", selection: $selectedSystem) {
+                        ForEach(MeasurementSystem.allCases, id: \.self) { system in
+                            Text(system.rawValue)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                    .onChange(of: selectedSystem) { newSystem in
+                        CoreDataProvider().saveMeasurementSystem(newSystem)
+                    }
+                }
+                Spacer()
             }
             .withEdgePadding()
             .navigationBarBackButtonHidden()
@@ -31,4 +45,9 @@ struct SettingsView: View {
                 })
         }
     }
+}
+
+enum MeasurementSystem: String, CaseIterable {
+    case metric = "Metric"
+    case imperial = "Imperial"
 }

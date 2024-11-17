@@ -265,6 +265,38 @@ class CoreDataProvider: ObservableObject {
         save()
     }
     
+    // MARK: Save User Measurement System
+    func saveMeasurementSystem(_ system: MeasurementSystem) {
+        let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
+        do {
+            let users = try manager.context.fetch(fetchRequest)
+            let user = users.first ?? UserEntity(context: manager.context)
+            
+            user.measurementSystem = system.rawValue
+            
+            try manager.context.save()
+            print("User's system saved as \(user.measurementSystem)")
+        }
+        catch {
+            print("Failed to save measurement system: \(error.localizedDescription)")
+        }
+    }
+    
+    // MARK: Get User Measurement System
+    func getMeasurementSystem() -> MeasurementSystem {
+        let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
+        
+        do {
+            if let user = try manager.context.fetch(fetchRequest).first,
+               let preferredSystem = MeasurementSystem(rawValue: user.measurementSystem ?? "") {
+                return preferredSystem
+            }
+        } catch {
+            print("Failed to fetch measurement system: \(error.localizedDescription)")
+        }
+        return .metric // Default system
+    }
+    
     // MARK: Save
     func save() {
         manager.save()

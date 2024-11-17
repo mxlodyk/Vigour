@@ -113,6 +113,7 @@
 		8984BAF22C3687CC0097E71A /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		8984BAF92C36888C0097E71A /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		8984BAFD2C36889C0097E71A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		89A93DC92CE966DE00F019AA /* CoreDataModel3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel3.xcdatamodel; sourceTree = "<group>"; };
 		89B4C6ED2C4C771100EE3822 /* DailyMentalHealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMentalHealthView.swift; sourceTree = "<group>"; };
 		89B4C6EF2C4C775E00EE3822 /* MindfulnessWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulnessWidgetView.swift; sourceTree = "<group>"; };
 		89B4C6F12C4C776500EE3822 /* SleepWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepWidgetView.swift; sourceTree = "<group>"; };
@@ -842,10 +843,11 @@
 		890C0E2F2C4B4F500010BBEA /* CoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				89A93DC92CE966DE00F019AA /* CoreDataModel3.xcdatamodel */,
 				8931941B2CE0760E00D55436 /* CoreDataModel2.xcdatamodel */,
 				890C0E302C4B4F500010BBEA /* CoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 8931941B2CE0760E00D55436 /* CoreDataModel2.xcdatamodel */;
+			currentVersion = 89A93DC92CE966DE00F019AA /* CoreDataModel3.xcdatamodel */;
 			path = CoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			usesTabs = 0;
