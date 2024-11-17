@@ -4,7 +4,6 @@ import Foundation
 // MARK: Food Search View
 struct FoodSearchView: View {
     
-    
     @State private var foodName: String = ""
     @State private var nutritionData: [Nutrition] = []
     @State private var foodList: [String] = []
@@ -19,7 +18,7 @@ struct FoodSearchView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
-                    TextField("Enter food name", text: $foodName)
+                    TextField("Food", text: $foodName)
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .onChange(of: foodName) {
@@ -33,7 +32,10 @@ struct FoodSearchView: View {
                     Spacer()
                     TextField("Quantity", text: $quantityText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                    Text(CoreDataProvider().getMeasurementSystem().rawValue == "Metric" ? "G" : "LB")
+                        .padding(.leading, 30)
+                        .padding(.trailing, 20)
+                    Text(CoreDataProvider().getMeasurementSystem().rawValue == "Metric" ? "grams" : "pounds")
+                        .withTextFormatting()
                 }
                 // MARK: Dropdown Menu: Food Suggestions.
                 if showSuggestions {
@@ -41,6 +43,7 @@ struct FoodSearchView: View {
                         VStack(alignment: .leading) {
                             ForEach(suggestions, id: \.self) { suggestion in
                                 Text(suggestion)
+                                    .withTextFormatting()
                                     .onTapGesture {
                                         foodName = suggestion
                                         showSuggestions = false

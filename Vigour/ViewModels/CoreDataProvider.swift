@@ -5,6 +5,8 @@
 import Foundation
 import CoreData
 
+// MARK: REFACTOR TO CALENDARDATAPROVIDER, NUTRITIONDATAPROVIDER, EXERCISEDATAPROVIDER, MENTALHEALTHDATAPROVIDER
+
 // MARK: Core Data Manager
 class CoreDataManager {
     
@@ -52,7 +54,7 @@ class CoreDataProvider: ObservableObject {
     @Published var sets: [SetEntity] = []
     @Published var loggedWorkouts: [WorkoutLogEntity] = []
     @Published var loggedFood: [FoodLogEntity] = []
-    
+        
     // MARK: Initialise
     init() {
         getPrograms()
