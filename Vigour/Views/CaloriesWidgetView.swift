@@ -7,7 +7,7 @@ import SwiftUI
 struct CaloriesWidgetView: View {
     
     @State var showingCalorieGoalBottomSheet = false
-    @State var calorieGoal: Int = 2000
+    @State var calorieGoal: Int16 = CoreDataProvider().getCalorieGoal()
     
     var body: some View {
         VStack {

@@ -7,7 +7,7 @@ import SwiftUI
 struct JournalWidgetView: View {
     
     @State var showingChangeGoalBottomSheet = false
-    @State var journalGoal: Int = 10
+    @State var journalGoal: Int16 = CoreDataProvider().getJournalGoal()
     
     var body: some View {
         VStack {

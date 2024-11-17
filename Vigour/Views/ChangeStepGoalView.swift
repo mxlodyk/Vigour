@@ -8,7 +8,7 @@ struct ChangeStepGoalView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @Binding var stepGoal: Int
+    @Binding var stepGoal: Int32
     @State var stepGoalText: String = ""
     
     var body: some View {
@@ -35,6 +35,7 @@ struct ChangeStepGoalView: View {
     
     // MARK: Save Button Pressed
     func saveButtonPressed() {
-        stepGoal = Int(stepGoalText) ?? 0
+        stepGoal = Int32(stepGoalText) ?? 0
+        CoreDataProvider().saveStepGoal(stepGoal)
     }
 }

@@ -61,7 +61,7 @@ class CoreDataProvider: ObservableObject {
         getSets()
         fetchCurrentWeek()
         getLoggedWorkoutsForSelectedDay()
-        getLoggedFoodForSelectedDay() // NEW
+        getLoggedFoodForSelectedDay()
     }
     
     // MARK: Fetch Current Week
@@ -297,6 +297,128 @@ class CoreDataProvider: ObservableObject {
         return .metric // Default system
     }
     
+    // MARK: REFACTOR GOAL SETTERS ANG GETTERS
+    
+    // MARK: Save User Step Goal
+    func saveStepGoal(_ stepGoal: Int32) {
+        let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
+        do {
+            let goals = try manager.context.fetch(fetchRequest)
+            let goal = goals.first ?? GoalEntity(context: manager.context)
+            
+            goal.steps = stepGoal
+            
+            try manager.context.save()
+            print("User's step goal saved as \(goal.steps)")
+        } catch {
+            print("Failed to save step goal: \(error.localizedDescription)")
+        }
+    }
+    
+    // MARK: Get User Step Goal
+    func getStepGoal() -> Int32 {
+        let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
+        
+        do {
+            if let goal = try manager.context.fetch(fetchRequest).first {
+                return goal.steps ?? 2000
+            }
+        } catch {
+            print("Failed to fetch user step goal: \(error.localizedDescription)")
+        }
+        return 2000 // Default step goal
+    }
+    
+    // MARK: Save User Calorie Goal
+    func saveCalorieGoal(_ calorieGoal: Int16) {
+        let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
+        do {
+            let goals = try manager.context.fetch(fetchRequest)
+            let goal = goals.first ?? GoalEntity(context: manager.context)
+            
+            goal.calories = calorieGoal
+            
+            try manager.context.save()
+            print("User's calorie goal saved as \(goal.calories)")
+        } catch {
+            print("Failed to save calorie goal: \(error.localizedDescription)")
+        }
+    }
+    
+    // MARK: Get User Calorie Goal
+    func getCalorieGoal() -> Int16 {
+        let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
+        
+        do {
+            if let goal = try manager.context.fetch(fetchRequest).first {
+                return goal.calories ?? 3000
+            }
+        } catch {
+            print("Failed to fetch user calorie goal: \(error.localizedDescription)")
+        }
+        return 3000 // Default calorie goal
+    }
+    
+    // MARK: Save User Meditation Goal
+    func saveMeditationGoal(_ meditationGoal: Int16) {
+        let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
+        do {
+            let goals = try manager.context.fetch(fetchRequest)
+            let goal = goals.first ?? GoalEntity(context: manager.context)
+            
+            goal.meditation = meditationGoal
+            
+            try manager.context.save()
+            print("User's meditation goal saved as \(goal.meditation)")
+        } catch {
+            print("Failed to save meditation goal: \(error.localizedDescription)")
+        }
+    }
+    
+    // MARK: Get User Meditation Goal
+    func getMeditationGoal() -> Int16 {
+        let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
+        
+        do {
+            if let goal = try manager.context.fetch(fetchRequest).first {
+                return goal.meditation != 0 ? goal.meditation : 10
+            }
+        } catch {
+            print("Failed to fetch user meditation goal: \(error.localizedDescription)")
+        }
+        return 10 // Default meditation goal
+    }
+    
+    // MARK: Save User Journal Goal
+    func saveJournalGoal(_ journalGoal: Int16) {
+        let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
+        do {
+            let goals = try manager.context.fetch(fetchRequest)
+            let goal = goals.first ?? GoalEntity(context: manager.context)
+            
+            goal.journal = journalGoal
+            
+            try manager.context.save()
+            print("User's journal goal saved as \(goal.journal)")
+        } catch {
+            print("Failed to save journal goal: \(error.localizedDescription)")
+        }
+    }
+    
+    // MARK: Get User Journal Goal
+    func getJournalGoal() -> Int16 {
+        let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
+        
+        do {
+            if let goal = try manager.context.fetch(fetchRequest).first {
+                return goal.journal != 0 ? goal.journal : 15
+            }
+        } catch {
+            print("Failed to fetch user journal goal: \(error.localizedDescription)")
+        }
+        return 15 // Default journal goal
+    }
+    
     // MARK: Save
     func save() {
         manager.save()
@@ -305,7 +427,6 @@ class CoreDataProvider: ObservableObject {
         getExercises()
         getSets()
         getLoggedWorkoutsForSelectedDay()
-        getLoggedFoodForSelectedDay() // NEW
+        getLoggedFoodForSelectedDay()
     }
-    
 }

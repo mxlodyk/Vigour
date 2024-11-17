@@ -8,7 +8,7 @@ struct ChangeJournalGoalView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @Binding var journalGoal: Int
+    @Binding var journalGoal: Int16
     @State var journalGoalText: String = ""
     
     var body: some View {
@@ -35,7 +35,8 @@ struct ChangeJournalGoalView: View {
     
     // MARK: Save Button Pressed
     func saveButtonPressed() {
-        journalGoal = Int(journalGoalText) ?? 0
+        journalGoal = Int16(journalGoalText) ?? 0
+        CoreDataProvider().saveJournalGoal(journalGoal)
     }
 }
 

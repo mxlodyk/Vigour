@@ -10,7 +10,7 @@ struct StepsWidgetView: View {
     
     @State var showingStepGoalBottomSheet = false
     @State var showingLogBottomSheet = false
-    @State var stepGoal: Int = 2000
+    @State var stepGoal: Int32 = CoreDataProvider().getStepGoal()
     
     // MARK: Check if step goal has been reached
     var goalReached: Bool {

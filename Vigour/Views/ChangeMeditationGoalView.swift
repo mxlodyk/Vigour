@@ -8,7 +8,7 @@ struct ChangeMeditationGoalView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @Binding var meditationGoal: Int
+    @Binding var meditationGoal: Int16
     @State var meditationGoalText: String = ""
     
     var body: some View {
@@ -35,7 +35,8 @@ struct ChangeMeditationGoalView: View {
     
     // MARK: Save Button Pressed
     func saveButtonPressed() {
-        meditationGoal = Int(meditationGoalText) ?? 0
+        meditationGoal = Int16(meditationGoalText) ?? 0
+        CoreDataProvider().saveMeditationGoal(meditationGoal)
     }
 }
 

@@ -7,7 +7,7 @@ import SwiftUI
 struct MeditationWidgetView: View {
     
     @State var showingMeditationGoalBottomSheet = false
-    @State var meditationGoal: Int = 10
+    @State var meditationGoal: Int16 = CoreDataProvider().getMeditationGoal()
     
     var body: some View {
         VStack {
