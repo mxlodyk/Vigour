@@ -6,6 +6,7 @@ import SwiftUI
 
 struct ChangeMeditationGoalView: View {
     
+    @EnvironmentObject var edp: ExerciseDataProvider
     @Environment(\.presentationMode) var presentationMode
     
     @Binding var meditationGoal: Int16
@@ -36,7 +37,7 @@ struct ChangeMeditationGoalView: View {
     // MARK: Save Button Pressed
     func saveButtonPressed() {
         meditationGoal = Int16(meditationGoalText) ?? 0
-        ExerciseDataProvider().saveMeditationGoal(meditationGoal)
+        edp.saveMeditationGoal(meditationGoal)
     }
 }
 

@@ -8,6 +8,7 @@ import SwiftUI
 struct MenuView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var cdp: CalendarDataProvider
     @EnvironmentObject var edp: ExerciseDataProvider
     @EnvironmentObject var hm: HealthManager
     
@@ -17,9 +18,11 @@ struct MenuView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView (showsIndicators: false) {
                 CalendarView()
+                    .environmentObject(cdp)
                     .environmentObject(edp)
                     .environmentObject(hm)
                 DailyExerciseView()
+                    .environmentObject(cdp)
                     .environmentObject(edp)
                     .environmentObject(hm)
                 DailyNutritionView()

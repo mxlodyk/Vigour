@@ -7,6 +7,7 @@ import SwiftUI
 // MARK: Daily Exercise View
 struct DailyExerciseView: View {
     
+    @EnvironmentObject var cdp: CalendarDataProvider
     @EnvironmentObject var edp: ExerciseDataProvider
     @EnvironmentObject var hm: HealthManager
     
@@ -33,7 +34,7 @@ struct DailyExerciseView: View {
             hm.fetchSelectedDayWorkouts()
         }
         // Update view if selected day changes
-        .onChange(of: edp.selectedDay) {
+        .onChange(of: cdp.selectedDay) {
             edp.getLoggedWorkoutsForSelectedDay()
             hm.fetchSelectedDaySteps()
             hm.fetchSelectedDayWorkouts()

@@ -6,6 +6,7 @@ import SwiftUI
 
 struct ChangeStepGoalView: View {
     
+    @EnvironmentObject var edp: ExerciseDataProvider
     @Environment(\.presentationMode) var presentationMode
     
     @Binding var stepGoal: Int32
@@ -36,6 +37,6 @@ struct ChangeStepGoalView: View {
     // MARK: Save Button Pressed
     func saveButtonPressed() {
         stepGoal = Int32(stepGoalText) ?? 0
-        ExerciseDataProvider().saveStepGoal(stepGoal)
+        edp.saveStepGoal(stepGoal)
     }
 }

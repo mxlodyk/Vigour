@@ -6,6 +6,7 @@ import SwiftUI
 
 struct ChangeJournalGoalView: View {
     
+    @EnvironmentObject var edp: ExerciseDataProvider
     @Environment(\.presentationMode) var presentationMode
     
     @Binding var journalGoal: Int16
@@ -36,7 +37,7 @@ struct ChangeJournalGoalView: View {
     // MARK: Save Button Pressed
     func saveButtonPressed() {
         journalGoal = Int16(journalGoalText) ?? 0
-        ExerciseDataProvider().saveJournalGoal(journalGoal)
+        edp.saveJournalGoal(journalGoal)
     }
 }
 

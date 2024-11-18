@@ -7,16 +7,16 @@ import SwiftUI
 @main
 struct VigourApp: App {
     
-    @StateObject private var edp = ExerciseDataProvider()
-    @StateObject private var hm = HealthManager()
+    @StateObject private var coordinator = AppCoordinator()
 
     var body: some Scene {
         
         WindowGroup {
             NavigationView {
                 HomeView()
-                    .environmentObject(edp)
-                    .environmentObject(hm)
+                    .environmentObject(coordinator.calendarDataProvider)
+                    .environmentObject(coordinator.exerciseDataProvider)
+                    .environmentObject(coordinator.healthManager)
             }
         }
     }

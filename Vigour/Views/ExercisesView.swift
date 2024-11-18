@@ -10,7 +10,7 @@ struct ExercisesView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var showingBottomSheet = false
     
-    @ObservedObject var edp = ExerciseDataProvider()
+    @EnvironmentObject var edp: ExerciseDataProvider
     @Binding var program: ProgramEntity
     @Binding var workout: WorkoutEntity
     

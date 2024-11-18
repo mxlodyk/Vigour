@@ -7,6 +7,7 @@ import SwiftUI
 // MARK: Home View
 struct HomeView: View {
     
+    @EnvironmentObject var cdp: CalendarDataProvider
     @EnvironmentObject var edp: ExerciseDataProvider
     @EnvironmentObject var hm: HealthManager
     
@@ -22,7 +23,7 @@ struct HomeView: View {
                 Text("VIGOUR")
                     .withHeading1Formatting()
                 Spacer()
-                NavigationLink(destination: MenuView().environmentObject(edp).environmentObject(hm)) {
+                NavigationLink(destination: MenuView().environmentObject(cdp).environmentObject(edp).environmentObject(hm)) {
                     Image("OnButton")
                 }
             }

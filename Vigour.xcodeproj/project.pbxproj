@@ -14,6 +14,8 @@
 		890C0E3B2C4BBB030010BBEA /* WorkoutCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E3A2C4BBB030010BBEA /* WorkoutCompletionView.swift */; };
 		890C0E3D2C4BD8170010BBEA /* ExerciseTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C0E3C2C4BD8170010BBEA /* ExerciseTimerView.swift */; };
 		8940AAB82CEAA8EF00D035F5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940AAB72CEAA8EF00D035F5 /* CoreDataManager.swift */; };
+		8940AABA2CEAB67300D035F5 /* CalendarDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940AAB92CEAB67300D035F5 /* CalendarDataProvider.swift */; };
+		8940AABC2CEABC7800D035F5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940AABB2CEABC7800D035F5 /* AppCoordinator.swift */; };
 		895557282C4DACFC00768C2E /* DropDownMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895557272C4DACFC00768C2E /* DropDownMenuView.swift */; };
 		895782AE2C423934001FDABF /* FoodSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895782AD2C423934001FDABF /* FoodSearchView.swift */; };
 		8961188A2C4A044300E0F89E /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896118892C4A044300E0F89E /* StartWorkoutView.swift */; };
@@ -99,6 +101,8 @@
 		890C0E3C2C4BD8170010BBEA /* ExerciseTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTimerView.swift; sourceTree = "<group>"; };
 		8931941B2CE0760E00D55436 /* CoreDataModel2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel2.xcdatamodel; sourceTree = "<group>"; };
 		8940AAB72CEAA8EF00D035F5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		8940AAB92CEAB67300D035F5 /* CalendarDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataProvider.swift; sourceTree = "<group>"; };
+		8940AABB2CEABC7800D035F5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		895557272C4DACFC00768C2E /* DropDownMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuView.swift; sourceTree = "<group>"; };
 		895782AD2C423934001FDABF /* FoodSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchView.swift; sourceTree = "<group>"; };
 		896118892C4A044300E0F89E /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
@@ -311,7 +315,9 @@
 			isa = PBXGroup;
 			children = (
 				89E3F4B12C3D2C19003C15B9 /* ExerciseDataProvider.swift */,
+				8940AABB2CEABC7800D035F5 /* AppCoordinator.swift */,
 				8940AAB72CEAA8EF00D035F5 /* CoreDataManager.swift */,
+				8940AAB92CEAB67300D035F5 /* CalendarDataProvider.swift */,
 				89C3E0DC2C461B890011F9B3 /* HealthManager.swift */,
 			);
 			path = ViewModels;
@@ -506,11 +512,13 @@
 				89A93DCD2CE9772C00F019AA /* ChangeMacroGoalView.swift in Sources */,
 				89EF51932C38097A0086BBC0 /* ProgramsView.swift in Sources */,
 				89C3E0D72C44D3D50011F9B3 /* DailyExerciseView.swift in Sources */,
+				8940AABC2CEABC7800D035F5 /* AppCoordinator.swift in Sources */,
 				89A93DDC2CE98ED400F019AA /* AddMealView.swift in Sources */,
 				89A93DD52CE97BCC00F019AA /* ChangeJournalGoalView.swift in Sources */,
 				89B4C6F22C4C776500EE3822 /* JournalWidgetView.swift in Sources */,
 				8961188C2C4A2B7500E0F89E /* StartTimerView.swift in Sources */,
 				89F1B4DA2C3DE4D5002F559B /* ThemeChangeView.swift in Sources */,
+				8940AABA2CEAB67300D035F5 /* CalendarDataProvider.swift in Sources */,
 				89EF51A72C3939AA0086BBC0 /* AddExerciseView.swift in Sources */,
 				8984BAC72C36871C0097E71A /* HomeView.swift in Sources */,
 				89C3E0D32C44AC820011F9B3 /* CalendarView.swift in Sources */,

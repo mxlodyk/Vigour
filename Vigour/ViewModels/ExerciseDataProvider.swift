@@ -7,13 +7,11 @@ import CoreData
 
 // MARK: REFACTOR TO CALENDARDATAPROVIDER, NUTRITIONDATAPROVIDER, EXERCISEDATAPROVIDER, MENTALHEALTHDATAPROVIDER
 
-// MARK: Core Data Provider
+// MARK: Exercise Data Provider
 class ExerciseDataProvider: ObservableObject {
     
-    let manager = CoreDataManager.instance
-    
-    @Published var currentWeek: [Date] = []
-    @Published var selectedDay: Date = Date()
+    let shared = CoreDataManager.instance
+    private var calendarDataProvider: CalendarDataProvider
     
     @Published var programs: [ProgramEntity] = []
     @Published var workouts: [WorkoutEntity] = []
@@ -23,51 +21,25 @@ class ExerciseDataProvider: ObservableObject {
     @Published var loggedFood: [FoodLogEntity] = []
         
     // MARK: Initialise
-    init() {
-        print("ExerciseDataProvider initialized")
+    init(calendarDataProvider: CalendarDataProvider) {
+        self.calendarDataProvider = calendarDataProvider
         getPrograms()
         getWorkouts()
         getExercises()
         getSets()
-        fetchCurrentWeek()
         getLoggedWorkoutsForSelectedDay()
         getLoggedFoodForSelectedDay()
-    }
-    
-    // MARK: Fetch Current Week
-    func fetchCurrentWeek() {
-        let today = Date()
-        let calendar = Calendar.current
-        
-        guard let week = calendar.dateInterval(of: .weekOfMonth, for: today),
-            let firstWeekDay = calendar.date(byAdding: .day, value: -calendar.component(.weekday, from: today) + 1, to: today) else {
-                return
-        }
-        currentWeek = (0..<7).compactMap { calendar.date(byAdding: .day, value: $0, to: firstWeekDay) }
-    }
-    
-    // MARK: Extract Date
-    func extractDate(date: Date, format: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter.string(from: date)
-    }
-    
-    // MARK: Check Current Date
-    func isToday(date: Date) -> Bool {
-        let calendar = Calendar.current
-        return calendar.isDate(date, inSameDayAs: selectedDay)
     }
     
     // MARK: Log Workout
     func logWorkout(_ workout: WorkoutEntity) {
             
-        let newLog = WorkoutLogEntity(context: manager.context)
-            newLog.date = selectedDay
+        let newLog = WorkoutLogEntity(context: shared.context)
+        newLog.date = calendarDataProvider.selectedDay
             newLog.workout = workout
             
             do {
-                try manager.context.save()
+                try shared.context.save()
                 getLoggedWorkoutsForSelectedDay()
             } catch {
                 // Handle the Core Data error appropriately
@@ -78,12 +50,12 @@ class ExerciseDataProvider: ObservableObject {
     // MARK: Log Food
     func logFood(_ food: FoodEntity) {
             
-        let newLog = FoodLogEntity(context: manager.context)
-            newLog.date = selectedDay
+        let newLog = FoodLogEntity(context: shared.context)
+        newLog.date = calendarDataProvider.selectedDay
             newLog.food = food
             
             do {
-                try manager.context.save()
+                try shared.context.save()
                 getLoggedFoodForSelectedDay()
             } catch {
                 // Handle the Core Data error appropriately
@@ -93,7 +65,7 @@ class ExerciseDataProvider: ObservableObject {
     
     // MARK: Delete Logged Workout
     func deleteLoggedWorkout(_ workoutLog: WorkoutLogEntity) {
-        manager.context.delete(workoutLog)
+        shared.context.delete(workoutLog)
         save()
     }
     
@@ -102,13 +74,13 @@ class ExerciseDataProvider: ObservableObject {
         let request = NSFetchRequest<WorkoutLogEntity>(entityName: "WorkoutLogEntity")
         
         let calendar = Calendar.current
-        let startOfDay = calendar.startOfDay(for: selectedDay)
+        let startOfDay = calendar.startOfDay(for: calendarDataProvider.selectedDay)
         let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
         
         request.predicate = NSPredicate(format: "date >= %@ AND date < %@", startOfDay as NSDate, endOfDay as NSDate)
         
         do {
-            loggedWorkouts = try manager.context.fetch(request)
+            loggedWorkouts = try shared.context.fetch(request)
         } catch let error {
             print("Error fetching logged workouts: \(error.localizedDescription)")
             loggedWorkouts = []
@@ -120,13 +92,13 @@ class ExerciseDataProvider: ObservableObject {
         let request = NSFetchRequest<FoodLogEntity>(entityName: "FoodLogEntity")
         
         let calendar = Calendar.current
-        let startOfDay = calendar.startOfDay(for: selectedDay)
+        let startOfDay = calendar.startOfDay(for: calendarDataProvider.selectedDay)
         let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
         
         request.predicate = NSPredicate(format: "date >= %@ AND date < %@", startOfDay as NSDate, endOfDay as NSDate)
         
         do {
-            loggedFood = try manager.context.fetch(request)
+            loggedFood = try shared.context.fetch(request)
         } catch let error {
             print("Error fetching logged workouts: \(error.localizedDescription)")
             loggedFood = []
@@ -137,7 +109,7 @@ class ExerciseDataProvider: ObservableObject {
     func getPrograms() {
         let request = NSFetchRequest<ProgramEntity>(entityName: "ProgramEntity")
         do {
-            programs = try manager.context.fetch(request)
+            programs = try shared.context.fetch(request)
         } catch let error {
             print("Error fetching Core Data. \(error.localizedDescription)")
         }
@@ -145,7 +117,7 @@ class ExerciseDataProvider: ObservableObject {
     
     // MARK: Add Program
     func addProgram(_ newProgramName: String) {
-        let newProgram = ProgramEntity(context: manager.context)
+        let newProgram = ProgramEntity(context: shared.context)
         newProgram.id = UUID()
         newProgram.name = newProgramName
         save()
@@ -153,7 +125,7 @@ class ExerciseDataProvider: ObservableObject {
     
     // MARK: Delete Program
     func deleteProgram(_ program: ProgramEntity) {
-        manager.context.delete(program)
+        shared.context.delete(program)
         save()
     }
     
@@ -161,7 +133,7 @@ class ExerciseDataProvider: ObservableObject {
     func getWorkouts() {
         let request = NSFetchRequest<WorkoutEntity>(entityName: "WorkoutEntity")
         do {
-            workouts = try manager.context.fetch(request)
+            workouts = try shared.context.fetch(request)
         } catch let error {
             print("Error fetching Core Data. \(error.localizedDescription)")
         }
@@ -169,7 +141,7 @@ class ExerciseDataProvider: ObservableObject {
     
     // MARK: Add Workout
     func addWorkout(_ program: ProgramEntity, _ newWorkoutName: String) {
-        let newWorkout = WorkoutEntity(context: manager.context)
+        let newWorkout = WorkoutEntity(context: shared.context)
         newWorkout.id = UUID()
         newWorkout.name = newWorkoutName
         newWorkout.addToPrograms(program)
@@ -186,7 +158,7 @@ class ExerciseDataProvider: ObservableObject {
     func getExercises() {
         let request = NSFetchRequest<ExerciseEntity>(entityName: "ExerciseEntity")
         do {
-            exercises = try manager.context.fetch(request)
+            exercises = try shared.context.fetch(request)
         } catch let error {
             print("Error fetching Core Data. \(error.localizedDescription)")
         }
@@ -194,7 +166,7 @@ class ExerciseDataProvider: ObservableObject {
     
     // MARK: Add Exercise
     func addExercise(_ program: ProgramEntity, _ workout: WorkoutEntity, _ newExerciseName: String) {
-        let newExercise = ExerciseEntity(context: manager.context)
+        let newExercise = ExerciseEntity(context: shared.context)
         newExercise.id = UUID()
         newExercise.name = newExerciseName
         newExercise.addToWorkouts(workout)
@@ -205,7 +177,7 @@ class ExerciseDataProvider: ObservableObject {
     func getSets() {
         let request = NSFetchRequest<SetEntity>(entityName: "SetEntity")
         do {
-            sets = try manager.context.fetch(request)
+            sets = try shared.context.fetch(request)
         } catch let error {
             print("Error fetching Core Data. \(error.localizedDescription)")
         }
@@ -213,7 +185,7 @@ class ExerciseDataProvider: ObservableObject {
     
     // MARK: Add Set
     func addSet(_ exercise: ExerciseEntity, _ weight: String, _ repetitions: String, _ tempo: String, _ restTime: String, _ restUnit: String) {
-        let newSet = SetEntity(context: manager.context)
+        let newSet = SetEntity(context: shared.context)
         newSet.id = UUID()
         newSet.weight = weight
         newSet.repetitions = repetitions
@@ -239,12 +211,12 @@ class ExerciseDataProvider: ObservableObject {
     func saveMeasurementSystem(_ system: MeasurementSystem) {
         let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         do {
-            let users = try manager.context.fetch(fetchRequest)
-            let user = users.first ?? UserEntity(context: manager.context)
+            let users = try shared.context.fetch(fetchRequest)
+            let user = users.first ?? UserEntity(context: shared.context)
             
             user.measurementSystem = system.rawValue
             
-            try manager.context.save()
+            try shared.context.save()
             print("User's system saved as \(user.measurementSystem)")
         }
         catch {
@@ -257,7 +229,7 @@ class ExerciseDataProvider: ObservableObject {
         let fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         
         do {
-            if let user = try manager.context.fetch(fetchRequest).first,
+            if let user = try shared.context.fetch(fetchRequest).first,
                let preferredSystem = MeasurementSystem(rawValue: user.measurementSystem ?? "") {
                 return preferredSystem
             }
@@ -273,12 +245,12 @@ class ExerciseDataProvider: ObservableObject {
     func saveStepGoal(_ stepGoal: Int32) {
         let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
         do {
-            let goals = try manager.context.fetch(fetchRequest)
-            let goal = goals.first ?? GoalEntity(context: manager.context)
+            let goals = try shared.context.fetch(fetchRequest)
+            let goal = goals.first ?? GoalEntity(context: shared.context)
             
             goal.steps = stepGoal
             
-            try manager.context.save()
+            try shared.context.save()
             print("User's step goal saved as \(goal.steps)")
         } catch {
             print("Failed to save step goal: \(error.localizedDescription)")
@@ -290,7 +262,7 @@ class ExerciseDataProvider: ObservableObject {
         let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
         
         do {
-            if let goal = try manager.context.fetch(fetchRequest).first {
+            if let goal = try shared.context.fetch(fetchRequest).first {
                 return goal.steps ?? 2000
             }
         } catch {
@@ -303,12 +275,12 @@ class ExerciseDataProvider: ObservableObject {
     func saveCalorieGoal(_ calorieGoal: Int16) {
         let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
         do {
-            let goals = try manager.context.fetch(fetchRequest)
-            let goal = goals.first ?? GoalEntity(context: manager.context)
+            let goals = try shared.context.fetch(fetchRequest)
+            let goal = goals.first ?? GoalEntity(context: shared.context)
             
             goal.calories = calorieGoal
             
-            try manager.context.save()
+            try shared.context.save()
             print("User's calorie goal saved as \(goal.calories)")
         } catch {
             print("Failed to save calorie goal: \(error.localizedDescription)")
@@ -320,7 +292,7 @@ class ExerciseDataProvider: ObservableObject {
         let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
         
         do {
-            if let goal = try manager.context.fetch(fetchRequest).first {
+            if let goal = try shared.context.fetch(fetchRequest).first {
                 return goal.calories ?? 3000
             }
         } catch {
@@ -333,12 +305,12 @@ class ExerciseDataProvider: ObservableObject {
     func saveMeditationGoal(_ meditationGoal: Int16) {
         let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
         do {
-            let goals = try manager.context.fetch(fetchRequest)
-            let goal = goals.first ?? GoalEntity(context: manager.context)
+            let goals = try shared.context.fetch(fetchRequest)
+            let goal = goals.first ?? GoalEntity(context: shared.context)
             
             goal.meditation = meditationGoal
             
-            try manager.context.save()
+            try shared.context.save()
             print("User's meditation goal saved as \(goal.meditation)")
         } catch {
             print("Failed to save meditation goal: \(error.localizedDescription)")
@@ -350,7 +322,7 @@ class ExerciseDataProvider: ObservableObject {
         let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
         
         do {
-            if let goal = try manager.context.fetch(fetchRequest).first {
+            if let goal = try shared.context.fetch(fetchRequest).first {
                 return goal.meditation != 0 ? goal.meditation : 10
             }
         } catch {
@@ -363,12 +335,12 @@ class ExerciseDataProvider: ObservableObject {
     func saveJournalGoal(_ journalGoal: Int16) {
         let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
         do {
-            let goals = try manager.context.fetch(fetchRequest)
-            let goal = goals.first ?? GoalEntity(context: manager.context)
+            let goals = try shared.context.fetch(fetchRequest)
+            let goal = goals.first ?? GoalEntity(context: shared.context)
             
             goal.journal = journalGoal
             
-            try manager.context.save()
+            try shared.context.save()
             print("User's journal goal saved as \(goal.journal)")
         } catch {
             print("Failed to save journal goal: \(error.localizedDescription)")
@@ -380,7 +352,7 @@ class ExerciseDataProvider: ObservableObject {
         let fetchRequest: NSFetchRequest<GoalEntity> = GoalEntity.fetchRequest()
         
         do {
-            if let goal = try manager.context.fetch(fetchRequest).first {
+            if let goal = try shared.context.fetch(fetchRequest).first {
                 return goal.journal != 0 ? goal.journal : 15
             }
         } catch {
@@ -391,7 +363,7 @@ class ExerciseDataProvider: ObservableObject {
     
     // MARK: Save
     func save() {
-        manager.save()
+        shared.save()
         getPrograms()
         getWorkouts()
         getExercises()

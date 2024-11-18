@@ -11,13 +11,12 @@ class CoreDataManager {
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
     
-    // Singleton
+    // MARK: Singleton
     static let instance = CoreDataManager()
     
     // MARK: Initialise
     init() {
         container = NSPersistentContainer(name: "CoreDataModel")
-        
         container.loadPersistentStores { (description, error) in
             if let error = error {
                 print("Error loading Core Data. \(error)")
@@ -35,4 +34,4 @@ class CoreDataManager {
             print("Error saving Core Data: \(error.localizedDescription)")
         }
     }
-}
+} // End of CoreDataManager class.
