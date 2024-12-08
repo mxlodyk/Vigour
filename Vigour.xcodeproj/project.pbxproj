@@ -16,12 +16,14 @@
 		8940AAB82CEAA8EF00D035F5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940AAB72CEAA8EF00D035F5 /* CoreDataManager.swift */; };
 		8940AABA2CEAB67300D035F5 /* CalendarDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940AAB92CEAB67300D035F5 /* CalendarDataProvider.swift */; };
 		8940AABC2CEABC7800D035F5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940AABB2CEABC7800D035F5 /* AppCoordinator.swift */; };
+		8940AABE2CEAE5AE00D035F5 /* NutritionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940AABD2CEAE5AE00D035F5 /* NutritionDataProvider.swift */; };
 		895557282C4DACFC00768C2E /* DropDownMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895557272C4DACFC00768C2E /* DropDownMenuView.swift */; };
 		895782AE2C423934001FDABF /* FoodSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895782AD2C423934001FDABF /* FoodSearchView.swift */; };
 		8961188A2C4A044300E0F89E /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896118892C4A044300E0F89E /* StartWorkoutView.swift */; };
 		8961188C2C4A2B7500E0F89E /* StartTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961188B2C4A2B7500E0F89E /* StartTimerView.swift */; };
 		8961188E2C4A31ED00E0F89E /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961188D2C4A31ED00E0F89E /* AddSetView.swift */; };
 		896291C32CE0597F00D8F49F /* food.txt in Resources */ = {isa = PBXBuildFile; fileRef = 896291C22CE0597F00D8F49F /* food.txt */; };
+		897357792D044B910021D8D5 /* ExerciseDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897357782D044B910021D8D5 /* ExerciseDataProviderTests.swift */; };
 		8984BAC52C36871C0097E71A /* VigourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC42C36871C0097E71A /* VigourApp.swift */; };
 		8984BAC72C36871C0097E71A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8984BAC62C36871C0097E71A /* HomeView.swift */; };
 		8984BAC92C36871D0097E71A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8984BAC82C36871D0097E71A /* Assets.xcassets */; };
@@ -103,12 +105,14 @@
 		8940AAB72CEAA8EF00D035F5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8940AAB92CEAB67300D035F5 /* CalendarDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataProvider.swift; sourceTree = "<group>"; };
 		8940AABB2CEABC7800D035F5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		8940AABD2CEAE5AE00D035F5 /* NutritionDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionDataProvider.swift; sourceTree = "<group>"; };
 		895557272C4DACFC00768C2E /* DropDownMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuView.swift; sourceTree = "<group>"; };
 		895782AD2C423934001FDABF /* FoodSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchView.swift; sourceTree = "<group>"; };
 		896118892C4A044300E0F89E /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
 		8961188B2C4A2B7500E0F89E /* StartTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTimerView.swift; sourceTree = "<group>"; };
 		8961188D2C4A31ED00E0F89E /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
 		896291C22CE0597F00D8F49F /* food.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = food.txt; sourceTree = "<group>"; };
+		897357782D044B910021D8D5 /* ExerciseDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDataProviderTests.swift; sourceTree = "<group>"; };
 		8984BAC12C36871C0097E71A /* Vigour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vigour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8984BAC42C36871C0097E71A /* VigourApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VigourApp.swift; sourceTree = "<group>"; };
 		8984BAC62C36871C0097E71A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				8984BAD52C36871D0097E71A /* VigourTests.swift */,
+				897357782D044B910021D8D5 /* ExerciseDataProviderTests.swift */,
 			);
 			path = VigourTests;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				89E3F4B12C3D2C19003C15B9 /* ExerciseDataProvider.swift */,
+				8940AABD2CEAE5AE00D035F5 /* NutritionDataProvider.swift */,
 				8940AABB2CEABC7800D035F5 /* AppCoordinator.swift */,
 				8940AAB72CEAA8EF00D035F5 /* CoreDataManager.swift */,
 				8940AAB92CEAB67300D035F5 /* CalendarDataProvider.swift */,
@@ -508,6 +514,7 @@
 				8961188A2C4A044300E0F89E /* StartWorkoutView.swift in Sources */,
 				8984BAEF2C3687A40097E71A /* DumbbellVideoPlayerView.swift in Sources */,
 				89C3E0DB2C45D26B0011F9B3 /* StepsWidgetView.swift in Sources */,
+				8940AABE2CEAE5AE00D035F5 /* NutritionDataProvider.swift in Sources */,
 				89EF51A12C392FED0086BBC0 /* SettingsView.swift in Sources */,
 				89A93DCD2CE9772C00F019AA /* ChangeMacroGoalView.swift in Sources */,
 				89EF51932C38097A0086BBC0 /* ProgramsView.swift in Sources */,
@@ -561,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				897357792D044B910021D8D5 /* ExerciseDataProviderTests.swift in Sources */,
 				8984BAD62C36871D0097E71A /* VigourTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

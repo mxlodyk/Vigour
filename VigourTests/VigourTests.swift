@@ -1,9 +1,6 @@
-//
 //  VigourTests.swift
 //  VigourTests
-//
 //  Created by Melody Flavel on 4/7/2024.
-//
 
 import XCTest
 @testable import Vigour
